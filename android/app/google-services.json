@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "444582748637",
+    "project_id": "insticket-9d3a7",
+    "storage_bucket": "insticket-9d3a7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:444582748637:android:bd5069d1528d6c4e36d634",
+        "android_client_info": {
+          "package_name": "com.team4.insticket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "444582748637-6se56hpg5tcv8908g14sqfe885h6om7a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.team4.insticket",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "444582748637-0i317oinljq4msjfos60vu1vdk106emp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1KDw9aYoURBkkkPul-222-t2pZuVZ9cQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "444582748637-0i317oinljq4msjfos60vu1vdk106emp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "444582748637-8e7o40n5m7naedpdk32kb395im3eqikn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.team4.insticket"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
