@@ -72,23 +72,21 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       backgroundColor: flutterTheme.of(context).primaryBackground,
       drawer: Drawer(
         elevation: 16,
-        child: Container(
-          width: 100,
-          height: 100,
-          decoration: BoxDecoration(
-            color: flutterTheme.of(context).primaryBackground,
-          ),
-          child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
+        child: SafeArea(
+          child: Container(
+            width: 100,
+            height: 100,
+            padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+            decoration: BoxDecoration(
+              color: flutterTheme.of(context).primaryBackground,
+            ),
             child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Align(
                   alignment: AlignmentDirectional(1, 0),
                   child: InkWell(
-                    onTap: () async {
+                    onTap: () {
                       if (scaffoldKey.currentState.isDrawerOpen ||
                           scaffoldKey.currentState.isEndDrawerOpen) {
                         Navigator.pop(context);
@@ -104,67 +102,28 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     ),
                   ),
                 ),
-                Column(
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'About',
-                      style: flutterTheme.of(context).bodyText1,
-                    ),
-                    Divider(),
-                    Text(
-                      'Contact us',
-                      style: flutterTheme.of(context).bodyText1,
-                    ),
-                    Divider(),
-                  ],
+                Text(
+                  'About',
+                  style: flutterTheme.of(context).bodyText1,
                 ),
+                Divider(),
+                Text(
+                  'Contact us',
+                  style: flutterTheme.of(context).bodyText1,
+                ),
+                Divider(),
                 Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("Dark theme"),
+                      Text(
+                        "Dark theme",
+                        style: flutterTheme.of(context).bodyText1,
+                      ),
                       Switch(
                         onChanged: toggleSwitch,
                         value: isSwitched,
                       )
                     ]),
-                Expanded(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      FFButtonWidget(
-                        onPressed: () async {
-                          await signOut();
-                          await Navigator.pushAndRemoveUntil(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => MainWidget(),
-                            ),
-                            (r) => false,
-                          );
-                        },
-                        text: 'log out',
-                        options: FFButtonOptions(
-                          width: double.infinity,
-                          height: 40,
-                          color: Color(0xFFD50000),
-                          textStyle:
-                              flutterTheme.of(context).subtitle2.override(
-                                    fontFamily: 'Poppins',
-                                    color: Colors.white,
-                                  ),
-                          borderSide: BorderSide(
-                            color: Colors.transparent,
-                            width: 1,
-                          ),
-                          borderRadius: 12,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
               ],
             ),
           ),
