@@ -419,7 +419,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         ? (width / 600) + 1.5
                                         : 3),
                             shrinkWrap: true,
-                            scrollDirection: Axis.vertical,
                             itemCount: listViewGamesRecordList.length,
                             itemBuilder: (context, listViewIndex) {
                               final listViewGamesRecord =
@@ -468,7 +467,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               ),
                                             ),
                                             child: Column(
-                                              mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
                                                   MainAxisAlignment.end,
                                               children: [

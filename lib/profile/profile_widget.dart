@@ -61,203 +61,209 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                 );
               }
               final columnUsersRecord = snapshot.data;
-              return Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
-                    child: InkWell(
-                      onTap: () async {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text(
-                              'You can\'t change your email',
-                              style: flutterTheme.of(context).bodyText1,
-                            ),
-                            duration: Duration(milliseconds: 2000),
-                            backgroundColor:
-                                flutterTheme.of(context).secondaryBackground,
-                          ),
-                        );
-                      },
-                      child: Container(
-                        width: double.infinity,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          color: flutterTheme.of(context).secondaryBackground,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(10, 0, 5, 2),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Icon(
-                                Icons.mail_outlined,
-                                color: flutterTheme.of(context).primaryText,
-                                size: 24,
-                              ),
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                                child: Text(
-                                  columnUsersRecord.email,
-                                  style: flutterTheme.of(context).bodyText1,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 30),
-                    child: TextFormField(
-                      controller: usernameController ??= TextEditingController(
-                        text: columnUsersRecord.displayName,
-                      ),
-                      obscureText: false,
-                      decoration: InputDecoration(
-                        labelText: 'Username',
-                        hintText: 'Enter Your Username',
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color(0x00000000),
-                            width: 1,
-                          ),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color(0x00000000),
-                            width: 1,
-                          ),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        filled: true,
-                        fillColor: Color(0xFFEEEEEE),
-                        prefixIcon: Icon(
-                          Icons.person_outline,
-                          color: Color(0xFF9E9E9E),
-                          size: 24,
-                        ),
-                      ),
-                      style: flutterTheme.of(context).bodyText1.override(
-                            fontFamily: 'Poppins',
-                            color: Color(0xFF9E9E9E),
-                          ),
-                      keyboardType: TextInputType.emailAddress,
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
-                    child: FFButtonWidget(
-                      onPressed: () async {
-                        final usersUpdateData = createUsersRecordData(
-                          displayName: usernameController?.text ?? '',
-                        );
-                        await columnUsersRecord.reference
-                            .update(usersUpdateData);
-                        await showDialog(
-                          context: context,
-                          builder: (alertDialogContext) {
-                            return AlertDialog(
-                              title: Text('Done !'),
-                              content: Text(
-                                  'Your username has been successfully updated'),
-                              actions: [
-                                TextButton(
-                                  onPressed: () =>
-                                      Navigator.pop(alertDialogContext),
-                                  child: Text('Ok'),
-                                ),
-                              ],
-                            );
-                          },
-                        );
-                      },
-                      text: 'Update Username',
-                      options: FFButtonOptions(
-                        width: double.infinity,
-                        height: 50,
-                        color: flutterTheme.of(context).primaryColor,
-                        textStyle: flutterTheme.of(context).subtitle2.override(
-                              fontFamily: 'Poppins',
-                              color: Colors.white,
-                            ),
-                        borderSide: BorderSide(
-                          color: Colors.transparent,
-                          width: 1,
-                        ),
-                        borderRadius: 10,
-                      ),
-                    ),
-                  ),
-                  if (currentUserDocument?.isAdmin ?? true)
+              return SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
-                      child: AuthUserStreamWidget(
-                        child: FFButtonWidget(
-                          onPressed: () async {
-                            await Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => AdminWidget(),
+                      child: InkWell(
+                        onTap: () async {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(
+                                'You can\'t change your email',
+                                style: flutterTheme.of(context).bodyText1,
                               ),
-                            );
-                          },
-                          text: 'Admin Dashboard',
-                          options: FFButtonOptions(
-                            width: double.infinity,
-                            height: 50,
-                            color: flutterTheme.of(context).primaryColor,
-                            textStyle:
-                                flutterTheme.of(context).subtitle2.override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.black,
-                                    ),
+                              duration: Duration(milliseconds: 2000),
+                              backgroundColor:
+                                  flutterTheme.of(context).secondaryBackground,
+                            ),
+                          );
+                        },
+                        child: Container(
+                          width: double.infinity,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: flutterTheme.of(context).secondaryBackground,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(10, 0, 5, 2),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Icon(
+                                  Icons.mail_outlined,
+                                  color: flutterTheme.of(context).primaryText,
+                                  size: 24,
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      10, 0, 0, 0),
+                                  child: Text(
+                                    columnUsersRecord.email,
+                                    style: flutterTheme.of(context).bodyText1,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 30),
+                      child: TextFormField(
+                        controller: usernameController ??=
+                            TextEditingController(
+                          text: columnUsersRecord.displayName,
+                        ),
+                        obscureText: false,
+                        decoration: InputDecoration(
+                          labelText: 'Username',
+                          hintText: 'Enter Your Username',
+                          enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
-                              color: Colors.transparent,
+                              color: Color(0x00000000),
                               width: 1,
                             ),
-                            borderRadius: 10,
+                            borderRadius: BorderRadius.circular(10),
                           ),
-                        ),
-                      ),
-                    ),
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
-                    child: FFButtonWidget(
-                      onPressed: () async {
-                        await signOut();
-                        await Navigator.pushAndRemoveUntil(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => MainWidget(),
-                          ),
-                          (r) => false,
-                        );
-                      },
-                      text: 'log out',
-                      options: FFButtonOptions(
-                        width: double.infinity,
-                        height: 50,
-                        color: Color(0xFFD50000),
-                        textStyle: flutterTheme.of(context).subtitle2.override(
-                              fontFamily: 'Poppins',
-                              color: Colors.white,
+                          focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Color(0x00000000),
+                              width: 1,
                             ),
-                        borderSide: BorderSide(
-                          color: Colors.transparent,
-                          width: 1,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          filled: true,
+                          fillColor: Color(0xFFEEEEEE),
+                          prefixIcon: Icon(
+                            Icons.person_outline,
+                            color: Color(0xFF9E9E9E),
+                            size: 24,
+                          ),
                         ),
-                        borderRadius: 10,
+                        style: flutterTheme.of(context).bodyText1.override(
+                              fontFamily: 'Poppins',
+                              color: Color(0xFF9E9E9E),
+                            ),
+                        keyboardType: TextInputType.emailAddress,
                       ),
                     ),
-                  ),
-                ],
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          final usersUpdateData = createUsersRecordData(
+                            displayName: usernameController?.text ?? '',
+                          );
+                          await columnUsersRecord.reference
+                              .update(usersUpdateData);
+                          await showDialog(
+                            context: context,
+                            builder: (alertDialogContext) {
+                              return AlertDialog(
+                                title: Text('Done !'),
+                                content: Text(
+                                    'Your username has been successfully updated'),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () =>
+                                        Navigator.pop(alertDialogContext),
+                                    child: Text('Ok'),
+                                  ),
+                                ],
+                              );
+                            },
+                          );
+                        },
+                        text: 'Update Username',
+                        options: FFButtonOptions(
+                          width: double.infinity,
+                          height: 50,
+                          color: flutterTheme.of(context).primaryColor,
+                          textStyle:
+                              flutterTheme.of(context).subtitle2.override(
+                                    fontFamily: 'Poppins',
+                                    color: Colors.white,
+                                  ),
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1,
+                          ),
+                          borderRadius: 10,
+                        ),
+                      ),
+                    ),
+                    if (currentUserDocument?.isAdmin ?? true)
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+                        child: AuthUserStreamWidget(
+                          child: FFButtonWidget(
+                            onPressed: () async {
+                              await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => AdminWidget(),
+                                ),
+                              );
+                            },
+                            text: 'Admin Dashboard',
+                            options: FFButtonOptions(
+                              width: double.infinity,
+                              height: 50,
+                              color: flutterTheme.of(context).primaryColor,
+                              textStyle:
+                                  flutterTheme.of(context).subtitle2.override(
+                                        fontFamily: 'Poppins',
+                                        color: Colors.black,
+                                      ),
+                              borderSide: BorderSide(
+                                color: Colors.transparent,
+                                width: 1,
+                              ),
+                              borderRadius: 10,
+                            ),
+                          ),
+                        ),
+                      ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 80, 0, 20),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          await signOut();
+                          await Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => MainWidget(),
+                            ),
+                            (r) => false,
+                          );
+                        },
+                        text: 'log out',
+                        options: FFButtonOptions(
+                          width: double.infinity,
+                          height: 50,
+                          color: Color(0xFFD50000),
+                          textStyle:
+                              flutterTheme.of(context).subtitle2.override(
+                                    fontFamily: 'Poppins',
+                                    color: Colors.white,
+                                  ),
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1,
+                          ),
+                          borderRadius: 10,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               );
             },
           ),
