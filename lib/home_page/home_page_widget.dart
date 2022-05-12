@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-
-import '../auth/auth_util.dart';
 import '../backend/backend.dart';
 import '../flutter_main/flutter_main_icon_button.dart';
 import '../flutter_main/flutter_main_theme.dart';
 import '../flutter_main/flutter_main_util.dart';
-import '../flutter_main/flutter_main_widgets.dart';
 import '../game_details/game_details_widget.dart';
-import '../main/main_widget.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePageWidget extends StatefulWidget {
   const HomePageWidget({
@@ -24,24 +21,26 @@ class HomePageWidget extends StatefulWidget {
 
 class _HomePageWidgetState extends State<HomePageWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  bool isSwitched = true;
   ScrollController controller = ScrollController();
-  void toggleSwitch(bool value) {
-    if (isSwitched == false) {
-      setState(() {
-        isSwitched = true;
-        setDarkModeSetting(context, ThemeMode.dark);
-      });
-    } else {
-      setState(() {
-        isSwitched = false;
-        setDarkModeSetting(context, ThemeMode.light);
-      });
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
+    bool isSwitched = Theme.of(context).brightness == Brightness.dark;
+
+    void toggleSwitch(bool value) {
+      if (isSwitched == false) {
+        setState(() {
+          isSwitched = true;
+          setDarkModeSetting(context, ThemeMode.dark);
+        });
+      } else {
+        setState(() {
+          isSwitched = false;
+          setDarkModeSetting(context, ThemeMode.light);
+        });
+      }
+    }
+
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
@@ -102,14 +101,25 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     ),
                   ),
                 ),
-                Text(
-                  'About',
-                  style: flutterTheme.of(context).bodyText1,
+                GestureDetector(
+                  onTap: () {
+                    launchURL(
+                        "https://github.com/hammiddi/Final-year-project/");
+                  },
+                  child: Text(
+                    'About',
+                    style: flutterTheme.of(context).bodyText1,
+                  ),
                 ),
                 Divider(),
-                Text(
-                  'Contact us',
-                  style: flutterTheme.of(context).bodyText1,
+                GestureDetector(
+                  onTap: () {
+                    launch("mailto:mr.hammiddi@gmail.com");
+                  },
+                  child: Text(
+                    'Contact us',
+                    style: flutterTheme.of(context).bodyText1,
+                  ),
                 ),
                 Divider(),
                 Row(
