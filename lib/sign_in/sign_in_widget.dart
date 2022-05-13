@@ -34,16 +34,16 @@ class _SignInWidgetState extends State<SignInWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: flutterTheme.of(context).primaryBackground,
+        backgroundColor: FlutterTheme.of(context).primaryBackground,
         automaticallyImplyLeading: false,
-        leading: flutterIconButton(
+        leading: FlutterIconButton(
           borderColor: Colors.transparent,
           borderRadius: 30,
           borderWidth: 1,
           buttonSize: 60,
           icon: Icon(
             Icons.arrow_back_rounded,
-            color: flutterTheme.of(context).primaryText,
+            color: FlutterTheme.of(context).primaryText,
             size: 32,
           ),
           onPressed: () async {
@@ -52,13 +52,13 @@ class _SignInWidgetState extends State<SignInWidget> {
         ),
         title: Text(
           'Sign In',
-          style: flutterTheme.of(context).title1,
+          style: FlutterTheme.of(context).title1,
         ),
         actions: [],
         centerTitle: true,
         elevation: 0,
       ),
-      backgroundColor: flutterTheme.of(context).primaryBackground,
+      backgroundColor: FlutterTheme.of(context).primaryBackground,
       body: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
         child: Padding(
@@ -82,7 +82,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                             ),
                             Text(
                               'INSTICKET',
-                              style: flutterTheme.of(context).title1,
+                              style: FlutterTheme.of(context).title1,
                             ),
                           ],
                         ),
@@ -125,8 +125,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                                         size: 24,
                                       ),
                                     ),
-                                    style: flutterTheme
-                                        .of(context)
+                                    style: FlutterTheme.of(context)
                                         .bodyText1
                                         .override(
                                           fontFamily: 'Poppins',
@@ -179,8 +178,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                                         ),
                                       ),
                                     ),
-                                    style: flutterTheme
-                                        .of(context)
+                                    style: FlutterTheme.of(context)
                                         .bodyText1
                                         .override(
                                           fontFamily: 'Poppins',
@@ -211,13 +209,11 @@ class _SignInWidgetState extends State<SignInWidget> {
                                     },
                                     child: Text(
                                       'Forget your password ?',
-                                      style: flutterTheme
-                                          .of(context)
+                                      style: FlutterTheme.of(context)
                                           .bodyText2
                                           .override(
                                             fontFamily: 'Poppins',
-                                            color: flutterTheme
-                                                .of(context)
+                                            color: FlutterTheme.of(context)
                                                 .primaryColor,
                                             decoration:
                                                 TextDecoration.underline,
@@ -250,9 +246,8 @@ class _SignInWidgetState extends State<SignInWidget> {
                                     width: double.infinity,
                                     height: 50,
                                     color:
-                                        flutterTheme.of(context).primaryColor,
-                                    textStyle: flutterTheme
-                                        .of(context)
+                                        FlutterTheme.of(context).primaryColor,
+                                    textStyle: FlutterTheme.of(context)
                                         .subtitle2
                                         .override(
                                           fontFamily: 'Poppins',
@@ -293,7 +288,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                                 ),
                                 Text(
                                   'INSTICKET',
-                                  style: flutterTheme.of(context).title1,
+                                  style: FlutterTheme.of(context).title1,
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.only(top: 22.0),
@@ -301,7 +296,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                                     'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors ',
                                     maxLines: 8,
                                     softWrap: true,
-                                    style: flutterTheme.of(context).bodyText1,
+                                    style: FlutterTheme.of(context).bodyText1,
                                   ),
                                 ),
                               ],
@@ -350,8 +345,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                                       size: 24,
                                     ),
                                   ),
-                                  style: flutterTheme
-                                      .of(context)
+                                  style: FlutterTheme.of(context)
                                       .bodyText1
                                       .override(
                                         fontFamily: 'Poppins',
@@ -404,8 +398,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                                       ),
                                     ),
                                   ),
-                                  style: flutterTheme
-                                      .of(context)
+                                  style: FlutterTheme.of(context)
                                       .bodyText1
                                       .override(
                                         fontFamily: 'Poppins',
@@ -436,13 +429,11 @@ class _SignInWidgetState extends State<SignInWidget> {
                                   },
                                   child: Text(
                                     'Forget your password ?',
-                                    style: flutterTheme
-                                        .of(context)
+                                    style: FlutterTheme.of(context)
                                         .bodyText2
                                         .override(
                                           fontFamily: 'Poppins',
-                                          color: flutterTheme
-                                              .of(context)
+                                          color: FlutterTheme.of(context)
                                               .primaryColor,
                                           decoration: TextDecoration.underline,
                                         ),
@@ -473,9 +464,8 @@ class _SignInWidgetState extends State<SignInWidget> {
                                 options: FFButtonOptions(
                                   width: double.infinity,
                                   height: 50,
-                                  color: flutterTheme.of(context).primaryColor,
-                                  textStyle: flutterTheme
-                                      .of(context)
+                                  color: FlutterTheme.of(context).primaryColor,
+                                  textStyle: FlutterTheme.of(context)
                                       .subtitle2
                                       .override(
                                         fontFamily: 'Poppins',

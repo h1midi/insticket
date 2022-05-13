@@ -30,16 +30,16 @@ class _TicketsViewWidgetState extends State<TicketsViewWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: flutterTheme.of(context).primaryBackground,
+        backgroundColor: FlutterTheme.of(context).primaryBackground,
         automaticallyImplyLeading: false,
-        leading: flutterIconButton(
+        leading: FlutterIconButton(
           borderColor: Colors.transparent,
           borderRadius: 30,
           borderWidth: 1,
           buttonSize: 60,
           icon: Icon(
             Icons.arrow_back_rounded,
-            color: flutterTheme.of(context).primaryText,
+            color: FlutterTheme.of(context).primaryText,
             size: 32,
           ),
           onPressed: () {
@@ -48,13 +48,13 @@ class _TicketsViewWidgetState extends State<TicketsViewWidget> {
         ),
         title: Text(
           'Tickets View',
-          style: flutterTheme.of(context).title1,
+          style: FlutterTheme.of(context).title1,
         ),
         actions: [],
         centerTitle: true,
         elevation: 0,
       ),
-      backgroundColor: flutterTheme.of(context).primaryBackground,
+      backgroundColor: FlutterTheme.of(context).primaryBackground,
       body: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
         child: Column(
@@ -124,7 +124,7 @@ class _TicketsViewWidgetState extends State<TicketsViewWidget> {
                                     EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                                 child: Text(
                                   widget.ticketsView.homeTeam,
-                                  style: flutterTheme.of(context).bodyText1,
+                                  style: FlutterTheme.of(context).bodyText1,
                                 ),
                               ),
                             ),
@@ -147,8 +147,7 @@ class _TicketsViewWidgetState extends State<TicketsViewWidget> {
                                     width: 50,
                                     height: 50,
                                     decoration: BoxDecoration(
-                                      color: flutterTheme
-                                          .of(context)
+                                      color: FlutterTheme.of(context)
                                           .secondaryColor,
                                       shape: BoxShape.circle,
                                     ),
@@ -158,7 +157,7 @@ class _TicketsViewWidgetState extends State<TicketsViewWidget> {
                                         'vs',
                                         textAlign: TextAlign.center,
                                         style:
-                                            flutterTheme.of(context).bodyText1,
+                                            FlutterTheme.of(context).bodyText1,
                                       ),
                                     ),
                                   ),
@@ -211,7 +210,7 @@ class _TicketsViewWidgetState extends State<TicketsViewWidget> {
                                     EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                                 child: Text(
                                   widget.ticketsView.awayTeam,
-                                  style: flutterTheme.of(context).bodyText1,
+                                  style: FlutterTheme.of(context).bodyText1,
                                 ),
                               ),
                             ),
@@ -231,7 +230,7 @@ class _TicketsViewWidgetState extends State<TicketsViewWidget> {
                       ? double.infinity
                       : 500,
                   decoration: BoxDecoration(
-                    color: flutterTheme.of(context).secondaryBackground,
+                    color: FlutterTheme.of(context).secondaryBackground,
                     boxShadow: [
                       BoxShadow(
                         blurRadius: 48,
@@ -256,7 +255,7 @@ class _TicketsViewWidgetState extends State<TicketsViewWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                           child: Text(
                             'My Tickets',
-                            style: flutterTheme.of(context).title2,
+                            style: FlutterTheme.of(context).title2,
                           ),
                         ),
                         Expanded(
@@ -321,15 +320,14 @@ class _TicketsViewWidgetState extends State<TicketsViewWidget> {
                                                   ? listViewTicketsRecord.code
                                                   : listViewTicketsRecord.code +
                                                       " (Expired)",
-                                              style: flutterTheme
-                                                  .of(context)
+                                              style: FlutterTheme.of(context)
                                                   .bodyText1
                                                   .override(
                                                     fontFamily: 'Poppins',
                                                     color: listViewTicketsRecord
                                                             .isValid
-                                                        ? flutterTheme
-                                                            .of(context)
+                                                        ? FlutterTheme.of(
+                                                                context)
                                                             .primaryColor
                                                         : Colors.red,
                                                     decoration: TextDecoration
@@ -339,8 +337,7 @@ class _TicketsViewWidgetState extends State<TicketsViewWidget> {
                                           ),
                                           Divider(
                                             thickness: 1,
-                                            color: flutterTheme
-                                                .of(context)
+                                            color: FlutterTheme.of(context)
                                                 .secondaryText,
                                           ),
                                         ],

@@ -29,17 +29,17 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: flutterTheme.of(context).primaryBackground,
+        backgroundColor: FlutterTheme.of(context).primaryBackground,
         automaticallyImplyLeading: false,
         title: Text(
           'My Tickets',
-          style: flutterTheme.of(context).title1,
+          style: FlutterTheme.of(context).title1,
         ),
         actions: [],
         centerTitle: true,
         elevation: 0,
       ),
-      backgroundColor: flutterTheme.of(context).primaryBackground,
+      backgroundColor: FlutterTheme.of(context).primaryBackground,
       body: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
         child: SingleChildScrollView(
@@ -52,7 +52,7 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(20, 30, 0, 0),
                 child: Text(
                   'Purchase History',
-                  style: flutterTheme.of(context).title2,
+                  style: FlutterTheme.of(context).title2,
                 ),
               ),
               StreamBuilder<List<GamesRecord>>(
@@ -104,8 +104,7 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                   width: double.infinity,
                                   height: 120,
                                   decoration: BoxDecoration(
-                                    color: flutterTheme
-                                        .of(context)
+                                    color: FlutterTheme.of(context)
                                         .secondaryBackground,
                                     boxShadow: [
                                       BoxShadow(
@@ -125,8 +124,7 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                                 0.4,
                                         height: double.infinity,
                                         decoration: BoxDecoration(
-                                          color: flutterTheme
-                                              .of(context)
+                                          color: FlutterTheme.of(context)
                                               .secondaryColor,
                                           borderRadius: BorderRadius.only(
                                             bottomLeft: Radius.circular(10),
@@ -202,14 +200,12 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                             children: [
                                               Text(
                                                 'Purchased  tickets ',
-                                                style: flutterTheme
-                                                    .of(context)
+                                                style: FlutterTheme.of(context)
                                                     .bodyText2,
                                               ),
                                               Text(
                                                 '${listViewGamesRecord.homeTeam} vs ${listViewGamesRecord.awayTeam}',
-                                                style: flutterTheme
-                                                    .of(context)
+                                                style: FlutterTheme.of(context)
                                                     .bodyText1,
                                               ),
                                               Row(
@@ -218,9 +214,9 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                                   Icon(
                                                     Icons
                                                         .calendar_today_outlined,
-                                                    color: flutterTheme
-                                                        .of(context)
-                                                        .secondaryText,
+                                                    color:
+                                                        FlutterTheme.of(context)
+                                                            .secondaryText,
                                                     size: 12,
                                                   ),
                                                   Padding(
@@ -233,8 +229,8 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                                           'd/M h:mm a',
                                                           listViewGamesRecord
                                                               .date),
-                                                      style: flutterTheme
-                                                          .of(context)
+                                                      style: FlutterTheme.of(
+                                                              context)
                                                           .bodyText2,
                                                     ),
                                                   ),
@@ -281,8 +277,7 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                 },
                                 child: Container(
                                   decoration: BoxDecoration(
-                                    color: flutterTheme
-                                        .of(context)
+                                    color: FlutterTheme.of(context)
                                         .secondaryBackground,
                                     boxShadow: [
                                       BoxShadow(
@@ -299,8 +294,7 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                         flex: 2,
                                         child: Container(
                                           decoration: BoxDecoration(
-                                            color: flutterTheme
-                                                .of(context)
+                                            color: FlutterTheme.of(context)
                                                 .secondaryColor,
                                             borderRadius: BorderRadius.only(
                                               bottomLeft: Radius.circular(10),
@@ -382,14 +376,12 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                             children: [
                                               Text(
                                                 'Purchased  tickets ',
-                                                style: flutterTheme
-                                                    .of(context)
+                                                style: FlutterTheme.of(context)
                                                     .bodyText2,
                                               ),
                                               Text(
                                                 '${listViewGamesRecord.homeTeam} vs ${listViewGamesRecord.awayTeam}',
-                                                style: flutterTheme
-                                                    .of(context)
+                                                style: FlutterTheme.of(context)
                                                     .bodyText1,
                                               ),
                                               Row(
@@ -398,9 +390,9 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                                   Icon(
                                                     Icons
                                                         .calendar_today_outlined,
-                                                    color: flutterTheme
-                                                        .of(context)
-                                                        .secondaryText,
+                                                    color:
+                                                        FlutterTheme.of(context)
+                                                            .secondaryText,
                                                     size: 12,
                                                   ),
                                                   Padding(
@@ -413,8 +405,8 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                                           'd/M h:mm a',
                                                           listViewGamesRecord
                                                               .date),
-                                                      style: flutterTheme
-                                                          .of(context)
+                                                      style: FlutterTheme.of(
+                                                              context)
                                                           .bodyText2,
                                                     ),
                                                   ),
@@ -437,7 +429,7 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(20, 30, 0, 0),
                 child: Text(
                   'Old Purchase History',
-                  style: flutterTheme.of(context).title2,
+                  style: FlutterTheme.of(context).title2,
                 ),
               ),
               StreamBuilder<List<GamesRecord>>(
@@ -468,8 +460,6 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                           shrinkWrap: true,
                           itemCount: listViewGamesRecordList.length,
                           itemBuilder: (context, listViewIndex) {
-                            final listViewGamesRecord =
-                                listViewGamesRecordList[listViewIndex];
                             return Column(
                               children: [
                                 Padding(
@@ -479,8 +469,7 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                     width: double.infinity,
                                     height: 120,
                                     decoration: BoxDecoration(
-                                      color: flutterTheme
-                                          .of(context)
+                                      color: FlutterTheme.of(context)
                                           .secondaryBackground,
                                       boxShadow: [
                                         BoxShadow(
@@ -589,13 +578,13 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                               children: [
                                                 Text(
                                                   '01X tickets purchased ',
-                                                  style: flutterTheme
-                                                      .of(context)
+                                                  style: FlutterTheme.of(
+                                                          context)
                                                       .bodyText2
                                                       .override(
                                                         fontFamily: 'Poppins',
-                                                        color: flutterTheme
-                                                            .of(context)
+                                                        color: FlutterTheme.of(
+                                                                context)
                                                             .warning,
                                                         decoration:
                                                             TextDecoration
@@ -604,9 +593,9 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                                 ),
                                                 Text(
                                                   'Team Example1 vs Team Example2',
-                                                  style: flutterTheme
-                                                      .of(context)
-                                                      .bodyText1,
+                                                  style:
+                                                      FlutterTheme.of(context)
+                                                          .bodyText1,
                                                 ),
                                                 Row(
                                                   mainAxisSize:
@@ -615,8 +604,8 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                                     Icon(
                                                       Icons
                                                           .calendar_today_outlined,
-                                                      color: flutterTheme
-                                                          .of(context)
+                                                      color: FlutterTheme.of(
+                                                              context)
                                                           .secondaryText,
                                                       size: 12,
                                                     ),
@@ -627,8 +616,8 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                                                   5, 0, 0, 0),
                                                       child: Text(
                                                         '16 mar 2022 - 19:00',
-                                                        style: flutterTheme
-                                                            .of(context)
+                                                        style: FlutterTheme.of(
+                                                                context)
                                                             .bodyText2,
                                                       ),
                                                     ),
@@ -649,8 +638,7 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                     width: double.infinity,
                                     height: 120,
                                     decoration: BoxDecoration(
-                                      color: flutterTheme
-                                          .of(context)
+                                      color: FlutterTheme.of(context)
                                           .secondaryBackground,
                                       boxShadow: [
                                         BoxShadow(
@@ -759,13 +747,13 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                               children: [
                                                 Text(
                                                   '01X tickets purchased ',
-                                                  style: flutterTheme
-                                                      .of(context)
+                                                  style: FlutterTheme.of(
+                                                          context)
                                                       .bodyText2
                                                       .override(
                                                         fontFamily: 'Poppins',
-                                                        color: flutterTheme
-                                                            .of(context)
+                                                        color: FlutterTheme.of(
+                                                                context)
                                                             .warning,
                                                         decoration:
                                                             TextDecoration
@@ -774,9 +762,9 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                                 ),
                                                 Text(
                                                   'Team Example1 vs Team Example2',
-                                                  style: flutterTheme
-                                                      .of(context)
-                                                      .bodyText1,
+                                                  style:
+                                                      FlutterTheme.of(context)
+                                                          .bodyText1,
                                                 ),
                                                 Row(
                                                   mainAxisSize:
@@ -785,8 +773,8 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                                     Icon(
                                                       Icons
                                                           .calendar_today_outlined,
-                                                      color: flutterTheme
-                                                          .of(context)
+                                                      color: FlutterTheme.of(
+                                                              context)
                                                           .secondaryText,
                                                       size: 12,
                                                     ),
@@ -797,8 +785,8 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                                                   5, 0, 0, 0),
                                                       child: Text(
                                                         '16 mar 2022 - 19:00',
-                                                        style: flutterTheme
-                                                            .of(context)
+                                                        style: FlutterTheme.of(
+                                                                context)
                                                             .bodyText2,
                                                       ),
                                                     ),
@@ -835,8 +823,7 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                   20, 20, 20, 20),
                               child: Container(
                                 decoration: BoxDecoration(
-                                  color: flutterTheme
-                                      .of(context)
+                                  color: FlutterTheme.of(context)
                                       .secondaryBackground,
                                   boxShadow: [
                                     BoxShadow(
@@ -941,22 +928,20 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                           children: [
                                             Text(
                                               '01X tickets purchased ',
-                                              style: flutterTheme
-                                                  .of(context)
+                                              style: FlutterTheme.of(context)
                                                   .bodyText2
                                                   .override(
                                                     fontFamily: 'Poppins',
-                                                    color: flutterTheme
-                                                        .of(context)
-                                                        .warning,
+                                                    color:
+                                                        FlutterTheme.of(context)
+                                                            .warning,
                                                     decoration: TextDecoration
                                                         .lineThrough,
                                                   ),
                                             ),
                                             Text(
                                               '${listViewGamesRecord.homeTeam} vs ${listViewGamesRecord.awayTeam}',
-                                              style: flutterTheme
-                                                  .of(context)
+                                              style: FlutterTheme.of(context)
                                                   .bodyText1,
                                             ),
                                             Row(
@@ -964,9 +949,9 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                               children: [
                                                 Icon(
                                                   Icons.calendar_today_outlined,
-                                                  color: flutterTheme
-                                                      .of(context)
-                                                      .secondaryText,
+                                                  color:
+                                                      FlutterTheme.of(context)
+                                                          .secondaryText,
                                                   size: 12,
                                                 ),
                                                 Padding(
@@ -977,9 +962,9 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                                         'd/M h:mm a',
                                                         listViewGamesRecord
                                                             .date),
-                                                    style: flutterTheme
-                                                        .of(context)
-                                                        .bodyText2,
+                                                    style:
+                                                        FlutterTheme.of(context)
+                                                            .bodyText2,
                                                   ),
                                                 ),
                                               ],

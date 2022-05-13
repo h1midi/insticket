@@ -1,10 +1,6 @@
 import 'dart:async';
-
 import 'package:built_value/built_value.dart';
-
-import 'index.dart';
 import 'serializers.dart';
-
 part 'tickets_record.g.dart';
 
 abstract class TicketsRecord

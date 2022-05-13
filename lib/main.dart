@@ -12,7 +12,7 @@ import 'index.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  await flutterTheme.initialize();
+  await FlutterTheme.initialize();
 
   runApp(MyApp());
 }
@@ -28,7 +28,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   Locale _locale;
-  ThemeMode _themeMode = flutterTheme.themeMode;
+  ThemeMode _themeMode = FlutterTheme.themeMode;
 
   Stream<InsticketFirebaseUser> userStream;
   InsticketFirebaseUser initialUser;
@@ -57,7 +57,7 @@ class _MyAppState extends State<MyApp> {
   void setLocale(Locale value) => setState(() => _locale = value);
   void setThemeMode(ThemeMode mode) => setState(() {
         _themeMode = mode;
-        flutterTheme.saveThemeMode(mode);
+        FlutterTheme.saveThemeMode(mode);
       });
 
   @override
@@ -126,9 +126,9 @@ class _NavBarPageState extends State<NavBarPage> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         onTap: (i) => setState(() => _currentPage = tabs.keys.toList()[i]),
-        backgroundColor: flutterTheme.of(context).secondaryBackground,
-        selectedItemColor: flutterTheme.of(context).primaryColor,
-        unselectedItemColor: flutterTheme.of(context).unselectedIcon,
+        backgroundColor: FlutterTheme.of(context).secondaryBackground,
+        selectedItemColor: FlutterTheme.of(context).primaryColor,
+        unselectedItemColor: FlutterTheme.of(context).unselectedIcon,
         showSelectedLabels: true,
         showUnselectedLabels: false,
         type: BottomNavigationBarType.fixed,

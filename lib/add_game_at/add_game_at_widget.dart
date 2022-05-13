@@ -27,17 +27,17 @@ class _AddGameAtWidgetState extends State<AddGameAtWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: flutterTheme.of(context).primaryBackground,
+        backgroundColor: FlutterTheme.of(context).primaryBackground,
         automaticallyImplyLeading: false,
         title: Text(
           'Select Away Team',
-          style: flutterTheme.of(context).title1,
+          style: FlutterTheme.of(context).title1,
         ),
         actions: [],
         centerTitle: true,
         elevation: 0,
       ),
-      backgroundColor: flutterTheme.of(context).primaryBackground,
+      backgroundColor: FlutterTheme.of(context).primaryBackground,
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -94,8 +94,7 @@ class _AddGameAtWidgetState extends State<AddGameAtWidget> {
                                     width: double.infinity,
                                     height: 120,
                                     decoration: BoxDecoration(
-                                      color: flutterTheme
-                                          .of(context)
+                                      color: FlutterTheme.of(context)
                                           .secondaryBackground,
                                       boxShadow: [
                                         BoxShadow(
@@ -116,8 +115,7 @@ class _AddGameAtWidgetState extends State<AddGameAtWidget> {
                                               0.4,
                                           height: double.infinity,
                                           decoration: BoxDecoration(
-                                            color: flutterTheme
-                                                .of(context)
+                                            color: FlutterTheme.of(context)
                                                 .secondaryColor,
                                             borderRadius: BorderRadius.only(
                                               bottomLeft: Radius.circular(10),
@@ -169,9 +167,9 @@ class _AddGameAtWidgetState extends State<AddGameAtWidget> {
                                               children: [
                                                 Text(
                                                   listViewTeamsRecord.name,
-                                                  style: flutterTheme
-                                                      .of(context)
-                                                      .bodyText1,
+                                                  style:
+                                                      FlutterTheme.of(context)
+                                                          .bodyText1,
                                                 ),
                                               ],
                                             ),

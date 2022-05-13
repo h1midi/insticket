@@ -44,16 +44,16 @@ class _HomePageWidgetState extends State<HomePageWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: flutterTheme.of(context).primaryBackground,
+        backgroundColor: FlutterTheme.of(context).primaryBackground,
         automaticallyImplyLeading: false,
-        leading: flutterIconButton(
+        leading: FlutterIconButton(
           borderColor: Colors.transparent,
           borderRadius: 30,
           borderWidth: 1,
           buttonSize: 60,
           icon: Icon(
             Icons.menu,
-            color: flutterTheme.of(context).primaryText,
+            color: FlutterTheme.of(context).primaryText,
             size: 32,
           ),
           onPressed: () async {
@@ -62,13 +62,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
         ),
         title: Text(
           'Home',
-          style: flutterTheme.of(context).title1,
+          style: FlutterTheme.of(context).title1,
         ),
         actions: [],
         centerTitle: true,
         elevation: 0,
       ),
-      backgroundColor: flutterTheme.of(context).primaryBackground,
+      backgroundColor: FlutterTheme.of(context).primaryBackground,
       drawer: Drawer(
         elevation: 16,
         child: SafeArea(
@@ -77,7 +77,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             height: 100,
             padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
             decoration: BoxDecoration(
-              color: flutterTheme.of(context).primaryBackground,
+              color: FlutterTheme.of(context).primaryBackground,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -108,17 +108,17 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   },
                   child: Text(
                     'About',
-                    style: flutterTheme.of(context).bodyText1,
+                    style: FlutterTheme.of(context).bodyText1,
                   ),
                 ),
                 Divider(),
                 GestureDetector(
                   onTap: () {
-                    launch("mailto:mr.hammiddi@gmail.com");
+                    launchUrl(Uri.parse("mailto:mr.hammiddi@gmail.com"));
                   },
                   child: Text(
                     'Contact us',
-                    style: flutterTheme.of(context).bodyText1,
+                    style: FlutterTheme.of(context).bodyText1,
                   ),
                 ),
                 Divider(),
@@ -127,7 +127,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     children: [
                       Text(
                         "Dark theme",
-                        style: flutterTheme.of(context).bodyText1,
+                        style: FlutterTheme.of(context).bodyText1,
                       ),
                       Switch(
                         onChanged: toggleSwitch,
@@ -150,7 +150,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(20, 10, 0, 20),
                 child: Text(
                   'Upcoming Games',
-                  style: flutterTheme.of(context).title2,
+                  style: FlutterTheme.of(context).title2,
                 ),
               ),
               StreamBuilder<List<GamesRecord>>(
@@ -202,8 +202,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   width: double.infinity,
                                   height: 120,
                                   decoration: BoxDecoration(
-                                    color: flutterTheme
-                                        .of(context)
+                                    color: FlutterTheme.of(context)
                                         .secondaryBackground,
                                     boxShadow: [
                                       BoxShadow(
@@ -225,8 +224,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 0.3,
                                         height: double.infinity,
                                         decoration: BoxDecoration(
-                                          color: flutterTheme
-                                              .of(context)
+                                          color: FlutterTheme.of(context)
                                               .secondaryColor,
                                           borderRadius: BorderRadius.only(
                                             bottomLeft: Radius.circular(10),
@@ -272,8 +270,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             Expanded(
                                               child: Text(
                                                 listViewGamesRecord.homeTeam,
-                                                style: flutterTheme
-                                                    .of(context)
+                                                style: FlutterTheme.of(context)
                                                     .bodyText1,
                                               ),
                                             ),
@@ -293,13 +290,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               Text(
                                                 'tickets available ',
                                                 textAlign: TextAlign.center,
-                                                style: flutterTheme
-                                                    .of(context)
+                                                style: FlutterTheme.of(context)
                                                     .bodyText1
                                                     .override(
                                                       fontFamily: 'Poppins',
-                                                      color: flutterTheme
-                                                          .of(context)
+                                                      color: FlutterTheme.of(
+                                                              context)
                                                           .primaryColor,
                                                     ),
                                               ),
@@ -310,9 +306,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                   dateTimeFormat('MMMEd',
                                                       listViewGamesRecord.date),
                                                   textAlign: TextAlign.center,
-                                                  style: flutterTheme
-                                                      .of(context)
-                                                      .bodyText1,
+                                                  style:
+                                                      FlutterTheme.of(context)
+                                                          .bodyText1,
                                                 ),
                                               ),
                                               Row(
@@ -328,8 +324,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                     child: Icon(
                                                       Icons
                                                           .access_time_outlined,
-                                                      color: flutterTheme
-                                                          .of(context)
+                                                      color: FlutterTheme.of(
+                                                              context)
                                                           .secondaryText,
                                                       size: 12,
                                                     ),
@@ -339,9 +335,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                         'jm',
                                                         listViewGamesRecord
                                                             .date),
-                                                    style: flutterTheme
-                                                        .of(context)
-                                                        .bodyText2,
+                                                    style:
+                                                        FlutterTheme.of(context)
+                                                            .bodyText2,
                                                   ),
                                                 ],
                                               ),
@@ -355,8 +351,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 0.3,
                                         height: double.infinity,
                                         decoration: BoxDecoration(
-                                          color: flutterTheme
-                                              .of(context)
+                                          color: FlutterTheme.of(context)
                                               .secondaryColor,
                                           borderRadius: BorderRadius.only(
                                             bottomLeft: Radius.circular(0),
@@ -402,8 +397,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             Expanded(
                                               child: Text(
                                                 listViewGamesRecord.awayTeam,
-                                                style: flutterTheme
-                                                    .of(context)
+                                                style: FlutterTheme.of(context)
                                                     .bodyText1,
                                               ),
                                             ),
@@ -449,8 +443,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   },
                                   child: Container(
                                     decoration: BoxDecoration(
-                                      color: flutterTheme
-                                          .of(context)
+                                      color: FlutterTheme.of(context)
                                           .secondaryBackground,
                                       boxShadow: [
                                         BoxShadow(
@@ -466,8 +459,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         Expanded(
                                           child: Container(
                                             decoration: BoxDecoration(
-                                              color: flutterTheme
-                                                  .of(context)
+                                              color: FlutterTheme.of(context)
                                                   .secondaryColor,
                                               borderRadius: BorderRadius.only(
                                                 bottomLeft: Radius.circular(10),
@@ -517,9 +509,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                   child: Text(
                                                     listViewGamesRecord
                                                         .homeTeam,
-                                                    style: flutterTheme
-                                                        .of(context)
-                                                        .bodyText1,
+                                                    style:
+                                                        FlutterTheme.of(context)
+                                                            .bodyText1,
                                                   ),
                                                 ),
                                               ],
@@ -539,13 +531,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 Text(
                                                   'tickets available ',
                                                   textAlign: TextAlign.center,
-                                                  style: flutterTheme
-                                                      .of(context)
+                                                  style: FlutterTheme.of(
+                                                          context)
                                                       .bodyText1
                                                       .override(
                                                         fontFamily: 'Poppins',
-                                                        color: flutterTheme
-                                                            .of(context)
+                                                        color: FlutterTheme.of(
+                                                                context)
                                                             .primaryColor,
                                                       ),
                                                 ),
@@ -558,9 +550,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                         listViewGamesRecord
                                                             .date),
                                                     textAlign: TextAlign.center,
-                                                    style: flutterTheme
-                                                        .of(context)
-                                                        .bodyText1,
+                                                    style:
+                                                        FlutterTheme.of(context)
+                                                            .bodyText1,
                                                   ),
                                                 ),
                                                 Row(
@@ -577,8 +569,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                       child: Icon(
                                                         Icons
                                                             .access_time_outlined,
-                                                        color: flutterTheme
-                                                            .of(context)
+                                                        color: FlutterTheme.of(
+                                                                context)
                                                             .secondaryText,
                                                         size: 12,
                                                       ),
@@ -588,8 +580,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                           'jm',
                                                           listViewGamesRecord
                                                               .date),
-                                                      style: flutterTheme
-                                                          .of(context)
+                                                      style: FlutterTheme.of(
+                                                              context)
                                                           .bodyText2,
                                                     ),
                                                   ],
@@ -601,8 +593,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         Expanded(
                                           child: Container(
                                             decoration: BoxDecoration(
-                                              color: flutterTheme
-                                                  .of(context)
+                                              color: FlutterTheme.of(context)
                                                   .secondaryColor,
                                               borderRadius: BorderRadius.only(
                                                 bottomLeft: Radius.circular(0),
@@ -654,9 +645,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                   child: Text(
                                                     listViewGamesRecord
                                                         .awayTeam,
-                                                    style: flutterTheme
-                                                        .of(context)
-                                                        .bodyText1,
+                                                    style:
+                                                        FlutterTheme.of(context)
+                                                            .bodyText1,
                                                   ),
                                                 ),
                                               ],

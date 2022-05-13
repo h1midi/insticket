@@ -20,7 +20,7 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: flutterTheme.of(context).primaryBackground,
+      backgroundColor: FlutterTheme.of(context).primaryBackground,
       body: Column(
         children: [
           Padding(
@@ -30,7 +30,7 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
               children: [
                 Text(
                   'INSTICKET',
-                  style: flutterTheme.of(context).title1.override(
+                  style: FlutterTheme.of(context).title1.override(
                         fontFamily: 'Poppins',
                         fontSize: 32,
                       ),
@@ -88,7 +88,7 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                                       child: Text(
                                         'Search',
                                         textAlign: TextAlign.center,
-                                        style: flutterTheme.of(context).title1,
+                                        style: FlutterTheme.of(context).title1,
                                       ),
                                     ),
                                   ],
@@ -105,7 +105,7 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                                         'You can easily find the soccer matches that you want',
                                         textAlign: TextAlign.center,
                                         style:
-                                            flutterTheme.of(context).subtitle2,
+                                            FlutterTheme.of(context).subtitle2,
                                       ),
                                     ),
                                   ],
@@ -151,7 +151,7 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                                       child: Text(
                                         'Purchase',
                                         textAlign: TextAlign.center,
-                                        style: flutterTheme.of(context).title1,
+                                        style: FlutterTheme.of(context).title1,
                                       ),
                                     ),
                                   ],
@@ -168,7 +168,7 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                                         'Buy as many tickets as you want with a simple click ',
                                         textAlign: TextAlign.center,
                                         style:
-                                            flutterTheme.of(context).subtitle2,
+                                            FlutterTheme.of(context).subtitle2,
                                       ),
                                     ),
                                   ],
@@ -214,7 +214,7 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                                       child: Text(
                                         'Scan',
                                         textAlign: TextAlign.center,
-                                        style: flutterTheme.of(context).title1,
+                                        style: FlutterTheme.of(context).title1,
                                       ),
                                     ),
                                   ],
@@ -231,7 +231,7 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                                         'And finally scan your qr code and enjoy your favorite match , easy isn\'t it ?',
                                         textAlign: TextAlign.center,
                                         style:
-                                            flutterTheme.of(context).subtitle2,
+                                            FlutterTheme.of(context).subtitle2,
                                       ),
                                     ),
                                   ],
@@ -266,7 +266,7 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                           dotWidth: 8,
                           dotHeight: 8,
                           dotColor: Color(0xFF9E9E9E),
-                          activeDotColor: flutterTheme.of(context).primaryText,
+                          activeDotColor: FlutterTheme.of(context).primaryText,
                           paintStyle: PaintingStyle.fill,
                         ),
                       ),
@@ -298,8 +298,8 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                     options: FFButtonOptions(
                       width: 200,
                       height: 50,
-                      color: flutterTheme.of(context).secondaryText,
-                      textStyle: flutterTheme.of(context).title2.override(
+                      color: FlutterTheme.of(context).secondaryText,
+                      textStyle: FlutterTheme.of(context).title2.override(
                             fontFamily: 'Poppins',
                             color: Color(0xFF212121),
                           ),

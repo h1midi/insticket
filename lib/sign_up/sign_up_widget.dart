@@ -41,16 +41,16 @@ class _SignUpWidgetState extends State<SignUpWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: flutterTheme.of(context).primaryBackground,
+        backgroundColor: FlutterTheme.of(context).primaryBackground,
         automaticallyImplyLeading: false,
-        leading: flutterIconButton(
+        leading: FlutterIconButton(
           borderColor: Colors.transparent,
           borderRadius: 30,
           borderWidth: 1,
           buttonSize: 60,
           icon: Icon(
             Icons.arrow_back_rounded,
-            color: flutterTheme.of(context).primaryText,
+            color: FlutterTheme.of(context).primaryText,
             size: 32,
           ),
           onPressed: () async {
@@ -59,13 +59,13 @@ class _SignUpWidgetState extends State<SignUpWidget> {
         ),
         title: Text(
           'Sign Up',
-          style: flutterTheme.of(context).title1,
+          style: FlutterTheme.of(context).title1,
         ),
         actions: [],
         centerTitle: true,
         elevation: 0,
       ),
-      backgroundColor: flutterTheme.of(context).primaryBackground,
+      backgroundColor: FlutterTheme.of(context).primaryBackground,
       body: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
         child: Padding(
@@ -91,7 +91,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                               ),
                               Text(
                                 'INSTICKET',
-                                style: flutterTheme.of(context).title1,
+                                style: FlutterTheme.of(context).title1,
                               ),
                             ],
                           ),
@@ -131,7 +131,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 ),
                               ),
                               style:
-                                  flutterTheme.of(context).bodyText1.override(
+                                  FlutterTheme.of(context).bodyText1.override(
                                         fontFamily: 'Poppins',
                                         color: Color.fromARGB(255, 0, 0, 0),
                                       ),
@@ -170,7 +170,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 ),
                               ),
                               style:
-                                  flutterTheme.of(context).bodyText1.override(
+                                  FlutterTheme.of(context).bodyText1.override(
                                         fontFamily: 'Poppins',
                                         color: Color.fromARGB(255, 0, 0, 0),
                                       ),
@@ -222,7 +222,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 ),
                               ),
                               style:
-                                  flutterTheme.of(context).bodyText1.override(
+                                  FlutterTheme.of(context).bodyText1.override(
                                         fontFamily: 'Poppins',
                                         color: Color(0xFF9E9E9E),
                                       ),
@@ -273,7 +273,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 ),
                               ),
                               style:
-                                  flutterTheme.of(context).bodyText1.override(
+                                  FlutterTheme.of(context).bodyText1.override(
                                         fontFamily: 'Poppins',
                                         color: Color.fromARGB(255, 0, 0, 0),
                                       ),
@@ -320,9 +320,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                             options: FFButtonOptions(
                               width: double.infinity,
                               height: 50,
-                              color: flutterTheme.of(context).primaryColor,
+                              color: FlutterTheme.of(context).primaryColor,
                               textStyle:
-                                  flutterTheme.of(context).subtitle2.override(
+                                  FlutterTheme.of(context).subtitle2.override(
                                         fontFamily: 'Poppins',
                                         color: Colors.white,
                                       ),
@@ -359,7 +359,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 ),
                                 Text(
                                   'INSTICKET',
-                                  style: flutterTheme.of(context).title1,
+                                  style: FlutterTheme.of(context).title1,
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.only(top: 22.0),
@@ -367,7 +367,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                     'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors ',
                                     softWrap: true,
                                     maxLines: 8,
-                                    style: flutterTheme.of(context).bodyText1,
+                                    style: FlutterTheme.of(context).bodyText1,
                                   ),
                                 ),
                               ],
@@ -416,8 +416,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                       size: 24,
                                     ),
                                   ),
-                                  style: flutterTheme
-                                      .of(context)
+                                  style: FlutterTheme.of(context)
                                       .bodyText1
                                       .override(
                                         fontFamily: 'Poppins',
@@ -457,8 +456,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                       size: 24,
                                     ),
                                   ),
-                                  style: flutterTheme
-                                      .of(context)
+                                  style: FlutterTheme.of(context)
                                       .bodyText1
                                       .override(
                                         fontFamily: 'Poppins',
@@ -511,8 +509,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                       ),
                                     ),
                                   ),
-                                  style: flutterTheme
-                                      .of(context)
+                                  style: FlutterTheme.of(context)
                                       .bodyText1
                                       .override(
                                         fontFamily: 'Poppins',
@@ -564,8 +561,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                       ),
                                     ),
                                   ),
-                                  style: flutterTheme
-                                      .of(context)
+                                  style: FlutterTheme.of(context)
                                       .bodyText1
                                       .override(
                                         fontFamily: 'Poppins',
@@ -614,9 +610,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 options: FFButtonOptions(
                                   width: double.infinity,
                                   height: 50,
-                                  color: flutterTheme.of(context).primaryColor,
-                                  textStyle: flutterTheme
-                                      .of(context)
+                                  color: FlutterTheme.of(context).primaryColor,
+                                  textStyle: FlutterTheme.of(context)
                                       .subtitle2
                                       .override(
                                         fontFamily: 'Poppins',

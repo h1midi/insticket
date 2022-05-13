@@ -7,7 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 const kThemeModeKey = '__theme_mode__';
 SharedPreferences _prefs;
 
-abstract class flutterTheme {
+abstract class FlutterTheme {
   static Future initialize() async =>
       _prefs = await SharedPreferences.getInstance();
   static ThemeMode get themeMode {
@@ -23,7 +23,7 @@ abstract class flutterTheme {
       ? _prefs?.remove(kThemeModeKey)
       : _prefs?.setBool(kThemeModeKey, mode == ThemeMode.dark);
 
-  static flutterTheme of(BuildContext context) =>
+  static FlutterTheme of(BuildContext context) =>
       Theme.of(context).brightness == Brightness.dark
           ? DarkModeTheme()
           : LightModeTheme();
@@ -77,7 +77,7 @@ abstract class flutterTheme {
       );
 }
 
-class LightModeTheme extends flutterTheme {
+class LightModeTheme extends FlutterTheme {
   Color primaryColor = const Color(0xFF00C853);
   Color secondaryColor = const Color(0xFFE8F5E9);
   Color alternate = const Color(0xFF388E3C);
@@ -89,7 +89,7 @@ class LightModeTheme extends flutterTheme {
   Color warning = Color(0xFFD50000);
 }
 
-class DarkModeTheme extends flutterTheme {
+class DarkModeTheme extends FlutterTheme {
   Color primaryColor = const Color(0xFF00C853);
   Color secondaryColor = const Color(0x15FFFFFF);
   Color alternate = const Color(0x00000000);

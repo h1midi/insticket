@@ -51,16 +51,16 @@ class _AddGameWidgetState extends State<AddGameWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: flutterTheme.of(context).primaryBackground,
+        backgroundColor: FlutterTheme.of(context).primaryBackground,
         automaticallyImplyLeading: false,
-        leading: flutterIconButton(
+        leading: FlutterIconButton(
           borderColor: Colors.transparent,
           borderRadius: 30,
           borderWidth: 1,
           buttonSize: 60,
           icon: Icon(
             Icons.arrow_back_rounded,
-            color: flutterTheme.of(context).primaryText,
+            color: FlutterTheme.of(context).primaryText,
             size: 32,
           ),
           onPressed: () async {
@@ -74,13 +74,13 @@ class _AddGameWidgetState extends State<AddGameWidget> {
         ),
         title: Text(
           'Add a game',
-          style: flutterTheme.of(context).title1,
+          style: FlutterTheme.of(context).title1,
         ),
         actions: [],
         centerTitle: true,
         elevation: 0,
       ),
-      backgroundColor: flutterTheme.of(context).primaryBackground,
+      backgroundColor: FlutterTheme.of(context).primaryBackground,
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -153,7 +153,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                                         0, 10, 0, 10),
                                     child: Text(
                                       widget.team.name,
-                                      style: flutterTheme.of(context).bodyText1,
+                                      style: FlutterTheme.of(context).bodyText1,
                                     ),
                                   ),
                                 ),
@@ -177,8 +177,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                                         width: 50,
                                         height: 50,
                                         decoration: BoxDecoration(
-                                          color: flutterTheme
-                                              .of(context)
+                                          color: FlutterTheme.of(context)
                                               .secondaryColor,
                                           shape: BoxShape.circle,
                                         ),
@@ -187,8 +186,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                                           child: Text(
                                             'vs',
                                             textAlign: TextAlign.center,
-                                            style: flutterTheme
-                                                .of(context)
+                                            style: FlutterTheme.of(context)
                                                 .bodyText1,
                                           ),
                                         ),
@@ -242,7 +240,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                                         0, 10, 0, 10),
                                     child: Text(
                                       widget.team2.name,
-                                      style: flutterTheme.of(context).bodyText1,
+                                      style: FlutterTheme.of(context).bodyText1,
                                     ),
                                   ),
                                 ),
@@ -289,7 +287,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                                 size: 24,
                               ),
                             ),
-                            style: flutterTheme.of(context).bodyText1.override(
+                            style: FlutterTheme.of(context).bodyText1.override(
                                   fontFamily: 'Poppins',
                                   color: Color(0xFF9E9E9E),
                                 ),
@@ -332,7 +330,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                                 size: 24,
                               ),
                             ),
-                            style: flutterTheme.of(context).bodyText1.override(
+                            style: FlutterTheme.of(context).bodyText1.override(
                                   fontFamily: 'Poppins',
                                   color: Color(0xFF9E9E9E),
                                 ),
@@ -375,7 +373,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                                 size: 24,
                               ),
                             ),
-                            style: flutterTheme.of(context).bodyText1.override(
+                            style: FlutterTheme.of(context).bodyText1.override(
                                   fontFamily: 'Poppins',
                                   color: Color(0xFF9E9E9E),
                                 ),
@@ -419,7 +417,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                                 size: 24,
                               ),
                             ),
-                            style: flutterTheme.of(context).bodyText1.override(
+                            style: FlutterTheme.of(context).bodyText1.override(
                                   fontFamily: 'Poppins',
                                   color: Color(0xFF9E9E9E),
                                 ),
@@ -464,7 +462,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                                 size: 24,
                               ),
                             ),
-                            style: flutterTheme.of(context).bodyText1.override(
+                            style: FlutterTheme.of(context).bodyText1.override(
                                   fontFamily: 'Poppins',
                                   color: Color(0xFF9E9E9E),
                                 ),
@@ -508,7 +506,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                                 size: 24,
                               ),
                             ),
-                            style: flutterTheme.of(context).bodyText1.override(
+                            style: FlutterTheme.of(context).bodyText1.override(
                                   fontFamily: 'Poppins',
                                   color: Color(0xFF9E9E9E),
                                 ),
@@ -552,7 +550,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                                 size: 24,
                               ),
                             ),
-                            style: flutterTheme.of(context).bodyText1.override(
+                            style: FlutterTheme.of(context).bodyText1.override(
                                   fontFamily: 'Poppins',
                                   color: Color(0xFF9E9E9E),
                                 ),
@@ -588,17 +586,16 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                             options: FFButtonOptions(
                               width: double.infinity,
                               height: 50,
-                              color: flutterTheme.of(context).primaryBackground,
-                              textStyle: flutterTheme
-                                  .of(context)
+                              color: FlutterTheme.of(context).primaryBackground,
+                              textStyle: FlutterTheme.of(context)
                                   .subtitle2
                                   .override(
                                     fontFamily: 'Poppins',
                                     color:
-                                        flutterTheme.of(context).primaryColor,
+                                        FlutterTheme.of(context).primaryColor,
                                   ),
                               borderSide: BorderSide(
-                                color: flutterTheme.of(context).primaryColor,
+                                color: FlutterTheme.of(context).primaryColor,
                                 width: 2,
                               ),
                               borderRadius: 12,
@@ -619,11 +616,11 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                           SnackBar(
                             content: Text(
                               'Select time and date is required',
-                              style: flutterTheme.of(context).bodyText1,
+                              style: FlutterTheme.of(context).bodyText1,
                             ),
                             duration: Duration(milliseconds: 3000),
                             backgroundColor:
-                                flutterTheme.of(context).secondaryBackground,
+                                FlutterTheme.of(context).secondaryBackground,
                           ),
                         );
                         return;
@@ -656,8 +653,8 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                     options: FFButtonOptions(
                       width: double.infinity,
                       height: 50,
-                      color: flutterTheme.of(context).primaryColor,
-                      textStyle: flutterTheme.of(context).subtitle2.override(
+                      color: FlutterTheme.of(context).primaryColor,
+                      textStyle: FlutterTheme.of(context).subtitle2.override(
                             fontFamily: 'Poppins',
                             color: Colors.white,
                           ),

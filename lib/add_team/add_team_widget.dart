@@ -32,16 +32,16 @@ class _AddTeamWidgetState extends State<AddTeamWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: flutterTheme.of(context).primaryBackground,
+        backgroundColor: FlutterTheme.of(context).primaryBackground,
         automaticallyImplyLeading: false,
-        leading: flutterIconButton(
+        leading: FlutterIconButton(
           borderColor: Colors.transparent,
           borderRadius: 30,
           borderWidth: 1,
           buttonSize: 60,
           icon: Icon(
             Icons.arrow_back_rounded,
-            color: flutterTheme.of(context).primaryText,
+            color: FlutterTheme.of(context).primaryText,
             size: 32,
           ),
           onPressed: () async {
@@ -55,13 +55,13 @@ class _AddTeamWidgetState extends State<AddTeamWidget> {
         ),
         title: Text(
           'Add a team',
-          style: flutterTheme.of(context).title1,
+          style: FlutterTheme.of(context).title1,
         ),
         actions: [],
         centerTitle: true,
         elevation: 0,
       ),
-      backgroundColor: flutterTheme.of(context).primaryBackground,
+      backgroundColor: FlutterTheme.of(context).primaryBackground,
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -108,7 +108,7 @@ class _AddTeamWidgetState extends State<AddTeamWidget> {
                               size: 24,
                             ),
                           ),
-                          style: flutterTheme.of(context).bodyText1.override(
+                          style: FlutterTheme.of(context).bodyText1.override(
                                 fontFamily: 'Poppins',
                                 color: Color(0xFF9E9E9E),
                               ),
@@ -170,16 +170,15 @@ class _AddTeamWidgetState extends State<AddTeamWidget> {
                           options: FFButtonOptions(
                             width: double.infinity,
                             height: 50,
-                            color: flutterTheme.of(context).primaryBackground,
-                            textStyle: flutterTheme
-                                .of(context)
+                            color: FlutterTheme.of(context).primaryBackground,
+                            textStyle: FlutterTheme.of(context)
                                 .subtitle2
                                 .override(
                                   fontFamily: 'Poppins',
-                                  color: flutterTheme.of(context).primaryColor,
+                                  color: FlutterTheme.of(context).primaryColor,
                                 ),
                             borderSide: BorderSide(
-                              color: flutterTheme.of(context).primaryColor,
+                              color: FlutterTheme.of(context).primaryColor,
                               width: 2,
                             ),
                             borderRadius: 12,
@@ -193,7 +192,7 @@ class _AddTeamWidgetState extends State<AddTeamWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
                   child: Text(
                     'image preview',
-                    style: flutterTheme.of(context).title2,
+                    style: FlutterTheme.of(context).title2,
                   ),
                 ),
                 Padding(
@@ -202,7 +201,7 @@ class _AddTeamWidgetState extends State<AddTeamWidget> {
                     width: MediaQuery.of(context).size.width * 0.4,
                     height: 150,
                     decoration: BoxDecoration(
-                      color: flutterTheme.of(context).secondaryColor,
+                      color: FlutterTheme.of(context).secondaryColor,
                       borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(10),
                         bottomRight: Radius.circular(0),
@@ -245,11 +244,11 @@ class _AddTeamWidgetState extends State<AddTeamWidget> {
                         SnackBar(
                           content: Text(
                             'Upload an image is required',
-                            style: flutterTheme.of(context).bodyText1,
+                            style: FlutterTheme.of(context).bodyText1,
                           ),
                           duration: Duration(milliseconds: 3000),
                           backgroundColor:
-                              flutterTheme.of(context).secondaryBackground,
+                              FlutterTheme.of(context).secondaryBackground,
                         ),
                       );
                       return;
@@ -271,8 +270,8 @@ class _AddTeamWidgetState extends State<AddTeamWidget> {
                   options: FFButtonOptions(
                     width: double.infinity,
                     height: 50,
-                    color: flutterTheme.of(context).primaryColor,
-                    textStyle: flutterTheme.of(context).subtitle2.override(
+                    color: FlutterTheme.of(context).primaryColor,
+                    textStyle: FlutterTheme.of(context).subtitle2.override(
                           fontFamily: 'Poppins',
                           color: Colors.white,
                         ),

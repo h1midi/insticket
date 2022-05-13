@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
@@ -80,16 +78,16 @@ class _AdminWidgetState extends State<AdminWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: flutterTheme.of(context).primaryBackground,
+        backgroundColor: FlutterTheme.of(context).primaryBackground,
         automaticallyImplyLeading: false,
-        leading: flutterIconButton(
+        leading: FlutterIconButton(
           borderColor: Colors.transparent,
           borderRadius: 30,
           borderWidth: 1,
           buttonSize: 60,
           icon: Icon(
             Icons.arrow_back_rounded,
-            color: flutterTheme.of(context).primaryText,
+            color: FlutterTheme.of(context).primaryText,
             size: 32,
           ),
           onPressed: () async {
@@ -103,13 +101,13 @@ class _AdminWidgetState extends State<AdminWidget> {
         ),
         title: Text(
           'Admin',
-          style: flutterTheme.of(context).title1,
+          style: FlutterTheme.of(context).title1,
         ),
         actions: [],
         centerTitle: true,
         elevation: 0,
       ),
-      backgroundColor: flutterTheme.of(context).primaryBackground,
+      backgroundColor: FlutterTheme.of(context).primaryBackground,
       body: SingleChildScrollView(
         controller: controller,
         child: Center(
@@ -141,8 +139,8 @@ class _AdminWidgetState extends State<AdminWidget> {
                       options: FFButtonOptions(
                         width: double.infinity,
                         height: 50,
-                        color: flutterTheme.of(context).primaryColor,
-                        textStyle: flutterTheme.of(context).subtitle2.override(
+                        color: FlutterTheme.of(context).primaryColor,
+                        textStyle: FlutterTheme.of(context).subtitle2.override(
                               fontFamily: 'Poppins',
                               color: Colors.white,
                             ),
@@ -173,8 +171,8 @@ class _AdminWidgetState extends State<AdminWidget> {
                       options: FFButtonOptions(
                         width: double.infinity,
                         height: 50,
-                        color: flutterTheme.of(context).primaryColor,
-                        textStyle: flutterTheme.of(context).subtitle2.override(
+                        color: FlutterTheme.of(context).primaryColor,
+                        textStyle: FlutterTheme.of(context).subtitle2.override(
                               fontFamily: 'Poppins',
                               color: Colors.white,
                             ),
@@ -215,9 +213,9 @@ class _AdminWidgetState extends State<AdminWidget> {
                           options: FFButtonOptions(
                             width: double.infinity,
                             height: 50,
-                            color: flutterTheme.of(context).primaryColor,
+                            color: FlutterTheme.of(context).primaryColor,
                             textStyle:
-                                flutterTheme.of(context).subtitle2.override(
+                                FlutterTheme.of(context).subtitle2.override(
                                       fontFamily: 'Poppins',
                                       color: Colors.white,
                                     ),
@@ -233,7 +231,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 20),
                     child: Text(
                       'Ticket sale statistics',
-                      style: flutterTheme.of(context).title2,
+                      style: FlutterTheme.of(context).title2,
                     ),
                   ),
                   StreamBuilder<List<GamesRecord>>(
@@ -265,8 +263,11 @@ class _AdminWidgetState extends State<AdminWidget> {
                           itemBuilder: (context, listViewIndex) {
                             final listViewGamesRecord =
                                 listViewGamesRecordList[listViewIndex];
-                            return StatWidget(
-                                listViewGamesRecord: listViewGamesRecord);
+                            return kIsWeb
+                                ? StatWidgetWeb(
+                                    listViewGamesRecord: listViewGamesRecord)
+                                : StatWidget(
+                                    listViewGamesRecord: listViewGamesRecord);
                           },
                         );
                       }),
@@ -280,8 +281,8 @@ class _AdminWidgetState extends State<AdminWidget> {
   }
 }
 
-class StatWidget extends StatelessWidget {
-  const StatWidget({
+class StatWidgetWeb extends StatelessWidget {
+  const StatWidgetWeb({
     Key key,
     @required this.listViewGamesRecord,
   }) : super(key: key);
@@ -296,7 +297,7 @@ class StatWidget extends StatelessWidget {
         width: double.infinity,
         height: 200,
         decoration: BoxDecoration(
-          color: flutterTheme.of(context).secondaryBackground,
+          color: FlutterTheme.of(context).secondaryBackground,
           boxShadow: [
             BoxShadow(
               blurRadius: 48,
@@ -314,7 +315,7 @@ class StatWidget extends StatelessWidget {
                 width: MediaQuery.of(context).size.width * 0.3,
                 height: double.infinity,
                 decoration: BoxDecoration(
-                  color: flutterTheme.of(context).secondaryColor,
+                  color: FlutterTheme.of(context).secondaryColor,
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(10),
                     bottomRight: Radius.circular(0),
@@ -387,22 +388,22 @@ class StatWidget extends StatelessWidget {
                   children: [
                     Text(
                       '${listViewGamesRecord.homeTeam} vs ${listViewGamesRecord.awayTeam}',
-                      style: flutterTheme.of(context).bodyText1,
+                      style: FlutterTheme.of(context).bodyText1,
                     ),
                     Text(
                       'covered seats\n${listViewGamesRecord.coveredNumCurrent.toString()} / ${listViewGamesRecord.coveredNum.toString()}',
-                      style: flutterTheme.of(context).bodyText2,
+                      style: FlutterTheme.of(context).bodyText2,
                     ),
                     Text(
                       'normal seats\n${listViewGamesRecord.normalNumCurrent.toString()} / ${listViewGamesRecord.normalNum.toString()}',
-                      style: flutterTheme.of(context).bodyText2,
+                      style: FlutterTheme.of(context).bodyText2,
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Icon(
                           Icons.calendar_today_outlined,
-                          color: flutterTheme.of(context).secondaryText,
+                          color: FlutterTheme.of(context).secondaryText,
                           size: 12,
                         ),
                         Padding(
@@ -410,7 +411,7 @@ class StatWidget extends StatelessWidget {
                           child: Text(
                             dateTimeFormat(
                                 'M / d h:mm a', listViewGamesRecord.date),
-                            style: flutterTheme.of(context).bodyText2,
+                            style: FlutterTheme.of(context).bodyText2,
                           ),
                         ),
                       ],
@@ -426,15 +427,181 @@ class StatWidget extends StatelessWidget {
                   children: [
                     Text(
                       "Total revenue ",
-                      style: flutterTheme.of(context).bodyText1,
+                      style: FlutterTheme.of(context).bodyText1,
                     ),
                     Text(
                       '${listViewGamesRecord.totalRevenue.toString()} \$',
-                      style: flutterTheme.of(context).bodyText2.override(
+                      style: FlutterTheme.of(context).bodyText2.override(
                             fontSize: 36,
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.bold,
-                            color: flutterTheme.of(context).primaryColor,
+                            color: FlutterTheme.of(context).primaryColor,
+                          ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class StatWidget extends StatelessWidget {
+  const StatWidget({
+    Key key,
+    @required this.listViewGamesRecord,
+  }) : super(key: key);
+
+  final GamesRecord listViewGamesRecord;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+      child: Container(
+        width: double.infinity,
+        height: 200,
+        decoration: BoxDecoration(
+          color: FlutterTheme.of(context).secondaryBackground,
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 48,
+              color: Color(0x0B000000),
+              offset: Offset(0, 2),
+            )
+          ],
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Expanded(
+              flex: 5,
+              child: Container(
+                width: MediaQuery.of(context).size.width * 0.3,
+                height: double.infinity,
+                decoration: BoxDecoration(
+                  color: FlutterTheme.of(context).secondaryColor,
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(10),
+                    bottomRight: Radius.circular(0),
+                    topLeft: Radius.circular(10),
+                    topRight: Radius.circular(0),
+                  ),
+                ),
+                child: Stack(
+                  alignment: AlignmentDirectional(-0.6, 0),
+                  children: [
+                    Align(
+                      alignment: AlignmentDirectional(0.4, -0.3),
+                      child: Container(
+                        width: 60,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          color: Color(0xFFC8E6C9),
+                          shape: BoxShape.circle,
+                        ),
+                        child: Padding(
+                          padding:
+                              EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                          child: Image.network(
+                            listViewGamesRecord.atImageUrl,
+                            width: 100,
+                            height: 100,
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: AlignmentDirectional(-0.4, 0.3),
+                      child: Container(
+                        width: 60,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          color: Color(0xFF81C784),
+                          shape: BoxShape.circle,
+                        ),
+                        child: Padding(
+                          padding:
+                              EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                          child: Image.network(
+                            listViewGamesRecord.htImageUrl,
+                            width: 100,
+                            height: 100,
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Expanded(
+              flex: 7,
+              child: Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(10, 15, 0, 15),
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '${listViewGamesRecord.homeTeam} vs ${listViewGamesRecord.awayTeam}',
+                      style: FlutterTheme.of(context).bodyText1,
+                    ),
+                    Text(
+                      'covered seats\n${listViewGamesRecord.coveredNumCurrent.toString()} / ${listViewGamesRecord.coveredNum.toString()}',
+                      style: FlutterTheme.of(context).bodyText2,
+                    ),
+                    Text(
+                      'normal seats\n${listViewGamesRecord.normalNumCurrent.toString()} / ${listViewGamesRecord.normalNum.toString()}',
+                      style: FlutterTheme.of(context).bodyText2,
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Icon(
+                          Icons.calendar_today_outlined,
+                          color: FlutterTheme.of(context).secondaryText,
+                          size: 12,
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                          child: Text(
+                            dateTimeFormat(
+                                'M / d h:mm a', listViewGamesRecord.date),
+                            style: FlutterTheme.of(context).bodyText2,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Expanded(
+              flex: 5,
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Total revenue",
+                      style: FlutterTheme.of(context).bodyText1,
+                      textAlign: TextAlign.center,
+                    ),
+                    Text(
+                      '${listViewGamesRecord.totalRevenue.toString()} \$',
+                      style: FlutterTheme.of(context).bodyText1.override(
+                            fontSize: 26,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.bold,
+                            color: FlutterTheme.of(context).primaryColor,
                           ),
                     ),
                   ],

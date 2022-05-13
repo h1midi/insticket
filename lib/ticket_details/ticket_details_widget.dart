@@ -49,16 +49,16 @@ class _TicketDetailsWidgetState extends State<TicketDetailsWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: flutterTheme.of(context).primaryBackground,
+        backgroundColor: FlutterTheme.of(context).primaryBackground,
         automaticallyImplyLeading: false,
-        leading: flutterIconButton(
+        leading: FlutterIconButton(
           borderColor: Colors.transparent,
           borderRadius: 30,
           borderWidth: 1,
           buttonSize: 60,
           icon: Icon(
             Icons.arrow_back_rounded,
-            color: flutterTheme.of(context).primaryText,
+            color: FlutterTheme.of(context).primaryText,
             size: 32,
           ),
           onPressed: () async {
@@ -67,13 +67,13 @@ class _TicketDetailsWidgetState extends State<TicketDetailsWidget> {
         ),
         title: Text(
           'Ticket Details',
-          style: flutterTheme.of(context).title1,
+          style: FlutterTheme.of(context).title1,
         ),
         actions: [],
         centerTitle: true,
         elevation: 0,
       ),
-      backgroundColor: flutterTheme.of(context).primaryBackground,
+      backgroundColor: FlutterTheme.of(context).primaryBackground,
       body: Padding(
         padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
         child: Center(
@@ -82,7 +82,7 @@ class _TicketDetailsWidgetState extends State<TicketDetailsWidget> {
                 MediaQuery.of(context).size.width < 500 ? double.infinity : 500,
             height: double.infinity,
             decoration: BoxDecoration(
-              color: flutterTheme.of(context).secondaryBackground,
+              color: FlutterTheme.of(context).secondaryBackground,
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(0),
                 bottomRight: Radius.circular(0),
@@ -100,7 +100,7 @@ class _TicketDetailsWidgetState extends State<TicketDetailsWidget> {
                       padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
                       child: Text(
                         'Ticket : ${widget.ticketDetails.code}',
-                        style: flutterTheme.of(context).title2,
+                        style: FlutterTheme.of(context).title2,
                       ),
                     ),
                     Padding(
@@ -111,15 +111,15 @@ class _TicketDetailsWidgetState extends State<TicketDetailsWidget> {
                         children: [
                           Text(
                             'Purchased on  : ${dateTimeFormat('d/M h:mm a', widget.ticketDetails.purchasedOn)}',
-                            style: flutterTheme.of(context).bodyText1.override(
+                            style: FlutterTheme.of(context).bodyText1.override(
                                   fontFamily: 'Poppins',
-                                  color: flutterTheme.of(context).secondaryText,
+                                  color: FlutterTheme.of(context).secondaryText,
                                 ),
                           ),
                           Divider(
                             height: 20,
                             thickness: 1,
-                            color: flutterTheme.of(context).secondaryText,
+                            color: FlutterTheme.of(context).secondaryText,
                           ),
                         ],
                       ),
@@ -136,36 +136,31 @@ class _TicketDetailsWidgetState extends State<TicketDetailsWidget> {
                               Text(
                                 'Cover seat : ',
                                 style:
-                                    flutterTheme.of(context).bodyText1.override(
+                                    FlutterTheme.of(context).bodyText1.override(
                                           fontFamily: 'Poppins',
-                                          color: flutterTheme
-                                              .of(context)
+                                          color: FlutterTheme.of(context)
                                               .secondaryText,
                                         ),
                               ),
                               if (widget.ticketDetails.isCovered ?? true)
                                 Text(
                                   'yes',
-                                  style: flutterTheme
-                                      .of(context)
+                                  style: FlutterTheme.of(context)
                                       .bodyText1
                                       .override(
                                         fontFamily: 'Poppins',
-                                        color: flutterTheme
-                                            .of(context)
+                                        color: FlutterTheme.of(context)
                                             .secondaryText,
                                       ),
                                 ),
                               if (!(widget.ticketDetails.isCovered) ?? true)
                                 Text(
                                   'no',
-                                  style: flutterTheme
-                                      .of(context)
+                                  style: FlutterTheme.of(context)
                                       .bodyText1
                                       .override(
                                         fontFamily: 'Poppins',
-                                        color: flutterTheme
-                                            .of(context)
+                                        color: FlutterTheme.of(context)
                                             .secondaryText,
                                       ),
                                 ),
@@ -174,7 +169,7 @@ class _TicketDetailsWidgetState extends State<TicketDetailsWidget> {
                           Divider(
                             height: 20,
                             thickness: 1,
-                            color: flutterTheme.of(context).secondaryText,
+                            color: FlutterTheme.of(context).secondaryText,
                           ),
                         ],
                       ),
@@ -191,10 +186,9 @@ class _TicketDetailsWidgetState extends State<TicketDetailsWidget> {
                               Text(
                                 'Price : ',
                                 style:
-                                    flutterTheme.of(context).bodyText1.override(
+                                    FlutterTheme.of(context).bodyText1.override(
                                           fontFamily: 'Poppins',
-                                          color: flutterTheme
-                                              .of(context)
+                                          color: FlutterTheme.of(context)
                                               .secondaryText,
                                         ),
                               ),
@@ -219,13 +213,11 @@ class _TicketDetailsWidgetState extends State<TicketDetailsWidget> {
                                     final textGamesRecord = snapshot.data;
                                     return Text(
                                       textGamesRecord.coveredPrice.toString(),
-                                      style: flutterTheme
-                                          .of(context)
+                                      style: FlutterTheme.of(context)
                                           .bodyText1
                                           .override(
                                             fontFamily: 'Poppins',
-                                            color: flutterTheme
-                                                .of(context)
+                                            color: FlutterTheme.of(context)
                                                 .secondaryText,
                                           ),
                                     );
@@ -252,13 +244,11 @@ class _TicketDetailsWidgetState extends State<TicketDetailsWidget> {
                                     final textGamesRecord = snapshot.data;
                                     return Text(
                                       textGamesRecord.normalPrice.toString(),
-                                      style: flutterTheme
-                                          .of(context)
+                                      style: FlutterTheme.of(context)
                                           .bodyText1
                                           .override(
                                             fontFamily: 'Poppins',
-                                            color: flutterTheme
-                                                .of(context)
+                                            color: FlutterTheme.of(context)
                                                 .secondaryText,
                                           ),
                                     );
@@ -267,10 +257,9 @@ class _TicketDetailsWidgetState extends State<TicketDetailsWidget> {
                               Text(
                                 ' \$',
                                 style:
-                                    flutterTheme.of(context).bodyText1.override(
+                                    FlutterTheme.of(context).bodyText1.override(
                                           fontFamily: 'Poppins',
-                                          color: flutterTheme
-                                              .of(context)
+                                          color: FlutterTheme.of(context)
                                               .secondaryText,
                                         ),
                               ),
@@ -279,7 +268,7 @@ class _TicketDetailsWidgetState extends State<TicketDetailsWidget> {
                           Divider(
                             height: 20,
                             thickness: 1,
-                            color: flutterTheme.of(context).secondaryText,
+                            color: FlutterTheme.of(context).secondaryText,
                           ),
                         ],
                       ),
@@ -332,13 +321,13 @@ class _TicketDetailsWidgetState extends State<TicketDetailsWidget> {
                             children: [
                               Text(
                                 'Save Ticket to Galery',
-                                style: flutterTheme.of(context).title2,
+                                style: FlutterTheme.of(context).title2,
                               ),
                               isSaved
                                   ? Icon(
                                       Icons.check,
                                       color:
-                                          flutterTheme.of(context).primaryColor,
+                                          FlutterTheme.of(context).primaryColor,
                                     )
                                   : Container(),
                             ],

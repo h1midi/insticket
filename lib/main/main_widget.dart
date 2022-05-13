@@ -21,7 +21,7 @@ class _MainWidgetState extends State<MainWidget> {
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: flutterTheme.of(context).primaryBackground,
+      backgroundColor: FlutterTheme.of(context).primaryBackground,
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -66,7 +66,7 @@ class OnPhone extends StatelessWidget {
                     ),
                     Text(
                       'INSTICKET',
-                      style: flutterTheme.of(context).title1,
+                      style: FlutterTheme.of(context).title1,
                     ),
                   ],
                 ),
@@ -98,13 +98,13 @@ class OnPhone extends StatelessWidget {
                       options: FFButtonOptions(
                         width: double.infinity,
                         height: 50,
-                        color: flutterTheme.of(context).primaryBackground,
-                        textStyle: flutterTheme.of(context).subtitle2.override(
+                        color: FlutterTheme.of(context).primaryBackground,
+                        textStyle: FlutterTheme.of(context).subtitle2.override(
                               fontFamily: 'Poppins',
-                              color: flutterTheme.of(context).primaryColor,
+                              color: FlutterTheme.of(context).primaryColor,
                             ),
                         borderSide: BorderSide(
-                          color: flutterTheme.of(context).primaryColor,
+                          color: FlutterTheme.of(context).primaryColor,
                           width: 2,
                         ),
                         borderRadius: 10,
@@ -126,8 +126,8 @@ class OnPhone extends StatelessWidget {
                       options: FFButtonOptions(
                         width: double.infinity,
                         height: 50,
-                        color: flutterTheme.of(context).primaryColor,
-                        textStyle: flutterTheme.of(context).subtitle2.override(
+                        color: FlutterTheme.of(context).primaryColor,
+                        textStyle: FlutterTheme.of(context).subtitle2.override(
                               fontFamily: 'Poppins',
                               color: Colors.white,
                             ),
@@ -157,7 +157,6 @@ class OnPc extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
     return SingleChildScrollView(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -178,7 +177,7 @@ class OnPc extends StatelessWidget {
                     ),
                     Text(
                       'INSTICKET',
-                      style: flutterTheme.of(context).title1,
+                      style: FlutterTheme.of(context).title1,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 22.0),
@@ -186,7 +185,7 @@ class OnPc extends StatelessWidget {
                         'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors ',
                         maxLines: 8,
                         softWrap: true,
-                        style: flutterTheme.of(context).bodyText1,
+                        style: FlutterTheme.of(context).bodyText1,
                       ),
                     ),
                   ],
@@ -213,13 +212,13 @@ class OnPc extends StatelessWidget {
                     options: FFButtonOptions(
                       width: width / 2,
                       height: 50,
-                      color: flutterTheme.of(context).primaryBackground,
-                      textStyle: flutterTheme.of(context).subtitle2.override(
+                      color: FlutterTheme.of(context).primaryBackground,
+                      textStyle: FlutterTheme.of(context).subtitle2.override(
                             fontFamily: 'Poppins',
-                            color: flutterTheme.of(context).primaryColor,
+                            color: FlutterTheme.of(context).primaryColor,
                           ),
                       borderSide: BorderSide(
-                        color: flutterTheme.of(context).primaryColor,
+                        color: FlutterTheme.of(context).primaryColor,
                         width: 2,
                       ),
                       borderRadius: 10,
@@ -241,8 +240,8 @@ class OnPc extends StatelessWidget {
                     options: FFButtonOptions(
                       width: width / 2,
                       height: 50,
-                      color: flutterTheme.of(context).primaryColor,
-                      textStyle: flutterTheme.of(context).subtitle2.override(
+                      color: FlutterTheme.of(context).primaryColor,
+                      textStyle: FlutterTheme.of(context).subtitle2.override(
                             fontFamily: 'Poppins',
                             color: Colors.white,
                           ),

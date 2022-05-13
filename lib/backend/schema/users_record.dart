@@ -1,10 +1,6 @@
 import 'dart:async';
-
 import 'package:built_value/built_value.dart';
-
-import 'index.dart';
 import 'serializers.dart';
-
 part 'users_record.g.dart';
 
 abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {

@@ -1,18 +1,12 @@
-import 'package:built_value/serializer.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-
 import '../flutter_main/flutter_main_util.dart';
 import 'schema/games_record.dart';
 import 'schema/serializers.dart';
 import 'schema/teams_record.dart';
 import 'schema/tickets_record.dart';
 import 'schema/users_record.dart';
-
 export 'dart:async' show StreamSubscription;
-
 export 'package:cloud_firestore/cloud_firestore.dart';
-
 export 'schema/games_record.dart';
 export 'schema/index.dart';
 export 'schema/serializers.dart';

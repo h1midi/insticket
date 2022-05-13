@@ -1,13 +1,9 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:stream_transform/stream_transform.dart';
-
 import '../backend/backend.dart';
-import '../flutter_main/flutter_main_util.dart';
 import 'firebase_user_provider.dart';
-
 export 'anonymous_auth.dart';
 export 'email_auth.dart';
 export 'google_auth.dart';
@@ -29,7 +25,7 @@ Future<User> signInOrCreateAccount(
   }
 }
 
-Future signOut() {
+Future signOut() async {
   _currentJwtToken = '';
   FirebaseAuth.instance.signOut();
 }

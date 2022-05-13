@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import '../auth/auth_util.dart';
@@ -30,16 +29,16 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: flutterTheme.of(context).primaryBackground,
+        backgroundColor: FlutterTheme.of(context).primaryBackground,
         automaticallyImplyLeading: false,
-        leading: flutterIconButton(
+        leading: FlutterIconButton(
           borderColor: Colors.transparent,
           borderRadius: 30,
           borderWidth: 1,
           buttonSize: 60,
           icon: Icon(
             Icons.arrow_back_rounded,
-            color: flutterTheme.of(context).primaryText,
+            color: FlutterTheme.of(context).primaryText,
             size: 32,
           ),
           onPressed: () async {
@@ -48,13 +47,13 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
         ),
         title: Text(
           'Buy Tickets',
-          style: flutterTheme.of(context).title1,
+          style: FlutterTheme.of(context).title1,
         ),
         actions: [],
         centerTitle: true,
         elevation: 0,
       ),
-      backgroundColor: flutterTheme.of(context).primaryBackground,
+      backgroundColor: FlutterTheme.of(context).primaryBackground,
       body: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
         child: SingleChildScrollView(
@@ -130,7 +129,7 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                                         0, 10, 0, 10),
                                     child: Text(
                                       widget.gameDetails.homeTeam,
-                                      style: flutterTheme.of(context).bodyText1,
+                                      style: FlutterTheme.of(context).bodyText1,
                                     ),
                                   ),
                                 ),
@@ -142,7 +141,7 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                                     dateTimeFormat(
                                         'MMMEd', widget.gameDetails.date),
                                     textAlign: TextAlign.center,
-                                    style: flutterTheme.of(context).bodyText2,
+                                    style: FlutterTheme.of(context).bodyText2,
                                   ),
                                 ),
                                 //Time
@@ -155,8 +154,7 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                                           0, 0, 5, 0),
                                       child: Icon(
                                         Icons.access_time_outlined,
-                                        color: flutterTheme
-                                            .of(context)
+                                        color: FlutterTheme.of(context)
                                             .secondaryText,
                                         size: 12,
                                       ),
@@ -164,7 +162,7 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                                     Text(
                                       dateTimeFormat(
                                           'jm', widget.gameDetails.date),
-                                      style: flutterTheme.of(context).bodyText2,
+                                      style: FlutterTheme.of(context).bodyText2,
                                     ),
                                   ],
                                 ),
@@ -189,8 +187,7 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                                         width: 50,
                                         height: 50,
                                         decoration: BoxDecoration(
-                                          color: flutterTheme
-                                              .of(context)
+                                          color: FlutterTheme.of(context)
                                               .secondaryColor,
                                           shape: BoxShape.circle,
                                         ),
@@ -199,8 +196,7 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                                           child: Text(
                                             'vs',
                                             textAlign: TextAlign.center,
-                                            style: flutterTheme
-                                                .of(context)
+                                            style: FlutterTheme.of(context)
                                                 .bodyText1,
                                           ),
                                         ),
@@ -257,7 +253,7 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                                         0, 10, 0, 10),
                                     child: Text(
                                       widget.gameDetails.awayTeam,
-                                      style: flutterTheme.of(context).bodyText1,
+                                      style: FlutterTheme.of(context).bodyText1,
                                     ),
                                   ),
                                 ),
@@ -270,8 +266,7 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                                           0, 0, 5, 0),
                                       child: Icon(
                                         Icons.place_outlined,
-                                        color: flutterTheme
-                                            .of(context)
+                                        color: FlutterTheme.of(context)
                                             .secondaryText,
                                         size: 12,
                                       ),
@@ -281,8 +276,7 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                                       child: Center(
                                         child: Text(
                                           widget.gameDetails.stadium,
-                                          style: flutterTheme
-                                              .of(context)
+                                          style: FlutterTheme.of(context)
                                               .bodyText2,
                                           maxLines: 2,
                                         ),
@@ -302,7 +296,7 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(20, 30, 0, 0),
                     child: Text(
                       widget.gameDetails.title,
-                      style: flutterTheme.of(context).title2,
+                      style: FlutterTheme.of(context).title2,
                     ),
                   ),
                   //dESCRIPTION
@@ -312,7 +306,7 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                       padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 0),
                       child: Text(
                         widget.gameDetails.desc,
-                        style: flutterTheme.of(context).bodyText1,
+                        style: FlutterTheme.of(context).bodyText1,
                       ),
                     ),
                   ),
@@ -331,7 +325,7 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                         padding: const EdgeInsets.only(bottom: 20.0),
                         child: Text(
                           'Buy Tickets',
-                          style: flutterTheme.of(context).title2,
+                          style: FlutterTheme.of(context).title2,
                         ),
                       ),
                       Column(
@@ -380,9 +374,8 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                                 options: FFButtonOptions(
                                   width: double.infinity,
                                   height: 50,
-                                  color: flutterTheme.of(context).primaryColor,
-                                  textStyle: flutterTheme
-                                      .of(context)
+                                  color: FlutterTheme.of(context).primaryColor,
+                                  textStyle: FlutterTheme.of(context)
                                       .bodyText1
                                       .override(
                                         fontFamily: 'Poppins',
@@ -439,9 +432,8 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                                 options: FFButtonOptions(
                                   width: double.infinity,
                                   height: 50,
-                                  color: flutterTheme.of(context).primaryColor,
-                                  textStyle: flutterTheme
-                                      .of(context)
+                                  color: FlutterTheme.of(context).primaryColor,
+                                  textStyle: FlutterTheme.of(context)
                                       .bodyText1
                                       .override(
                                         fontFamily: 'Poppins',
@@ -467,8 +459,7 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                                   width: double.infinity,
                                   height: 50,
                                   color: Color.fromARGB(255, 88, 88, 88),
-                                  textStyle: flutterTheme
-                                      .of(context)
+                                  textStyle: FlutterTheme.of(context)
                                       .bodyText1
                                       .override(
                                         fontFamily: 'Poppins',
@@ -494,8 +485,7 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                                   width: double.infinity,
                                   height: 50,
                                   color: Color.fromARGB(255, 88, 88, 88),
-                                  textStyle: flutterTheme
-                                      .of(context)
+                                  textStyle: FlutterTheme.of(context)
                                       .bodyText1
                                       .override(
                                         fontFamily: 'Poppins',

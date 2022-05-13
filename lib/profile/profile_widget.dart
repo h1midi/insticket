@@ -24,13 +24,13 @@ class _ProfileWidgetState extends State<ProfileWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: flutterTheme.of(context).primaryBackground,
+        backgroundColor: FlutterTheme.of(context).primaryBackground,
         automaticallyImplyLeading: false,
         title: Text(
           'Profile',
-          style: flutterTheme.of(context).title2.override(
+          style: FlutterTheme.of(context).title2.override(
                 fontFamily: 'Poppins',
-                color: flutterTheme.of(context).primaryText,
+                color: FlutterTheme.of(context).primaryText,
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
@@ -39,7 +39,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
         centerTitle: true,
         elevation: 0,
       ),
-      backgroundColor: flutterTheme.of(context).primaryBackground,
+      backgroundColor: FlutterTheme.of(context).primaryBackground,
       body: Center(
         child: SizedBox(
           width:
@@ -76,11 +76,10 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               SnackBar(
                                 content: Text(
                                   'You can\'t change your email',
-                                  style: flutterTheme.of(context).bodyText1,
+                                  style: FlutterTheme.of(context).bodyText1,
                                 ),
                                 duration: Duration(milliseconds: 2000),
-                                backgroundColor: flutterTheme
-                                    .of(context)
+                                backgroundColor: FlutterTheme.of(context)
                                     .secondaryBackground,
                               ),
                             );
@@ -90,7 +89,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                             height: 50,
                             decoration: BoxDecoration(
                               color:
-                                  flutterTheme.of(context).secondaryBackground,
+                                  FlutterTheme.of(context).secondaryBackground,
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Padding(
@@ -101,7 +100,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                 children: [
                                   Icon(
                                     Icons.mail_outlined,
-                                    color: flutterTheme.of(context).primaryText,
+                                    color: FlutterTheme.of(context).primaryText,
                                     size: 24,
                                   ),
                                   Padding(
@@ -109,7 +108,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                         10, 0, 0, 0),
                                     child: Text(
                                       columnUsersRecord.email,
-                                      style: flutterTheme.of(context).bodyText1,
+                                      style: FlutterTheme.of(context).bodyText1,
                                     ),
                                   ),
                                 ],
@@ -151,7 +150,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               size: 24,
                             ),
                           ),
-                          style: flutterTheme.of(context).bodyText1.override(
+                          style: FlutterTheme.of(context).bodyText1.override(
                                 fontFamily: 'Poppins',
                                 color: Color(0xFF9E9E9E),
                               ),
@@ -189,9 +188,9 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                           options: FFButtonOptions(
                             width: double.infinity,
                             height: 50,
-                            color: flutterTheme.of(context).primaryColor,
+                            color: FlutterTheme.of(context).primaryColor,
                             textStyle:
-                                flutterTheme.of(context).subtitle2.override(
+                                FlutterTheme.of(context).subtitle2.override(
                                       fontFamily: 'Poppins',
                                       color: Colors.white,
                                     ),
@@ -220,9 +219,9 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               options: FFButtonOptions(
                                 width: double.infinity,
                                 height: 50,
-                                color: flutterTheme.of(context).primaryColor,
+                                color: FlutterTheme.of(context).primaryColor,
                                 textStyle:
-                                    flutterTheme.of(context).subtitle2.override(
+                                    FlutterTheme.of(context).subtitle2.override(
                                           fontFamily: 'Poppins',
                                           color: Colors.black,
                                         ),
@@ -254,7 +253,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                             height: 50,
                             color: Color(0xFFD50000),
                             textStyle:
-                                flutterTheme.of(context).subtitle2.override(
+                                FlutterTheme.of(context).subtitle2.override(
                                       fontFamily: 'Poppins',
                                       color: Colors.white,
                                     ),

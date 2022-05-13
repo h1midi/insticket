@@ -27,16 +27,16 @@ class _ScanWidgetState extends State<ScanWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: flutterTheme.of(context).primaryBackground,
+        backgroundColor: FlutterTheme.of(context).primaryBackground,
         automaticallyImplyLeading: false,
-        leading: flutterIconButton(
+        leading: FlutterIconButton(
           borderColor: Colors.transparent,
           borderRadius: 30,
           borderWidth: 1,
           buttonSize: 60,
           icon: Icon(
             Icons.arrow_back_rounded,
-            color: flutterTheme.of(context).primaryText,
+            color: FlutterTheme.of(context).primaryText,
             size: 32,
           ),
           onPressed: () async {
@@ -45,13 +45,13 @@ class _ScanWidgetState extends State<ScanWidget> {
         ),
         title: Text(
           'Scanned Code',
-          style: flutterTheme.of(context).title1,
+          style: FlutterTheme.of(context).title1,
         ),
         actions: [],
         centerTitle: true,
         elevation: 0,
       ),
-      backgroundColor: flutterTheme.of(context).primaryBackground,
+      backgroundColor: FlutterTheme.of(context).primaryBackground,
       body: Padding(
         padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
         child: StreamBuilder<List<TicketsRecord>>(
@@ -84,9 +84,9 @@ class _ScanWidgetState extends State<ScanWidget> {
                 child: Center(
                   child: Text(
                     'Invalid Ticket ',
-                    style: flutterTheme.of(context).bodyText1.override(
+                    style: FlutterTheme.of(context).bodyText1.override(
                           fontFamily: 'Poppins',
-                          color: flutterTheme.of(context).warning,
+                          color: FlutterTheme.of(context).warning,
                           fontWeight: FontWeight.bold,
                           fontSize: 32,
                         ),
@@ -107,7 +107,7 @@ class _ScanWidgetState extends State<ScanWidget> {
                       padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
                       child: Text(
                         'Ticket : ${containerTicketsRecord.code}',
-                        style: flutterTheme.of(context).title2,
+                        style: FlutterTheme.of(context).title2,
                       ),
                     ),
                     Padding(
@@ -122,10 +122,9 @@ class _ScanWidgetState extends State<ScanWidget> {
                               Text(
                                 'Game : ',
                                 style:
-                                    flutterTheme.of(context).bodyText1.override(
+                                    FlutterTheme.of(context).bodyText1.override(
                                           fontFamily: 'Poppins',
-                                          color: flutterTheme
-                                              .of(context)
+                                          color: FlutterTheme.of(context)
                                               .secondaryText,
                                         ),
                               ),
@@ -149,13 +148,11 @@ class _ScanWidgetState extends State<ScanWidget> {
                                   final textGamesRecord = snapshot.data;
                                   return Text(
                                     textGamesRecord.versus,
-                                    style: flutterTheme
-                                        .of(context)
+                                    style: FlutterTheme.of(context)
                                         .bodyText1
                                         .override(
                                           fontFamily: 'Poppins',
-                                          color: flutterTheme
-                                              .of(context)
+                                          color: FlutterTheme.of(context)
                                               .secondaryText,
                                         ),
                                   );
@@ -166,7 +163,7 @@ class _ScanWidgetState extends State<ScanWidget> {
                           Divider(
                             height: 20,
                             thickness: 1,
-                            color: flutterTheme.of(context).secondaryText,
+                            color: FlutterTheme.of(context).secondaryText,
                           ),
                         ],
                       ),
@@ -183,10 +180,9 @@ class _ScanWidgetState extends State<ScanWidget> {
                               Text(
                                 'Date : ',
                                 style:
-                                    flutterTheme.of(context).bodyText1.override(
+                                    FlutterTheme.of(context).bodyText1.override(
                                           fontFamily: 'Poppins',
-                                          color: flutterTheme
-                                              .of(context)
+                                          color: FlutterTheme.of(context)
                                               .secondaryText,
                                         ),
                               ),
@@ -211,13 +207,11 @@ class _ScanWidgetState extends State<ScanWidget> {
                                   return Text(
                                     dateTimeFormat(
                                         'd/M/y', textGamesRecord.date),
-                                    style: flutterTheme
-                                        .of(context)
+                                    style: FlutterTheme.of(context)
                                         .bodyText1
                                         .override(
                                           fontFamily: 'Poppins',
-                                          color: flutterTheme
-                                              .of(context)
+                                          color: FlutterTheme.of(context)
                                               .secondaryText,
                                         ),
                                   );
@@ -228,7 +222,7 @@ class _ScanWidgetState extends State<ScanWidget> {
                           Divider(
                             height: 20,
                             thickness: 1,
-                            color: flutterTheme.of(context).secondaryText,
+                            color: FlutterTheme.of(context).secondaryText,
                           ),
                         ],
                       ),
@@ -260,10 +254,9 @@ class _ScanWidgetState extends State<ScanWidget> {
                               return Text(
                                 'Name : ${textUsersRecord.displayName}',
                                 style:
-                                    flutterTheme.of(context).bodyText1.override(
+                                    FlutterTheme.of(context).bodyText1.override(
                                           fontFamily: 'Poppins',
-                                          color: flutterTheme
-                                              .of(context)
+                                          color: FlutterTheme.of(context)
                                               .secondaryText,
                                         ),
                               );
@@ -272,7 +265,7 @@ class _ScanWidgetState extends State<ScanWidget> {
                           Divider(
                             height: 20,
                             thickness: 1,
-                            color: flutterTheme.of(context).secondaryText,
+                            color: FlutterTheme.of(context).secondaryText,
                           ),
                         ],
                       ),
@@ -285,15 +278,15 @@ class _ScanWidgetState extends State<ScanWidget> {
                         children: [
                           Text(
                             'Purchased on  : ${dateTimeFormat('d/M h:mm a', containerTicketsRecord.purchasedOn)}',
-                            style: flutterTheme.of(context).bodyText1.override(
+                            style: FlutterTheme.of(context).bodyText1.override(
                                   fontFamily: 'Poppins',
-                                  color: flutterTheme.of(context).secondaryText,
+                                  color: FlutterTheme.of(context).secondaryText,
                                 ),
                           ),
                           Divider(
                             height: 20,
                             thickness: 1,
-                            color: flutterTheme.of(context).secondaryText,
+                            color: FlutterTheme.of(context).secondaryText,
                           ),
                         ],
                       ),
@@ -310,36 +303,31 @@ class _ScanWidgetState extends State<ScanWidget> {
                               Text(
                                 'Cover seat : ',
                                 style:
-                                    flutterTheme.of(context).bodyText1.override(
+                                    FlutterTheme.of(context).bodyText1.override(
                                           fontFamily: 'Poppins',
-                                          color: flutterTheme
-                                              .of(context)
+                                          color: FlutterTheme.of(context)
                                               .secondaryText,
                                         ),
                               ),
                               if (containerTicketsRecord.isCovered ?? true)
                                 Text(
                                   'yes',
-                                  style: flutterTheme
-                                      .of(context)
+                                  style: FlutterTheme.of(context)
                                       .bodyText1
                                       .override(
                                         fontFamily: 'Poppins',
-                                        color: flutterTheme
-                                            .of(context)
+                                        color: FlutterTheme.of(context)
                                             .secondaryText,
                                       ),
                                 ),
                               if (!(containerTicketsRecord.isCovered) ?? true)
                                 Text(
                                   'no',
-                                  style: flutterTheme
-                                      .of(context)
+                                  style: FlutterTheme.of(context)
                                       .bodyText1
                                       .override(
                                         fontFamily: 'Poppins',
-                                        color: flutterTheme
-                                            .of(context)
+                                        color: FlutterTheme.of(context)
                                             .secondaryText,
                                       ),
                                 ),
@@ -348,7 +336,7 @@ class _ScanWidgetState extends State<ScanWidget> {
                           Divider(
                             height: 20,
                             thickness: 1,
-                            color: flutterTheme.of(context).secondaryText,
+                            color: FlutterTheme.of(context).secondaryText,
                           ),
                         ],
                       ),
@@ -363,13 +351,12 @@ class _ScanWidgetState extends State<ScanWidget> {
                             Center(
                               child: Text(
                                 'Valid Ticket',
-                                style: flutterTheme
-                                    .of(context)
+                                style: FlutterTheme.of(context)
                                     .bodyText1
                                     .override(
                                       fontFamily: 'Poppins',
                                       color:
-                                          flutterTheme.of(context).primaryColor,
+                                          FlutterTheme.of(context).primaryColor,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 22,
                                     ),
@@ -379,12 +366,11 @@ class _ScanWidgetState extends State<ScanWidget> {
                             Center(
                               child: Text(
                                 'Used Ticket ',
-                                style: flutterTheme
-                                    .of(context)
+                                style: FlutterTheme.of(context)
                                     .bodyText1
                                     .override(
                                       fontFamily: 'Poppins',
-                                      color: flutterTheme.of(context).warning,
+                                      color: FlutterTheme.of(context).warning,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 22,
                                     ),
@@ -393,7 +379,7 @@ class _ScanWidgetState extends State<ScanWidget> {
                           Divider(
                             height: 20,
                             thickness: 1,
-                            color: flutterTheme.of(context).secondaryText,
+                            color: FlutterTheme.of(context).secondaryText,
                           ),
                         ],
                       ),
@@ -424,9 +410,9 @@ class _ScanWidgetState extends State<ScanWidget> {
                               options: FFButtonOptions(
                                 width: 200,
                                 height: 50,
-                                color: flutterTheme.of(context).primaryColor,
+                                color: FlutterTheme.of(context).primaryColor,
                                 textStyle:
-                                    flutterTheme.of(context).title2.override(
+                                    FlutterTheme.of(context).title2.override(
                                           fontFamily: 'Poppins',
                                           color: Color(0xFF212121),
                                         ),
