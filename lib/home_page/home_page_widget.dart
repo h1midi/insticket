@@ -122,18 +122,29 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   ),
                 ),
                 Divider(),
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "Dark theme",
-                        style: FlutterTheme.of(context).bodyText1,
-                      ),
-                      Switch(
-                        onChanged: toggleSwitch,
-                        value: isSwitched,
-                      )
-                    ]),
+                Expanded(child: Container()),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 8.0),
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Dark theme",
+                          style: FlutterTheme.of(context).bodyText1.override(
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16),
+                        ),
+                        Switch(
+                          inactiveThumbImage: NetworkImage(
+                              "https://cdn-icons-png.flaticon.com/512/5115/5115625.png"),
+                          activeThumbImage: NetworkImage(
+                              "https://cdn-icons-png.flaticon.com/512/5115/5115625.png"),
+                          onChanged: toggleSwitch,
+                          value: isSwitched,
+                        )
+                      ]),
+                ),
               ],
             ),
           ),
@@ -417,11 +428,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             controller: controller,
                             gridDelegate:
                                 SliverGridDelegateWithFixedCrossAxisCount(
-                                    crossAxisCount: (width / 600).round(),
-                                    crossAxisSpacing: 16,
-                                    childAspectRatio: (width / 600) + 1.5 < 3
-                                        ? (width / 600) + 1.5
-                                        : 3),
+                              crossAxisCount: (width / 600).round(),
+                              crossAxisSpacing: 16,
+                              childAspectRatio: 4,
+                            ),
                             shrinkWrap: true,
                             itemCount: listViewGamesRecordList.length,
                             itemBuilder: (context, listViewIndex) {

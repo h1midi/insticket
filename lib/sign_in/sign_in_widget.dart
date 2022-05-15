@@ -102,7 +102,10 @@ class _SignInWidgetState extends State<SignInWidget> {
                                     obscureText: false,
                                     decoration: InputDecoration(
                                       labelText: 'Email Adress',
+                                      labelStyle:
+                                          TextStyle(color: Colors.black),
                                       hintText: 'Enter Your Email Adress',
+                                      hintStyle: TextStyle(color: Colors.grey),
                                       enabledBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
@@ -142,7 +145,10 @@ class _SignInWidgetState extends State<SignInWidget> {
                                     obscureText: !passwordVisibility,
                                     decoration: InputDecoration(
                                       labelText: 'Password',
+                                      labelStyle:
+                                          TextStyle(color: Colors.black),
                                       hintText: 'Enter Your Password',
+                                      hintStyle: TextStyle(color: Colors.grey),
                                       enabledBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),

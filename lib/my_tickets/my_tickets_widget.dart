@@ -116,7 +116,6 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                     borderRadius: BorderRadius.circular(10),
                                   ),
                                   child: Row(
-                                    mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Container(
                                         width:
@@ -192,7 +191,6 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   15, 15, 15, 15),
                                           child: Column(
-                                            mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceBetween,
                                             crossAxisAlignment:
@@ -251,11 +249,10 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                           controller: controller,
                           gridDelegate:
                               SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: (width / 600).round(),
-                                  crossAxisSpacing: 16,
-                                  childAspectRatio: (width / 600) + 1.5 < 3
-                                      ? (width / 600) + 1.5
-                                      : 3),
+                            crossAxisCount: (width / 600).round(),
+                            crossAxisSpacing: 16,
+                            childAspectRatio: 4,
+                          ),
                           shrinkWrap: true,
                           itemCount: listViewGamesRecordList.length,
                           itemBuilder: (context, listViewIndex) {
@@ -460,347 +457,154 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                           shrinkWrap: true,
                           itemCount: listViewGamesRecordList.length,
                           itemBuilder: (context, listViewIndex) {
-                            return Column(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      20, 20, 20, 20),
-                                  child: Container(
-                                    width: double.infinity,
-                                    height: 120,
-                                    decoration: BoxDecoration(
-                                      color: FlutterTheme.of(context)
-                                          .secondaryBackground,
-                                      boxShadow: [
-                                        BoxShadow(
-                                          blurRadius: 48,
-                                          color: Color(0x0B000000),
-                                          offset: Offset(0, 2),
-                                        )
-                                      ],
-                                      borderRadius: BorderRadius.circular(10),
-                                    ),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Container(
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              0.4,
-                                          height: double.infinity,
-                                          decoration: BoxDecoration(
-                                            color: Color(0xFFFFEBEE),
-                                            borderRadius: BorderRadius.only(
-                                              bottomLeft: Radius.circular(10),
-                                              bottomRight: Radius.circular(0),
-                                              topLeft: Radius.circular(10),
-                                              topRight: Radius.circular(0),
+                            final listViewGamesRecord =
+                                listViewGamesRecordList[listViewIndex];
+                            return Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  20, 20, 20, 20),
+                              child: Container(
+                                width: double.infinity,
+                                height: 120,
+                                decoration: BoxDecoration(
+                                  color: FlutterTheme.of(context)
+                                      .secondaryBackground,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      blurRadius: 48,
+                                      color: Color(0x0B000000),
+                                      offset: Offset(0, 2),
+                                    )
+                                  ],
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      width: MediaQuery.of(context).size.width *
+                                          0.4,
+                                      height: double.infinity,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFFFFEBEE),
+                                        borderRadius: BorderRadius.only(
+                                          bottomLeft: Radius.circular(10),
+                                          bottomRight: Radius.circular(0),
+                                          topLeft: Radius.circular(10),
+                                          topRight: Radius.circular(0),
+                                        ),
+                                      ),
+                                      child: Stack(
+                                        alignment:
+                                            AlignmentDirectional(-0.6, 0),
+                                        children: [
+                                          Align(
+                                            alignment:
+                                                AlignmentDirectional(0.4, 0),
+                                            child: Container(
+                                              width: 60,
+                                              height: 60,
+                                              decoration: BoxDecoration(
+                                                color: Color(0xFFFFCDD2),
+                                                shape: BoxShape.circle,
+                                              ),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(10, 10, 10, 10),
+                                                child: Image.network(
+                                                  listViewGamesRecord
+                                                      .atImageUrl,
+                                                  width: 100,
+                                                  height: 100,
+                                                  fit: BoxFit.contain,
+                                                ),
+                                              ),
                                             ),
                                           ),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Stack(
-                                                alignment: AlignmentDirectional(
-                                                    -0.6, 0),
-                                                children: [
-                                                  Align(
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            0.4, 0),
-                                                    child: Container(
-                                                      width: 60,
-                                                      height: 60,
-                                                      decoration: BoxDecoration(
-                                                        color:
-                                                            Color(0xFFFFCDD2),
-                                                        shape: BoxShape.circle,
-                                                      ),
-                                                      child: Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(10,
-                                                                    10, 10, 10),
-                                                        child: Image.network(
-                                                          'https://upload.wikimedia.org/wikipedia/sco/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png',
-                                                          width: 100,
-                                                          height: 100,
-                                                          fit: BoxFit.contain,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Align(
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            -0.4, 0),
-                                                    child: Container(
-                                                      width: 60,
-                                                      height: 60,
-                                                      decoration: BoxDecoration(
-                                                        color:
-                                                            Color(0xFFEF9A9A),
-                                                        shape: BoxShape.circle,
-                                                      ),
-                                                      child: Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(10,
-                                                                    10, 10, 10),
-                                                        child: Image.network(
-                                                          'https://upload.wikimedia.org/wikipedia/sco/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png',
-                                                          width: 100,
-                                                          height: 100,
-                                                          fit: BoxFit.contain,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
+                                          Align(
+                                            alignment:
+                                                AlignmentDirectional(-0.4, 0),
+                                            child: Container(
+                                              width: 60,
+                                              height: 60,
+                                              decoration: BoxDecoration(
+                                                color: Color(0xFFEF9A9A),
+                                                shape: BoxShape.circle,
                                               ),
-                                            ],
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(10, 10, 10, 10),
+                                                child: Image.network(
+                                                  listViewGamesRecord
+                                                      .htImageUrl,
+                                                  width: 100,
+                                                  height: 100,
+                                                  fit: BoxFit.contain,
+                                                ),
+                                              ),
+                                            ),
                                           ),
-                                        ),
-                                        Expanded(
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    10, 10, 10, 10),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceEvenly,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  '01X tickets purchased ',
-                                                  style: FlutterTheme.of(
-                                                          context)
-                                                      .bodyText2
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color: FlutterTheme.of(
-                                                                context)
+                                        ],
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            10, 10, 10, 10),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              '01X tickets purchased ',
+                                              style: FlutterTheme.of(context)
+                                                  .bodyText2
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    color:
+                                                        FlutterTheme.of(context)
                                                             .warning,
-                                                        decoration:
-                                                            TextDecoration
-                                                                .lineThrough,
-                                                      ),
-                                                ),
-                                                Text(
-                                                  'Team Example1 vs Team Example2',
-                                                  style:
+                                                    decoration: TextDecoration
+                                                        .lineThrough,
+                                                  ),
+                                            ),
+                                            Text(
+                                              '${listViewGamesRecord.homeTeam} vs ${listViewGamesRecord.awayTeam}',
+                                              style: FlutterTheme.of(context)
+                                                  .bodyText1,
+                                            ),
+                                            Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Icon(
+                                                  Icons.calendar_today_outlined,
+                                                  color:
                                                       FlutterTheme.of(context)
-                                                          .bodyText1,
-                                                ),
-                                                Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Icon(
-                                                      Icons
-                                                          .calendar_today_outlined,
-                                                      color: FlutterTheme.of(
-                                                              context)
                                                           .secondaryText,
-                                                      size: 12,
-                                                    ),
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  5, 0, 0, 0),
-                                                      child: Text(
-                                                        '16 mar 2022 - 19:00',
-                                                        style: FlutterTheme.of(
-                                                                context)
+                                                  size: 12,
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(5, 0, 0, 0),
+                                                  child: Text(
+                                                    dateTimeFormat(
+                                                        'd/M h:mm a',
+                                                        listViewGamesRecord
+                                                            .date),
+                                                    style:
+                                                        FlutterTheme.of(context)
                                                             .bodyText2,
-                                                      ),
-                                                    ),
-                                                  ],
+                                                  ),
                                                 ),
                                               ],
                                             ),
-                                          ),
+                                          ],
                                         ),
-                                      ],
+                                      ),
                                     ),
-                                  ),
+                                  ],
                                 ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      20, 20, 20, 20),
-                                  child: Container(
-                                    width: double.infinity,
-                                    height: 120,
-                                    decoration: BoxDecoration(
-                                      color: FlutterTheme.of(context)
-                                          .secondaryBackground,
-                                      boxShadow: [
-                                        BoxShadow(
-                                          blurRadius: 48,
-                                          color: Color(0x0B000000),
-                                          offset: Offset(0, 2),
-                                        )
-                                      ],
-                                      borderRadius: BorderRadius.circular(10),
-                                    ),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Container(
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              0.4,
-                                          height: double.infinity,
-                                          decoration: BoxDecoration(
-                                            color: Color(0xFFFFEBEE),
-                                            borderRadius: BorderRadius.only(
-                                              bottomLeft: Radius.circular(10),
-                                              bottomRight: Radius.circular(0),
-                                              topLeft: Radius.circular(10),
-                                              topRight: Radius.circular(0),
-                                            ),
-                                          ),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Stack(
-                                                alignment: AlignmentDirectional(
-                                                    -0.6, 0),
-                                                children: [
-                                                  Align(
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            0.4, 0),
-                                                    child: Container(
-                                                      width: 60,
-                                                      height: 60,
-                                                      decoration: BoxDecoration(
-                                                        color:
-                                                            Color(0xFFFFCDD2),
-                                                        shape: BoxShape.circle,
-                                                      ),
-                                                      child: Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(10,
-                                                                    10, 10, 10),
-                                                        child: Image.network(
-                                                          'https://upload.wikimedia.org/wikipedia/sco/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png',
-                                                          width: 100,
-                                                          height: 100,
-                                                          fit: BoxFit.contain,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Align(
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            -0.4, 0),
-                                                    child: Container(
-                                                      width: 60,
-                                                      height: 60,
-                                                      decoration: BoxDecoration(
-                                                        color:
-                                                            Color(0xFFEF9A9A),
-                                                        shape: BoxShape.circle,
-                                                      ),
-                                                      child: Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(10,
-                                                                    10, 10, 10),
-                                                        child: Image.network(
-                                                          'https://upload.wikimedia.org/wikipedia/sco/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png',
-                                                          width: 100,
-                                                          height: 100,
-                                                          fit: BoxFit.contain,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        Expanded(
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    10, 10, 10, 10),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceEvenly,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  '01X tickets purchased ',
-                                                  style: FlutterTheme.of(
-                                                          context)
-                                                      .bodyText2
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color: FlutterTheme.of(
-                                                                context)
-                                                            .warning,
-                                                        decoration:
-                                                            TextDecoration
-                                                                .lineThrough,
-                                                      ),
-                                                ),
-                                                Text(
-                                                  'Team Example1 vs Team Example2',
-                                                  style:
-                                                      FlutterTheme.of(context)
-                                                          .bodyText1,
-                                                ),
-                                                Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Icon(
-                                                      Icons
-                                                          .calendar_today_outlined,
-                                                      color: FlutterTheme.of(
-                                                              context)
-                                                          .secondaryText,
-                                                      size: 12,
-                                                    ),
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  5, 0, 0, 0),
-                                                      child: Text(
-                                                        '16 mar 2022 - 19:00',
-                                                        style: FlutterTheme.of(
-                                                                context)
-                                                            .bodyText2,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ],
+                              ),
                             );
                           },
                         )
@@ -808,11 +612,10 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                           controller: controller,
                           gridDelegate:
                               SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: (width / 600).round(),
-                                  crossAxisSpacing: 16,
-                                  childAspectRatio: (width / 600) + 1.5 < 3
-                                      ? (width / 600) + 1.5
-                                      : 3),
+                            crossAxisCount: (width / 600).round(),
+                            crossAxisSpacing: 16,
+                            childAspectRatio: 4,
+                          ),
                           shrinkWrap: true,
                           itemCount: listViewGamesRecordList.length,
                           itemBuilder: (context, listViewIndex) {

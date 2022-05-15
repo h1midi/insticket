@@ -107,7 +107,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelText: 'Username',
+                                labelStyle: TextStyle(color: Colors.black),
                                 hintText: 'Enter Your Username',
+                                hintStyle: TextStyle(color: Colors.grey),
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
@@ -146,7 +148,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelText: 'Email Adress',
+                                labelStyle: TextStyle(color: Colors.black),
                                 hintText: 'Enter Your Email Adress',
+                                hintStyle: TextStyle(color: Colors.grey),
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
@@ -185,7 +189,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                               obscureText: !passwordVisibility,
                               decoration: InputDecoration(
                                 labelText: 'Password',
+                                labelStyle: TextStyle(color: Colors.black),
                                 hintText: 'Enter Your Password',
+                                hintStyle: TextStyle(color: Colors.grey),
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
@@ -236,7 +242,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                               obscureText: !confirmPasswordVisibility,
                               decoration: InputDecoration(
                                 labelText: 'Confirm Password',
+                                labelStyle: TextStyle(color: Colors.black),
                                 hintText: 'Confirm Your Password',
+                                hintStyle: TextStyle(color: Colors.grey),
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
