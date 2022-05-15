@@ -372,7 +372,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 Padding(
                                   padding: const EdgeInsets.only(top: 22.0),
                                   child: Text(
-                                    'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors ',
+                                    'Une solution de vente de billet en temps réel et de controle d’accès au niveau des stades de football',
                                     softWrap: true,
                                     maxLines: 8,
                                     style: FlutterTheme.of(context).bodyText1,
@@ -402,6 +402,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                   decoration: InputDecoration(
                                     labelText: 'Username',
                                     hintText: 'Enter Your Username',
+                                    labelStyle: TextStyle(color: Colors.black),
+                                    hintStyle: TextStyle(color: Colors.grey),
                                     enabledBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
@@ -442,6 +444,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                   decoration: InputDecoration(
                                     labelText: 'Email Adress',
                                     hintText: 'Enter Your Email Adress',
+                                    labelStyle: TextStyle(color: Colors.black),
+                                    hintStyle: TextStyle(color: Colors.grey),
                                     enabledBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
@@ -482,6 +486,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                   decoration: InputDecoration(
                                     labelText: 'Password',
                                     hintText: 'Enter Your Password',
+                                    labelStyle: TextStyle(color: Colors.black),
+                                    hintStyle: TextStyle(color: Colors.grey),
                                     enabledBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
@@ -534,6 +540,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                   decoration: InputDecoration(
                                     labelText: 'Confirm Password',
                                     hintText: 'Confirm Your Password',
+                                    labelStyle: TextStyle(color: Colors.black),
+                                    hintStyle: TextStyle(color: Colors.grey),
                                     enabledBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),

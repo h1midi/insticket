@@ -251,7 +251,7 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                               SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: (width / 600).round(),
                             crossAxisSpacing: 16,
-                            childAspectRatio: 4,
+                            childAspectRatio: 3.5,
                           ),
                           shrinkWrap: true,
                           itemCount: listViewGamesRecordList.length,
@@ -365,7 +365,6 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   15, 15, 15, 15),
                                           child: Column(
-                                            mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceBetween,
                                             crossAxisAlignment:
@@ -382,7 +381,6 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                                     .bodyText1,
                                               ),
                                               Row(
-                                                mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Icon(
                                                     Icons
@@ -614,7 +612,7 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                               SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: (width / 600).round(),
                             crossAxisSpacing: 16,
-                            childAspectRatio: 4,
+                            childAspectRatio: 3.5,
                           ),
                           shrinkWrap: true,
                           itemCount: listViewGamesRecordList.length,
@@ -622,8 +620,8 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                             final listViewGamesRecord =
                                 listViewGamesRecordList[listViewIndex];
                             return Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  20, 20, 20, 20),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(20, 20, 20, 0),
                               child: Container(
                                 decoration: BoxDecoration(
                                   color: FlutterTheme.of(context)
@@ -651,67 +649,55 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                             topRight: Radius.circular(0),
                                           ),
                                         ),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
+                                        child: Stack(
+                                          alignment:
+                                              AlignmentDirectional(-0.6, 0),
                                           children: [
-                                            Stack(
+                                            Align(
                                               alignment:
-                                                  AlignmentDirectional(-0.6, 0),
-                                              children: [
-                                                Align(
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                          0.4, 0),
-                                                  child: Container(
-                                                    width: 60,
-                                                    height: 60,
-                                                    decoration: BoxDecoration(
-                                                      color: Color(0xFFFFCDD2),
-                                                      shape: BoxShape.circle,
-                                                    ),
-                                                    child: Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(10, 10,
-                                                                  10, 10),
-                                                      child: Image.network(
-                                                        listViewGamesRecord
-                                                            .atImageUrl,
-                                                        width: 100,
-                                                        height: 100,
-                                                        fit: BoxFit.contain,
-                                                      ),
-                                                    ),
+                                                  AlignmentDirectional(0.4, 0),
+                                              child: Container(
+                                                width: 60,
+                                                height: 60,
+                                                decoration: BoxDecoration(
+                                                  color: Color(0xFFFFCDD2),
+                                                  shape: BoxShape.circle,
+                                                ),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(10, 10, 10, 10),
+                                                  child: Image.network(
+                                                    listViewGamesRecord
+                                                        .atImageUrl,
+                                                    width: 100,
+                                                    height: 100,
+                                                    fit: BoxFit.contain,
                                                   ),
                                                 ),
-                                                Align(
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                          -0.4, 0),
-                                                  child: Container(
-                                                    width: 60,
-                                                    height: 60,
-                                                    decoration: BoxDecoration(
-                                                      color: Color(0xFFEF9A9A),
-                                                      shape: BoxShape.circle,
-                                                    ),
-                                                    child: Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(10, 10,
-                                                                  10, 10),
-                                                      child: Image.network(
-                                                        listViewGamesRecord
-                                                            .htImageUrl,
-                                                        width: 100,
-                                                        height: 100,
-                                                        fit: BoxFit.contain,
-                                                      ),
-                                                    ),
+                                              ),
+                                            ),
+                                            Align(
+                                              alignment:
+                                                  AlignmentDirectional(-0.4, 0),
+                                              child: Container(
+                                                width: 60,
+                                                height: 60,
+                                                decoration: BoxDecoration(
+                                                  color: Color(0xFFEF9A9A),
+                                                  shape: BoxShape.circle,
+                                                ),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(10, 10, 10, 10),
+                                                  child: Image.network(
+                                                    listViewGamesRecord
+                                                        .htImageUrl,
+                                                    width: 100,
+                                                    height: 100,
+                                                    fit: BoxFit.contain,
                                                   ),
                                                 ),
-                                              ],
+                                              ),
                                             ),
                                           ],
                                         ),
@@ -721,11 +707,10 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                       flex: 3,
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            10, 10, 10, 10),
+                                            15, 15, 15, 15),
                                         child: Column(
-                                          mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
+                                              MainAxisAlignment.spaceBetween,
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
@@ -748,7 +733,6 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                                   .bodyText1,
                                             ),
                                             Row(
-                                              mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Icon(
                                                   Icons.calendar_today_outlined,

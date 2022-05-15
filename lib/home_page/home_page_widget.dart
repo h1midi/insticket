@@ -5,7 +5,6 @@ import '../flutter_main/flutter_main_icon_button.dart';
 import '../flutter_main/flutter_main_theme.dart';
 import '../flutter_main/flutter_main_util.dart';
 import '../game_details/game_details_widget.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class HomePageWidget extends StatefulWidget {
   const HomePageWidget({
@@ -20,29 +19,13 @@ class HomePageWidget extends StatefulWidget {
 }
 
 class _HomePageWidgetState extends State<HomePageWidget> {
-  final scaffoldKey = GlobalKey<ScaffoldState>();
   ScrollController controller = ScrollController();
 
   @override
   Widget build(BuildContext context) {
-    bool isSwitched = Theme.of(context).brightness == Brightness.dark;
-
-    void toggleSwitch(bool value) {
-      if (isSwitched == false) {
-        setState(() {
-          isSwitched = true;
-          setDarkModeSetting(context, ThemeMode.dark);
-        });
-      } else {
-        setState(() {
-          isSwitched = false;
-          setDarkModeSetting(context, ThemeMode.light);
-        });
-      }
-    }
-
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Scaffold(
-      key: scaffoldKey,
       appBar: AppBar(
         backgroundColor: FlutterTheme.of(context).primaryBackground,
         automaticallyImplyLeading: false,
@@ -51,13 +34,15 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           borderRadius: 30,
           borderWidth: 1,
           buttonSize: 60,
-          icon: Icon(
-            Icons.menu,
-            color: FlutterTheme.of(context).primaryText,
-            size: 32,
-          ),
+          icon: width < height
+              ? Icon(
+                  Icons.menu,
+                  color: FlutterTheme.of(context).primaryText,
+                  size: 32,
+                )
+              : Container(),
           onPressed: () async {
-            scaffoldKey.currentState.openDrawer();
+            Scaffold.of(context).openDrawer();
           },
         ),
         title: Text(
@@ -69,87 +54,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
         elevation: 0,
       ),
       backgroundColor: FlutterTheme.of(context).primaryBackground,
-      drawer: Drawer(
-        elevation: 16,
-        child: SafeArea(
-          child: Container(
-            width: 100,
-            height: 100,
-            padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
-            decoration: BoxDecoration(
-              color: FlutterTheme.of(context).primaryBackground,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Align(
-                  alignment: AlignmentDirectional(1, 0),
-                  child: InkWell(
-                    onTap: () {
-                      if (scaffoldKey.currentState.isDrawerOpen ||
-                          scaffoldKey.currentState.isEndDrawerOpen) {
-                        Navigator.pop(context);
-                      }
-                    },
-                    child: Icon(
-                      Icons.close_outlined,
-                      color: Theme.of(context).brightness != Brightness.dark ??
-                              true
-                          ? Colors.black
-                          : Colors.white,
-                      size: 32,
-                    ),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    launchURL(
-                        "https://github.com/hammiddi/Final-year-project/");
-                  },
-                  child: Text(
-                    'About',
-                    style: FlutterTheme.of(context).bodyText1,
-                  ),
-                ),
-                Divider(),
-                GestureDetector(
-                  onTap: () {
-                    launchUrl(Uri.parse("mailto:mr.hammiddi@gmail.com"));
-                  },
-                  child: Text(
-                    'Contact us',
-                    style: FlutterTheme.of(context).bodyText1,
-                  ),
-                ),
-                Divider(),
-                Expanded(child: Container()),
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 8.0),
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Dark theme",
-                          style: FlutterTheme.of(context).bodyText1.override(
-                              fontFamily: 'Poppins',
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16),
-                        ),
-                        Switch(
-                          inactiveThumbImage: NetworkImage(
-                              "https://cdn-icons-png.flaticon.com/512/5115/5115625.png"),
-                          activeThumbImage: NetworkImage(
-                              "https://cdn-icons-png.flaticon.com/512/5115/5115625.png"),
-                          onChanged: toggleSwitch,
-                          value: isSwitched,
-                        )
-                      ]),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
       body: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
         child: SingleChildScrollView(
@@ -225,7 +129,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     borderRadius: BorderRadius.circular(10),
                                   ),
                                   child: Row(
-                                    mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
@@ -245,7 +148,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           ),
                                         ),
                                         child: Column(
-                                          mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
                                               MainAxisAlignment.end,
                                           children: [
@@ -428,15 +330,35 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             controller: controller,
                             gridDelegate:
                                 SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: (width / 600).round(),
+                              crossAxisCount: width < height
+                                  ? (width / 600).round()
+                                  : (width / 730).round(),
                               crossAxisSpacing: 16,
-                              childAspectRatio: 4,
+                              childAspectRatio: 2.8,
                             ),
                             shrinkWrap: true,
                             itemCount: listViewGamesRecordList.length,
                             itemBuilder: (context, listViewIndex) {
                               final listViewGamesRecord =
                                   listViewGamesRecordList[listViewIndex];
+                              double imgSize;
+                              if ((width < height
+                                          ? (width / 600).round()
+                                          : (width / 730).round()) ==
+                                      1 &&
+                                  (width / 3 - 170) > 60) {
+                                imgSize = width / 3 - 190;
+                              } else if ((width < height
+                                          ? (width / 600).round()
+                                          : (width / 730).round()) ==
+                                      2 &&
+                                  (width / 6 - 170) > 60) {
+                                imgSize = width / 6 - 170;
+                              } else if (width > height) {
+                                imgSize = 45;
+                              } else {
+                                imgSize = 60;
+                              }
                               return Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0, 20, 0, 16),
@@ -492,8 +414,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             .fromSTEB(
                                                                 0, 20, 0, 10),
                                                     child: Container(
-                                                      width: 60,
-                                                      height: 60,
+                                                      width: imgSize,
+                                                      height: imgSize,
                                                       decoration: BoxDecoration(
                                                         color:
                                                             Color(0xFFC8E6C9),
@@ -507,8 +429,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                         child: Image.network(
                                                           listViewGamesRecord
                                                               .htImageUrl,
-                                                          width: 100,
-                                                          height: 100,
+                                                          width: imgSize + 40,
+                                                          height: imgSize + 40,
                                                           fit: BoxFit.contain,
                                                         ),
                                                       ),
@@ -628,8 +550,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             .fromSTEB(
                                                                 0, 20, 0, 10),
                                                     child: Container(
-                                                      width: 60,
-                                                      height: 60,
+                                                      width: imgSize,
+                                                      height: imgSize,
                                                       decoration: BoxDecoration(
                                                         color:
                                                             Color(0xFFC8E6C9),
@@ -643,8 +565,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                         child: Image.network(
                                                           listViewGamesRecord
                                                               .atImageUrl,
-                                                          width: 100,
-                                                          height: 100,
+                                                          width: imgSize + 40,
+                                                          height: imgSize + 40,
                                                           fit: BoxFit.contain,
                                                         ),
                                                       ),
