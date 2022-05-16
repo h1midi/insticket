@@ -6,6 +6,7 @@ import '../flutter_main/flutter_main_theme.dart';
 import '../flutter_main/flutter_main_util.dart';
 import '../game_details/game_details_widget.dart';
 
+//FR
 class HomePageWidget extends StatefulWidget {
   const HomePageWidget({
     Key key,
@@ -46,7 +47,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           },
         ),
         title: Text(
-          'Home',
+          'Accueil',
           style: FlutterTheme.of(context).title1,
         ),
         actions: [],
@@ -64,7 +65,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(20, 10, 0, 20),
                 child: Text(
-                  'Upcoming Games',
+                  'Matchs à venir',
                   style: FlutterTheme.of(context).title2,
                 ),
               ),
@@ -201,7 +202,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 MainAxisAlignment.spaceEvenly,
                                             children: [
                                               Text(
-                                                'tickets available ',
+                                                'billets disponibles',
                                                 textAlign: TextAlign.center,
                                                 style: FlutterTheme.of(context)
                                                     .bodyText1
@@ -465,7 +466,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                   MainAxisAlignment.spaceEvenly,
                                               children: [
                                                 Text(
-                                                  'tickets available ',
+                                                  'billets disponibles',
                                                   textAlign: TextAlign.center,
                                                   style: FlutterTheme.of(
                                                           context)

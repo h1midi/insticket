@@ -14,6 +14,8 @@ import '../flutter_main/Utils.dart';
 import '../flutter_main/screenshot.dart';
 import 'package:permission_handler/permission_handler.dart';
 
+// FR
+
 class TicketDetailsWidget extends StatefulWidget {
   const TicketDetailsWidget({
     Key key,
@@ -66,7 +68,7 @@ class _TicketDetailsWidgetState extends State<TicketDetailsWidget> {
           },
         ),
         title: Text(
-          'Ticket Details',
+          'Informations sur le billet',
           style: FlutterTheme.of(context).title1,
         ),
         actions: [],
@@ -99,7 +101,7 @@ class _TicketDetailsWidgetState extends State<TicketDetailsWidget> {
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
                       child: Text(
-                        'Ticket : ${widget.ticketDetails.code}',
+                        'Billet : ${widget.ticketDetails.code}',
                         style: FlutterTheme.of(context).title2,
                       ),
                     ),
@@ -110,7 +112,7 @@ class _TicketDetailsWidgetState extends State<TicketDetailsWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Purchased on  : ${dateTimeFormat('d/M h:mm a', widget.ticketDetails.purchasedOn)}',
+                            'Acheté le : ${dateTimeFormat('d/M h:mm a', widget.ticketDetails.purchasedOn)}',
                             style: FlutterTheme.of(context).bodyText1.override(
                                   fontFamily: 'Poppins',
                                   color: FlutterTheme.of(context).secondaryText,
@@ -134,7 +136,7 @@ class _TicketDetailsWidgetState extends State<TicketDetailsWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Text(
-                                'Cover seat : ',
+                                'Places couverts : ',
                                 style:
                                     FlutterTheme.of(context).bodyText1.override(
                                           fontFamily: 'Poppins',
@@ -144,7 +146,7 @@ class _TicketDetailsWidgetState extends State<TicketDetailsWidget> {
                               ),
                               if (widget.ticketDetails.isCovered ?? true)
                                 Text(
-                                  'yes',
+                                  'oui',
                                   style: FlutterTheme.of(context)
                                       .bodyText1
                                       .override(
@@ -155,7 +157,7 @@ class _TicketDetailsWidgetState extends State<TicketDetailsWidget> {
                                 ),
                               if (!(widget.ticketDetails.isCovered) ?? true)
                                 Text(
-                                  'no',
+                                  'non',
                                   style: FlutterTheme.of(context)
                                       .bodyText1
                                       .override(
@@ -184,7 +186,7 @@ class _TicketDetailsWidgetState extends State<TicketDetailsWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Text(
-                                'Price : ',
+                                'Prix : ',
                                 style:
                                     FlutterTheme.of(context).bodyText1.override(
                                           fontFamily: 'Poppins',
@@ -320,7 +322,7 @@ class _TicketDetailsWidgetState extends State<TicketDetailsWidget> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Text(
-                                'Save Ticket to Galery',
+                                'Téléchargez votre billet',
                                 style: FlutterTheme.of(context).title2,
                               ),
                               isSaved

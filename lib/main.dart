@@ -11,6 +11,8 @@ import 'flutter_main/flutter_main_util.dart';
 import 'flutter_main/internationalization.dart';
 import 'index.dart';
 
+// FR
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -66,7 +68,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'insticket',
+      title: 'Insticket',
       localizationsDelegates: [
         FFLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,
@@ -146,6 +148,20 @@ class _NavBarPageState extends State<NavBarPage> {
         children: [
           width > height
               ? SideNavigationBar(
+                  theme: SideNavigationBarTheme(
+                      dividerTheme: SideNavigationBarDividerTheme(
+                        showHeaderDivider: true,
+                        showMainDivider: true,
+                        showFooterDivider: false,
+                        headerDividerColor:
+                            FlutterTheme.of(context).primaryColor,
+                        mainDividerColor: FlutterTheme.of(context).primaryColor,
+                      ),
+                      itemTheme: SideNavigationBarItemTheme(
+                        selectedItemColor:
+                            FlutterTheme.of(context).primaryColor,
+                      ),
+                      togglerTheme: SideNavigationBarTogglerTheme.standard()),
                   header: SideNavigationBarHeader(
                     image: Image.asset(
                       'assets/images/logo.png',
@@ -157,17 +173,17 @@ class _NavBarPageState extends State<NavBarPage> {
                         style: FlutterTheme.of(context).title1.override(
                             fontFamily: 'Poppins',
                             color: FlutterTheme.of(context).primaryColor)),
-                    subtitle: Text("Store"),
+                    subtitle: Text("***"),
                   ),
                   selectedIndex: currentIndex,
                   items: const [
                     SideNavigationBarItem(
                       icon: Icons.home_outlined,
-                      label: 'Home',
+                      label: 'Accueil',
                     ),
                     SideNavigationBarItem(
                       icon: Icons.confirmation_num_outlined,
-                      label: 'Tickets',
+                      label: 'Billets',
                     ),
                     SideNavigationBarItem(
                       icon: Icons.person_outlined,
@@ -241,7 +257,7 @@ class _NavBarPageState extends State<NavBarPage> {
                         padding: const EdgeInsets.only(top: 8.0, right: 20),
                         child: ListTile(
                           title: Text(
-                            'About',
+                            'À propos',
                             style: FlutterTheme.of(context).bodyText1,
                           ),
                           leading: Icon(Icons.info_outline_rounded),
@@ -255,7 +271,7 @@ class _NavBarPageState extends State<NavBarPage> {
                         padding: const EdgeInsets.only(bottom: 8.0, right: 20),
                         child: ListTile(
                           title: Text(
-                            'Contact us',
+                            'Contactez-nous',
                             style: FlutterTheme.of(context).bodyText1,
                           ),
                           leading: Icon(Icons.mail_outline_rounded),
@@ -275,7 +291,7 @@ class _NavBarPageState extends State<NavBarPage> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                "Dark theme",
+                                "Thème sombre",
                                 style: FlutterTheme.of(context)
                                     .bodyText1
                                     .override(

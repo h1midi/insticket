@@ -5,6 +5,7 @@ import '../flutter_main/flutter_main_theme.dart';
 import '../flutter_main/flutter_main_widgets.dart';
 import '../main.dart';
 
+//FR
 class OnBoardingWidget extends StatefulWidget {
   const OnBoardingWidget({Key key}) : super(key: key);
 
@@ -86,7 +87,7 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                                   children: [
                                     Expanded(
                                       child: Text(
-                                        'Search',
+                                        'Recherche',
                                         textAlign: TextAlign.center,
                                         style: FlutterTheme.of(context).title1,
                                       ),
@@ -102,7 +103,7 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                                   children: [
                                     Expanded(
                                       child: Text(
-                                        'You can easily find the soccer matches that you want',
+                                        'Vous pouvez facilement trouver les matchs de football que vous voulez',
                                         textAlign: TextAlign.center,
                                         style:
                                             FlutterTheme.of(context).subtitle2,
@@ -149,7 +150,7 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                                   children: [
                                     Expanded(
                                       child: Text(
-                                        'Purchase',
+                                        'Acheter',
                                         textAlign: TextAlign.center,
                                         style: FlutterTheme.of(context).title1,
                                       ),
@@ -165,7 +166,7 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                                   children: [
                                     Expanded(
                                       child: Text(
-                                        'Buy as many tickets as you want with a simple click ',
+                                        'Achetez autant de billets que vous le souhaitez en un simple clic',
                                         textAlign: TextAlign.center,
                                         style:
                                             FlutterTheme.of(context).subtitle2,
@@ -212,7 +213,7 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                                   children: [
                                     Expanded(
                                       child: Text(
-                                        'Scan',
+                                        'Scanner',
                                         textAlign: TextAlign.center,
                                         style: FlutterTheme.of(context).title1,
                                       ),
@@ -228,7 +229,7 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                                   children: [
                                     Expanded(
                                       child: Text(
-                                        'And finally scan your qr code and enjoy your favorite match , easy isn\'t it ?',
+                                        'Et enfin scannez votre code qr et regardez votre match préféré, facile n\'est-ce pas ?',
                                         textAlign: TextAlign.center,
                                         style:
                                             FlutterTheme.of(context).subtitle2,
@@ -294,7 +295,7 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                         ),
                       );
                     },
-                    text: 'Skip',
+                    text: 'Passer',
                     options: FFButtonOptions(
                       width: 200,
                       height: 50,

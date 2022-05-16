@@ -5,6 +5,7 @@ import '../flutter_main/flutter_main_widgets.dart';
 import '../sign_in/sign_in_widget.dart';
 import '../sign_up/sign_up_widget.dart';
 
+//FR
 class MainWidget extends StatefulWidget {
   const MainWidget({Key key}) : super(key: key);
 
@@ -94,7 +95,7 @@ class OnPhone extends StatelessWidget {
                           ),
                         );
                       },
-                      text: 'Sign In',
+                      text: 'S\'identifier',
                       options: FFButtonOptions(
                         width: double.infinity,
                         height: 50,
@@ -122,7 +123,7 @@ class OnPhone extends StatelessWidget {
                           ),
                         );
                       },
-                      text: 'Sign Up',
+                      text: 'S\'inscrire',
                       options: FFButtonOptions(
                         width: double.infinity,
                         height: 50,
@@ -208,7 +209,7 @@ class OnPc extends StatelessWidget {
                         ),
                       );
                     },
-                    text: 'Sign In',
+                    text: 'S\'identifier',
                     options: FFButtonOptions(
                       width: width / 2,
                       height: 50,
@@ -236,7 +237,7 @@ class OnPc extends StatelessWidget {
                         ),
                       );
                     },
-                    text: 'Sign Up',
+                    text: 'S\'inscrire',
                     options: FFButtonOptions(
                       width: width / 2,
                       height: 50,

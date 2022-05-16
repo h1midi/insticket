@@ -8,6 +8,7 @@ import '../flutter_main/flutter_main_theme.dart';
 import '../flutter_main/flutter_main_widgets.dart';
 import '../flutter_main/upload_media.dart';
 
+//FR
 class AddTeamWidget extends StatefulWidget {
   const AddTeamWidget({Key key}) : super(key: key);
 
@@ -47,7 +48,7 @@ class _AddTeamWidgetState extends State<AddTeamWidget> {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          'Add a team',
+          'Ajouter une équipe',
           style: FlutterTheme.of(context).title1,
         ),
         actions: [],
@@ -74,8 +75,8 @@ class _AddTeamWidgetState extends State<AddTeamWidget> {
                         controller: teamNameController,
                         obscureText: false,
                         decoration: InputDecoration(
-                          labelText: 'team name',
-                          hintText: 'Enter the team name',
+                          labelText: 'Nom de l\'équipe',
+                          hintText: 'Entrez le nom de l\'équipe',
                           labelStyle: TextStyle(color: Colors.black),
                           hintStyle: TextStyle(color: Colors.black),
                           enabledBorder: UnderlineInputBorder(
@@ -106,7 +107,7 @@ class _AddTeamWidgetState extends State<AddTeamWidget> {
                             ),
                         validator: (val) {
                           if (val.isEmpty) {
-                            return 'required input';
+                            return 'saisie obligatoire';
                           }
 
                           return null;
@@ -129,7 +130,7 @@ class _AddTeamWidgetState extends State<AddTeamWidget> {
                                   validateFileFormat(m.storagePath, context))) {
                             showUploadMessage(
                               context,
-                              'Uploading file...',
+                              'Téléchargement du fichier...',
                               showLoading: true,
                             );
                             final downloadUrls = await Future.wait(
@@ -141,18 +142,18 @@ class _AddTeamWidgetState extends State<AddTeamWidget> {
                                   () => uploadedFileUrl = downloadUrls.first);
                               showUploadMessage(
                                 context,
-                                'Success!',
+                                'Succès!',
                               );
                             } else {
                               showUploadMessage(
                                 context,
-                                'Failed to upload media',
+                                'Échec du téléchargement',
                               );
                               return;
                             }
                           }
                         },
-                        text: 'Upload an image',
+                        text: 'Télécharger une image',
                         icon: Icon(
                           Icons.camera_alt_outlined,
                           size: 15,
@@ -181,7 +182,7 @@ class _AddTeamWidgetState extends State<AddTeamWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
                 child: Text(
-                  'image preview',
+                  'aperçu d\'image',
                   style: FlutterTheme.of(context).title2,
                 ),
               ),
@@ -233,7 +234,7 @@ class _AddTeamWidgetState extends State<AddTeamWidget> {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
                         content: Text(
-                          'Upload an image is required',
+                          'Télécharger une image est requis',
                           style: FlutterTheme.of(context).bodyText1,
                         ),
                         duration: Duration(milliseconds: 3000),
@@ -256,7 +257,7 @@ class _AddTeamWidgetState extends State<AddTeamWidget> {
                     ),
                   );
                 },
-                text: 'Add team',
+                text: 'Ajouter l\'équipe',
                 options: FFButtonOptions(
                   width: double.infinity,
                   height: 50,

@@ -7,6 +7,8 @@ import '../flutter_main/flutter_main_theme.dart';
 import '../flutter_main/flutter_main_util.dart';
 import '../flutter_main/flutter_main_widgets.dart';
 
+// FR
+
 class ScanWidget extends StatefulWidget {
   const ScanWidget({
     Key key,
@@ -44,7 +46,7 @@ class _ScanWidgetState extends State<ScanWidget> {
           },
         ),
         title: Text(
-          'Scanned Code',
+          'Code scanné',
           style: FlutterTheme.of(context).title1,
         ),
         actions: [],
@@ -83,7 +85,7 @@ class _ScanWidgetState extends State<ScanWidget> {
               return Container(
                 child: Center(
                   child: Text(
-                    'Invalid Ticket ',
+                    'Billet invalide',
                     style: FlutterTheme.of(context).bodyText1.override(
                           fontFamily: 'Poppins',
                           color: FlutterTheme.of(context).warning,
@@ -106,7 +108,7 @@ class _ScanWidgetState extends State<ScanWidget> {
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
                       child: Text(
-                        'Ticket : ${containerTicketsRecord.code}',
+                        'Billet : ${containerTicketsRecord.code}',
                         style: FlutterTheme.of(context).title2,
                       ),
                     ),
@@ -120,7 +122,7 @@ class _ScanWidgetState extends State<ScanWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Text(
-                                'Game : ',
+                                'Match : ',
                                 style:
                                     FlutterTheme.of(context).bodyText1.override(
                                           fontFamily: 'Poppins',
@@ -252,7 +254,7 @@ class _ScanWidgetState extends State<ScanWidget> {
                               }
                               final textUsersRecord = snapshot.data;
                               return Text(
-                                'Name : ${textUsersRecord.displayName}',
+                                'Nom : ${textUsersRecord.displayName}',
                                 style:
                                     FlutterTheme.of(context).bodyText1.override(
                                           fontFamily: 'Poppins',
@@ -277,7 +279,7 @@ class _ScanWidgetState extends State<ScanWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Purchased on  : ${dateTimeFormat('d/M h:mm a', containerTicketsRecord.purchasedOn)}',
+                            'Acheté le  : ${dateTimeFormat('d/M h:mm a', containerTicketsRecord.purchasedOn)}',
                             style: FlutterTheme.of(context).bodyText1.override(
                                   fontFamily: 'Poppins',
                                   color: FlutterTheme.of(context).secondaryText,
@@ -301,7 +303,7 @@ class _ScanWidgetState extends State<ScanWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Text(
-                                'Cover seat : ',
+                                'Places couverts : ',
                                 style:
                                     FlutterTheme.of(context).bodyText1.override(
                                           fontFamily: 'Poppins',
@@ -311,7 +313,7 @@ class _ScanWidgetState extends State<ScanWidget> {
                               ),
                               if (containerTicketsRecord.isCovered ?? true)
                                 Text(
-                                  'yes',
+                                  'oui',
                                   style: FlutterTheme.of(context)
                                       .bodyText1
                                       .override(
@@ -322,7 +324,7 @@ class _ScanWidgetState extends State<ScanWidget> {
                                 ),
                               if (!(containerTicketsRecord.isCovered) ?? true)
                                 Text(
-                                  'no',
+                                  'non',
                                   style: FlutterTheme.of(context)
                                       .bodyText1
                                       .override(
@@ -350,7 +352,7 @@ class _ScanWidgetState extends State<ScanWidget> {
                           if (containerTicketsRecord.isValid)
                             Center(
                               child: Text(
-                                'Valid Ticket',
+                                'Billet valide',
                                 style: FlutterTheme.of(context)
                                     .bodyText1
                                     .override(
@@ -365,7 +367,7 @@ class _ScanWidgetState extends State<ScanWidget> {
                           if (!containerTicketsRecord.isValid)
                             Center(
                               child: Text(
-                                'Used Ticket ',
+                                'Billet utilisé ',
                                 style: FlutterTheme.of(context)
                                     .bodyText1
                                     .override(

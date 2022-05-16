@@ -8,6 +8,7 @@ import '../flutter_main/flutter_main_theme.dart';
 import '../flutter_main/flutter_main_util.dart';
 import '../flutter_main/flutter_main_widgets.dart';
 
+//FR
 class AddGameWidget extends StatefulWidget {
   const AddGameWidget({
     Key key,
@@ -67,7 +68,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          'Add a game',
+          'Ajoutez un match',
           style: FlutterTheme.of(context).title1,
         ),
         actions: [],
@@ -253,8 +254,8 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                         controller: titleController,
                         obscureText: false,
                         decoration: InputDecoration(
-                          labelText: 'Title',
-                          hintText: 'Type a title',
+                          labelText: 'Titre',
+                          hintText: 'Tapez un titre',
                           labelStyle: TextStyle(color: Colors.black),
                           hintStyle: TextStyle(color: Colors.black),
                           enabledBorder: UnderlineInputBorder(
@@ -285,7 +286,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                             ),
                         validator: (val) {
                           if (val.isEmpty) {
-                            return 'required input';
+                            return 'Champs obligatoires';
                           }
 
                           return null;
@@ -299,7 +300,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                         obscureText: false,
                         decoration: InputDecoration(
                           labelText: 'Description',
-                          hintText: 'Type a description',
+                          hintText: 'Tapez une description',
                           labelStyle: TextStyle(color: Colors.black),
                           hintStyle: TextStyle(color: Colors.black),
                           enabledBorder: UnderlineInputBorder(
@@ -330,7 +331,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                             ),
                         validator: (val) {
                           if (val.isEmpty) {
-                            return 'required input';
+                            return 'Champs obligatoires';
                           }
 
                           return null;
@@ -343,8 +344,8 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                         controller: stadiumController,
                         obscureText: false,
                         decoration: InputDecoration(
-                          labelText: 'Stadium',
-                          hintText: 'Enter the name of the stadium',
+                          labelText: 'Stade',
+                          hintText: 'Entrez le nom du stade',
                           labelStyle: TextStyle(color: Colors.black),
                           hintStyle: TextStyle(color: Colors.black),
                           enabledBorder: UnderlineInputBorder(
@@ -375,7 +376,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                             ),
                         validator: (val) {
                           if (val.isEmpty) {
-                            return 'required input';
+                            return 'Champs obligatoires';
                           }
 
                           return null;
@@ -388,9 +389,9 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                         controller: acsController,
                         obscureText: false,
                         decoration: InputDecoration(
-                          labelText: 'Available covered seats',
+                          labelText: 'Places couvertes disponibles',
                           hintText:
-                              'Enter the number of available covered seats',
+                              'Entrez le nombre de places couvertes disponibles',
                           labelStyle: TextStyle(color: Colors.black),
                           hintStyle: TextStyle(color: Colors.black),
                           enabledBorder: UnderlineInputBorder(
@@ -422,7 +423,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                         keyboardType: TextInputType.number,
                         validator: (val) {
                           if (val.isEmpty) {
-                            return 'required input';
+                            return 'Champs obligatoires';
                           }
 
                           return null;
@@ -435,9 +436,9 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                         controller: ansController,
                         obscureText: false,
                         decoration: InputDecoration(
-                          labelText: 'Available normal seats',
+                          labelText: 'Places normal disponibles',
                           hintText:
-                              'Enter the number of available normal seats',
+                              'Entrez le nombre de places normal disponibles',
                           labelStyle: TextStyle(color: Colors.black),
                           hintStyle: TextStyle(color: Colors.black),
                           enabledBorder: UnderlineInputBorder(
@@ -469,7 +470,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                         keyboardType: TextInputType.number,
                         validator: (val) {
                           if (val.isEmpty) {
-                            return 'required input';
+                            return 'Champs obligatoires';
                           }
 
                           return null;
@@ -482,8 +483,8 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                         controller: pcsController,
                         obscureText: false,
                         decoration: InputDecoration(
-                          labelText: 'Price of a covered seat',
-                          hintText: 'Enter the price of  a covered seat',
+                          labelText: 'Prix d\'une place couverte',
+                          hintText: 'Saisissez le prix d\'une place couverte',
                           labelStyle: TextStyle(color: Colors.black),
                           hintStyle: TextStyle(color: Colors.black),
                           enabledBorder: UnderlineInputBorder(
@@ -515,7 +516,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                         keyboardType: TextInputType.number,
                         validator: (val) {
                           if (val.isEmpty) {
-                            return 'required input';
+                            return 'Champs obligatoires';
                           }
 
                           return null;
@@ -528,8 +529,8 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                         controller: pnsController,
                         obscureText: false,
                         decoration: InputDecoration(
-                          labelText: 'Price of a normal seat',
-                          hintText: 'Enter the price of  a normal seat',
+                          labelText: 'Prix d\'une place normal',
+                          hintText: 'Saisissez le prix d\'une place normal',
                           labelStyle: TextStyle(color: Colors.black),
                           hintStyle: TextStyle(color: Colors.black),
                           enabledBorder: UnderlineInputBorder(
@@ -561,7 +562,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                         keyboardType: TextInputType.number,
                         validator: (val) {
                           if (val.isEmpty) {
-                            return 'required input';
+                            return 'Champs obligatoires';
                           }
 
                           return null;
@@ -582,7 +583,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                             minTime: getCurrentTimestamp,
                           );
                         },
-                        text: 'Select time and date',
+                        text: 'Sélectionnez l\'heure et la date',
                         icon: Icon(
                           Icons.access_time,
                           size: 15,
@@ -618,7 +619,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
                         content: Text(
-                          'Select time and date is required',
+                          'Veuillez sélectionner l\'heure et la date',
                           style: FlutterTheme.of(context).bodyText1,
                         ),
                         duration: Duration(milliseconds: 3000),
@@ -652,7 +653,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                     ),
                   );
                 },
-                text: 'Add game',
+                text: 'Ajouter le macth',
                 options: FFButtonOptions(
                   width: double.infinity,
                   height: 50,

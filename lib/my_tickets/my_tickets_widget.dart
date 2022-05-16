@@ -7,6 +7,7 @@ import '../flutter_main/flutter_main_theme.dart';
 import '../flutter_main/flutter_main_util.dart';
 import '../tickets_view/tickets_view_widget.dart';
 
+//FR
 class MyTicketsWidget extends StatefulWidget {
   const MyTicketsWidget({
     Key key,
@@ -32,7 +33,7 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
         backgroundColor: FlutterTheme.of(context).primaryBackground,
         automaticallyImplyLeading: false,
         title: Text(
-          'My Tickets',
+          'Mes billets',
           style: FlutterTheme.of(context).title1,
         ),
         actions: [],
@@ -51,7 +52,7 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(20, 30, 0, 0),
                 child: Text(
-                  'Purchase History',
+                  'Historique d\'achat',
                   style: FlutterTheme.of(context).title2,
                 ),
               ),
@@ -197,7 +198,7 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                'Purchased  tickets ',
+                                                'Billets achetés',
                                                 style: FlutterTheme.of(context)
                                                     .bodyText2,
                                               ),
@@ -371,7 +372,7 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                'Purchased  tickets ',
+                                                'Billets achetés',
                                                 style: FlutterTheme.of(context)
                                                     .bodyText2,
                                               ),
@@ -423,7 +424,7 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(20, 30, 0, 0),
                 child: Text(
-                  'Old Purchase History',
+                  'Historique des achats expirés',
                   style: FlutterTheme.of(context).title2,
                 ),
               ),
@@ -554,7 +555,7 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             Text(
-                                              '01X tickets purchased ',
+                                              'Billet expiré',
                                               style: FlutterTheme.of(context)
                                                   .bodyText2
                                                   .override(
@@ -715,7 +716,7 @@ class _MyTicketsWidgetState extends State<MyTicketsWidget> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             Text(
-                                              '01X tickets purchased ',
+                                              'Billet expiré',
                                               style: FlutterTheme.of(context)
                                                   .bodyText2
                                                   .override(

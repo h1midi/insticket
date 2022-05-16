@@ -8,6 +8,7 @@ import '../flutter_main/flutter_main_theme.dart';
 import '../flutter_main/flutter_main_widgets.dart';
 import '../main/main_widget.dart';
 
+// FR
 class ProfileWidget extends StatefulWidget {
   const ProfileWidget({Key key}) : super(key: key);
 
@@ -27,7 +28,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
         backgroundColor: FlutterTheme.of(context).primaryBackground,
         automaticallyImplyLeading: false,
         title: Text(
-          'Profile',
+          'Profil',
           style: FlutterTheme.of(context).title2.override(
                 fontFamily: 'Poppins',
                 color: FlutterTheme.of(context).primaryText,
@@ -75,7 +76,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
                                 content: Text(
-                                  'You can\'t change your email',
+                                  'Vous ne pouvez pas modifier votre adresse e-mail',
                                   style: FlutterTheme.of(context).bodyText1,
                                 ),
                                 duration: Duration(milliseconds: 2000),
@@ -126,8 +127,10 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                           ),
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelText: 'Username',
-                            hintText: 'Enter Your Username',
+                            labelText: 'Nom',
+                            hintText: 'Entrez votre nom',
+                            labelStyle: TextStyle(color: Colors.black),
+                            hintStyle: TextStyle(color: Colors.black),
                             enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
                                 color: Color(0x00000000),
@@ -170,9 +173,9 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               context: context,
                               builder: (alertDialogContext) {
                                 return AlertDialog(
-                                  title: Text('Done !'),
+                                  title: Text('Fait !'),
                                   content: Text(
-                                      'Your username has been successfully updated'),
+                                      'Votre nom a été changé avec succès'),
                                   actions: [
                                     TextButton(
                                       onPressed: () =>
@@ -184,7 +187,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               },
                             );
                           },
-                          text: 'Update Username',
+                          text: 'Changez votre nom',
                           options: FFButtonOptions(
                             width: double.infinity,
                             height: 50,
@@ -215,7 +218,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                   ),
                                 );
                               },
-                              text: 'Admin Dashboard',
+                              text: 'Tableau de bord administrateur',
                               options: FFButtonOptions(
                                 width: double.infinity,
                                 height: 50,
@@ -235,7 +238,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                           ),
                         ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 80, 0, 20),
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
                         child: FFButtonWidget(
                           onPressed: () async {
                             await signOut();
@@ -247,7 +250,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               (r) => false,
                             );
                           },
-                          text: 'log out',
+                          text: 'Se déconnecter',
                           options: FFButtonOptions(
                             width: double.infinity,
                             height: 50,

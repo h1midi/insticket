@@ -14,6 +14,7 @@ import '../flutter_main/flutter_main_widgets.dart';
 import '../main.dart';
 import '../scan/scan_widget.dart';
 
+//FR
 class AdminWidget extends StatefulWidget {
   const AdminWidget({
     Key key,
@@ -100,7 +101,7 @@ class _AdminWidgetState extends State<AdminWidget> {
           },
         ),
         title: Text(
-          'Admin',
+          'Administrateur',
           style: FlutterTheme.of(context).title1,
         ),
         actions: [],
@@ -131,7 +132,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                           ),
                         );
                       },
-                      text: 'Add a new game',
+                      text: 'Ajouter un nouveau match',
                       icon: Icon(
                         Icons.sports_soccer_outlined,
                         size: 15,
@@ -163,7 +164,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                           ),
                         );
                       },
-                      text: 'Add a new team',
+                      text: 'Ajouter une nouvelle équipe',
                       icon: Icon(
                         Icons.flag_outlined,
                         size: 15,
@@ -189,7 +190,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                           onPressed: () async {
                             scannedQr = await FlutterBarcodeScanner.scanBarcode(
                               '#00C853', // scanning line color
-                              'Cancel', // cancel button text
+                              'Annuler', // cancel button text
                               true, // whether to show the flash icon
                               ScanMode.QR,
                             );
@@ -205,7 +206,7 @@ class _AdminWidgetState extends State<AdminWidget> {
 
                             setState(() {});
                           },
-                          text: 'Scan QR code',
+                          text: 'Scannez le code QR',
                           icon: Icon(
                             Icons.qr_code_scanner_outlined,
                             size: 15,
@@ -230,7 +231,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 20),
                     child: Text(
-                      'Ticket sale statistics',
+                      'Statistiques de vente de billets',
                       style: FlutterTheme.of(context).title2,
                     ),
                   ),
@@ -396,11 +397,11 @@ class StatWidgetWeb extends StatelessWidget {
                       style: FlutterTheme.of(context).bodyText1,
                     ),
                     Text(
-                      'covered seats\n${listViewGamesRecord.coveredNumCurrent.toString()} / ${listViewGamesRecord.coveredNum.toString()}',
+                      'Places couvert\n${listViewGamesRecord.coveredNumCurrent.toString()} / ${listViewGamesRecord.coveredNum.toString()}',
                       style: FlutterTheme.of(context).bodyText2,
                     ),
                     Text(
-                      'normal seats\n${listViewGamesRecord.normalNumCurrent.toString()} / ${listViewGamesRecord.normalNum.toString()}',
+                      'Place normal\n${listViewGamesRecord.normalNumCurrent.toString()} / ${listViewGamesRecord.normalNum.toString()}',
                       style: FlutterTheme.of(context).bodyText2,
                     ),
                     Row(
@@ -431,7 +432,7 @@ class StatWidgetWeb extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Total revenue ",
+                      "Revenu total",
                       style: FlutterTheme.of(context).bodyText1,
                     ),
                     Text(
@@ -481,7 +482,6 @@ class StatWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
         ),
         child: Row(
-          mainAxisSize: MainAxisSize.max,
           children: [
             Expanded(
               flex: 5,
@@ -551,7 +551,6 @@ class StatWidget extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(10, 15, 0, 15),
                 child: Column(
-                  mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -560,11 +559,11 @@ class StatWidget extends StatelessWidget {
                       style: FlutterTheme.of(context).bodyText1,
                     ),
                     Text(
-                      'covered seats\n${listViewGamesRecord.coveredNumCurrent.toString()} / ${listViewGamesRecord.coveredNum.toString()}',
+                      'Places couvert\n${listViewGamesRecord.coveredNumCurrent.toString()} / ${listViewGamesRecord.coveredNum.toString()}',
                       style: FlutterTheme.of(context).bodyText2,
                     ),
                     Text(
-                      'normal seats\n${listViewGamesRecord.normalNumCurrent.toString()} / ${listViewGamesRecord.normalNum.toString()}',
+                      'Places normal\n${listViewGamesRecord.normalNumCurrent.toString()} / ${listViewGamesRecord.normalNum.toString()}',
                       style: FlutterTheme.of(context).bodyText2,
                     ),
                     Row(
@@ -596,7 +595,7 @@ class StatWidget extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Total revenue",
+                      "Revenu total",
                       style: FlutterTheme.of(context).bodyText1,
                       textAlign: TextAlign.center,
                     ),

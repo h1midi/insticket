@@ -6,6 +6,8 @@ import '../flutter_main/flutter_main_theme.dart';
 import '../flutter_main/flutter_main_widgets.dart';
 import '../main.dart';
 
+// FR
+
 class SignInWidget extends StatefulWidget {
   const SignInWidget({Key key}) : super(key: key);
 
@@ -51,7 +53,7 @@ class _SignInWidgetState extends State<SignInWidget> {
           },
         ),
         title: Text(
-          'Sign In',
+          'S\'identifier',
           style: FlutterTheme.of(context).title1,
         ),
         actions: [],
@@ -101,10 +103,10 @@ class _SignInWidgetState extends State<SignInWidget> {
                                     controller: emailController,
                                     obscureText: false,
                                     decoration: InputDecoration(
-                                      labelText: 'Email Adress',
+                                      labelText: 'Adresse e-mail',
                                       labelStyle:
                                           TextStyle(color: Colors.black),
-                                      hintText: 'Enter Your Email Adress',
+                                      hintText: 'Entrez votre adresse e-mail',
                                       hintStyle: TextStyle(color: Colors.grey),
                                       enabledBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
@@ -144,11 +146,11 @@ class _SignInWidgetState extends State<SignInWidget> {
                                     controller: passwordController,
                                     obscureText: !passwordVisibility,
                                     decoration: InputDecoration(
-                                      labelText: 'Password',
+                                      labelText: 'Mot de passe',
                                       labelStyle:
                                           TextStyle(color: Colors.black),
                                       hintStyle: TextStyle(color: Colors.grey),
-                                      hintText: 'Enter Your Password',
+                                      hintText: 'Entrez votre mot de passe',
                                       enabledBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
@@ -202,7 +204,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                                             .showSnackBar(
                                           SnackBar(
                                             content: Text(
-                                              'Email required!',
+                                              'E-mail requis !',
                                             ),
                                           ),
                                         );
@@ -214,7 +216,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                                       );
                                     },
                                     child: Text(
-                                      'Forget your password ?',
+                                      'Mot de passe oublié ?',
                                       style: FlutterTheme.of(context)
                                           .bodyText2
                                           .override(
@@ -247,7 +249,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                                       (r) => false,
                                     );
                                   },
-                                  text: 'Sign In',
+                                  text: 'S\'identifier',
                                   options: FFButtonOptions(
                                     width: double.infinity,
                                     height: 50,
@@ -327,8 +329,8 @@ class _SignInWidgetState extends State<SignInWidget> {
                                   controller: emailController,
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'Email Adress',
-                                    hintText: 'Enter Your Email Adress',
+                                    labelText: 'Adresse e-mail',
+                                    hintText: 'Entrez votre adresse e-mail',
                                     labelStyle: TextStyle(color: Colors.black),
                                     hintStyle: TextStyle(color: Colors.grey),
                                     enabledBorder: UnderlineInputBorder(
@@ -369,8 +371,8 @@ class _SignInWidgetState extends State<SignInWidget> {
                                   controller: passwordController,
                                   obscureText: !passwordVisibility,
                                   decoration: InputDecoration(
-                                    labelText: 'Password',
-                                    hintText: 'Enter Your Password',
+                                    labelText: 'Mot de passe',
+                                    hintText: 'Entrez votre mot de passe',
                                     labelStyle: TextStyle(color: Colors.black),
                                     hintStyle: TextStyle(color: Colors.grey),
                                     enabledBorder: UnderlineInputBorder(
@@ -426,7 +428,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                                           .showSnackBar(
                                         SnackBar(
                                           content: Text(
-                                            'Email required!',
+                                            'E-mail requis !',
                                           ),
                                         ),
                                       );
@@ -438,7 +440,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                                     );
                                   },
                                   child: Text(
-                                    'Forget your password ?',
+                                    'Mot de passe oublié ?',
                                     style: FlutterTheme.of(context)
                                         .bodyText2
                                         .override(
@@ -470,7 +472,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                                     (r) => false,
                                   );
                                 },
-                                text: 'Sign In',
+                                text: 'S\'identifier',
                                 options: FFButtonOptions(
                                   width: double.infinity,
                                   height: 50,

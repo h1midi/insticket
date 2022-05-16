@@ -7,6 +7,8 @@ import '../flutter_main/flutter_main_theme.dart';
 import '../flutter_main/flutter_main_widgets.dart';
 import '../on_boarding/on_boarding_widget.dart';
 
+// FR
+
 class SignUpWidget extends StatefulWidget {
   const SignUpWidget({Key key}) : super(key: key);
 
@@ -58,7 +60,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
           },
         ),
         title: Text(
-          'Sign Up',
+          'S\'inscrire',
           style: FlutterTheme.of(context).title1,
         ),
         actions: [],
@@ -106,9 +108,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                               controller: usernameController,
                               obscureText: false,
                               decoration: InputDecoration(
-                                labelText: 'Username',
+                                labelText: 'Nom',
                                 labelStyle: TextStyle(color: Colors.black),
-                                hintText: 'Enter Your Username',
+                                hintText: 'Entrez votre nom',
                                 hintStyle: TextStyle(color: Colors.grey),
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
@@ -147,9 +149,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                               controller: emailController,
                               obscureText: false,
                               decoration: InputDecoration(
-                                labelText: 'Email Adress',
+                                labelText: 'Adresse e-mail',
                                 labelStyle: TextStyle(color: Colors.black),
-                                hintText: 'Enter Your Email Adress',
+                                hintText: 'Entrez votre adresse e-mail',
                                 hintStyle: TextStyle(color: Colors.grey),
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
@@ -188,9 +190,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                               controller: passwordController,
                               obscureText: !passwordVisibility,
                               decoration: InputDecoration(
-                                labelText: 'Password',
+                                labelText: 'Mot de passe',
                                 labelStyle: TextStyle(color: Colors.black),
-                                hintText: 'Enter Your Password',
+                                hintText: 'Entrez votre mot de passe',
                                 hintStyle: TextStyle(color: Colors.grey),
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
@@ -241,9 +243,10 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                               controller: confirmPasswordController,
                               obscureText: !confirmPasswordVisibility,
                               decoration: InputDecoration(
-                                labelText: 'Confirm Password',
+                                labelText: 'Confirmez le mot de passe',
                                 labelStyle: TextStyle(color: Colors.black),
-                                hintText: 'Confirm Your Password',
+                                hintText:
+                                    'Entrez votre mot de passe une fois de plus',
                                 hintStyle: TextStyle(color: Colors.grey),
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
@@ -294,7 +297,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
                                     content: Text(
-                                      'Passwords don\'t match!',
+                                      'Les mots de passe ne correspondent pas !',
                                     ),
                                   ),
                                 );
@@ -324,7 +327,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 ),
                               );
                             },
-                            text: 'Sign UP',
+                            text: 'S\'inscrire',
                             options: FFButtonOptions(
                               width: double.infinity,
                               height: 50,
@@ -400,8 +403,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                   controller: usernameController,
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'Username',
-                                    hintText: 'Enter Your Username',
+                                    labelText: 'Nom',
+                                    hintText: 'Entrez votre nom',
                                     labelStyle: TextStyle(color: Colors.black),
                                     hintStyle: TextStyle(color: Colors.grey),
                                     enabledBorder: UnderlineInputBorder(
@@ -442,8 +445,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                   controller: emailController,
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'Email Adress',
-                                    hintText: 'Enter Your Email Adress',
+                                    labelText: 'Adresse e-mail',
+                                    hintText: 'Entrez votre adresse e-mail',
                                     labelStyle: TextStyle(color: Colors.black),
                                     hintStyle: TextStyle(color: Colors.grey),
                                     enabledBorder: UnderlineInputBorder(
@@ -484,8 +487,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                   controller: passwordController,
                                   obscureText: !passwordVisibility,
                                   decoration: InputDecoration(
-                                    labelText: 'Password',
-                                    hintText: 'Enter Your Password',
+                                    labelText: 'Mot de passe',
+                                    hintText: 'Entrez votre mot de passe',
                                     labelStyle: TextStyle(color: Colors.black),
                                     hintStyle: TextStyle(color: Colors.grey),
                                     enabledBorder: UnderlineInputBorder(
@@ -538,8 +541,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                   controller: confirmPasswordController,
                                   obscureText: !confirmPasswordVisibility,
                                   decoration: InputDecoration(
-                                    labelText: 'Confirm Password',
-                                    hintText: 'Confirm Your Password',
+                                    labelText: 'Confirmez le mot de passe',
+                                    hintText:
+                                        'Entrez votre mot de passe une fois de plus',
                                     labelStyle: TextStyle(color: Colors.black),
                                     hintStyle: TextStyle(color: Colors.grey),
                                     enabledBorder: UnderlineInputBorder(
@@ -592,7 +596,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       SnackBar(
                                         content: Text(
-                                          'Passwords don\'t match!',
+                                          'Les mots de passe ne correspondent pas !',
                                         ),
                                       ),
                                     );
@@ -622,7 +626,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                     ),
                                   );
                                 },
-                                text: 'Sign UP',
+                                text: 'S\'inscrire',
                                 options: FFButtonOptions(
                                   width: double.infinity,
                                   height: 50,

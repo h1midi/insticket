@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 import '../add_game/add_game_widget.dart';
-import '../admin/admin_widget.dart';
 import '../backend/backend.dart';
 import '../flutter_main/flutter_main_icon_button.dart';
 import '../flutter_main/flutter_main_theme.dart';
 
+//FR
 class AddGameAtWidget extends StatefulWidget {
   const AddGameAtWidget({
     Key key,
@@ -44,7 +44,7 @@ class _AddGameAtWidgetState extends State<AddGameAtWidget> {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          'Select Away Team',
+          'Sélectionnez l\'équipe extérieur',
           style: FlutterTheme.of(context).title1,
         ),
         actions: [],

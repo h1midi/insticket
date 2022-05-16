@@ -7,6 +7,8 @@ import '../flutter_main/flutter_main_icon_button.dart';
 import '../flutter_main/flutter_main_theme.dart';
 import '../ticket_details/ticket_details_widget.dart';
 
+// FR
+
 class TicketsViewWidget extends StatefulWidget {
   const TicketsViewWidget({
     Key key,
@@ -47,7 +49,7 @@ class _TicketsViewWidgetState extends State<TicketsViewWidget> {
           },
         ),
         title: Text(
-          'Tickets View',
+          'Billet',
           style: FlutterTheme.of(context).title1,
         ),
         actions: [],
@@ -79,7 +81,6 @@ class _TicketsViewWidgetState extends State<TicketsViewWidget> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Row(
-                    mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
@@ -135,7 +136,6 @@ class _TicketsViewWidgetState extends State<TicketsViewWidget> {
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
                           child: Column(
-                            mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Align(
@@ -254,7 +254,7 @@ class _TicketsViewWidgetState extends State<TicketsViewWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                           child: Text(
-                            'My Tickets',
+                            'Informations sur les billets',
                             style: FlutterTheme.of(context).title2,
                           ),
                         ),
@@ -319,7 +319,7 @@ class _TicketsViewWidgetState extends State<TicketsViewWidget> {
                                               listViewTicketsRecord.isValid
                                                   ? listViewTicketsRecord.code
                                                   : listViewTicketsRecord.code +
-                                                      " (Expired)",
+                                                      " (Expiré)",
                                               style: FlutterTheme.of(context)
                                                   .bodyText1
                                                   .override(

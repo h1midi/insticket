@@ -9,6 +9,7 @@ import '../flutter_main/flutter_main_util.dart';
 import '../flutter_main/flutter_main_widgets.dart';
 import '../main.dart';
 
+//FR
 class GameDetailsWidget extends StatefulWidget {
   const GameDetailsWidget({
     Key key,
@@ -46,7 +47,7 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
           },
         ),
         title: Text(
-          'Buy Tickets',
+          'Acheter des billets',
           style: FlutterTheme.of(context).title1,
         ),
         actions: [],
@@ -324,7 +325,7 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                       Padding(
                         padding: const EdgeInsets.only(bottom: 20.0),
                         child: Text(
-                          'Buy Tickets',
+                          'Acheter des billets',
                           style: FlutterTheme.of(context).title2,
                         ),
                       ),
@@ -370,7 +371,7 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                                   );
                                 },
                                 text:
-                                    'Covered seat : ${widget.gameDetails.coveredPrice.toString()} \$',
+                                    'Places couverts : ${widget.gameDetails.coveredPrice.toString()} \$',
                                 options: FFButtonOptions(
                                   width: double.infinity,
                                   height: 50,
@@ -428,7 +429,7 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                                   );
                                 },
                                 text:
-                                    'Normal seat : ${widget.gameDetails.normalPrice.toString()} \$',
+                                    'Places normal : ${widget.gameDetails.normalPrice.toString()} \$',
                                 options: FFButtonOptions(
                                   width: double.infinity,
                                   height: 50,
@@ -454,7 +455,8 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                                   EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
                               child: FFButtonWidget(
                                 onPressed: () {},
-                                text: 'Covered seat tickets are sold out',
+                                text:
+                                    'Les billets pour les places couvertes sont épuisés',
                                 options: FFButtonOptions(
                                   width: double.infinity,
                                   height: 50,
@@ -480,7 +482,8 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                                   EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
                               child: FFButtonWidget(
                                 onPressed: () {},
-                                text: 'Normal seat tickets are sold out',
+                                text:
+                                    'Les billets pour les places normal sont épuisés',
                                 options: FFButtonOptions(
                                   width: double.infinity,
                                   height: 50,
