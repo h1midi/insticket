@@ -238,8 +238,7 @@ class _NavBarPageState extends State<NavBarPage> {
                         thickness: 1.5,
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(
-                            top: 8.0, left: 20, right: 20),
+                        padding: const EdgeInsets.only(top: 8.0, right: 20),
                         child: ListTile(
                           title: Text(
                             'About',
@@ -253,8 +252,7 @@ class _NavBarPageState extends State<NavBarPage> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(
-                            bottom: 8.0, left: 20, right: 20),
+                        padding: const EdgeInsets.only(bottom: 8.0, right: 20),
                         child: ListTile(
                           title: Text(
                             'Contact us',

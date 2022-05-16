@@ -64,14 +64,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
             color: FlutterTheme.of(context).primaryText,
             size: 32,
           ),
-          onPressed: () async {
-            await Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => AdminWidget(),
-              ),
-            );
-          },
+          onPressed: () => Navigator.pop(context),
         ),
         title: Text(
           'Add a game',
@@ -262,6 +255,8 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                         decoration: InputDecoration(
                           labelText: 'Title',
                           hintText: 'Type a title',
+                          labelStyle: TextStyle(color: Colors.black),
+                          hintStyle: TextStyle(color: Colors.black),
                           enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0x00000000),
@@ -305,6 +300,8 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                         decoration: InputDecoration(
                           labelText: 'Description',
                           hintText: 'Type a description',
+                          labelStyle: TextStyle(color: Colors.black),
+                          hintStyle: TextStyle(color: Colors.black),
                           enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0x00000000),
@@ -348,6 +345,8 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                         decoration: InputDecoration(
                           labelText: 'Stadium',
                           hintText: 'Enter the name of the stadium',
+                          labelStyle: TextStyle(color: Colors.black),
+                          hintStyle: TextStyle(color: Colors.black),
                           enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0x00000000),
@@ -392,6 +391,8 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                           labelText: 'Available covered seats',
                           hintText:
                               'Enter the number of available covered seats',
+                          labelStyle: TextStyle(color: Colors.black),
+                          hintStyle: TextStyle(color: Colors.black),
                           enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0x00000000),
@@ -437,6 +438,8 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                           labelText: 'Available normal seats',
                           hintText:
                               'Enter the number of available normal seats',
+                          labelStyle: TextStyle(color: Colors.black),
+                          hintStyle: TextStyle(color: Colors.black),
                           enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0x00000000),
@@ -481,6 +484,8 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                         decoration: InputDecoration(
                           labelText: 'Price of a covered seat',
                           hintText: 'Enter the price of  a covered seat',
+                          labelStyle: TextStyle(color: Colors.black),
+                          hintStyle: TextStyle(color: Colors.black),
                           enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0x00000000),
@@ -525,6 +530,8 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                         decoration: InputDecoration(
                           labelText: 'Price of a normal seat',
                           hintText: 'Enter the price of  a normal seat',
+                          labelStyle: TextStyle(color: Colors.black),
+                          hintStyle: TextStyle(color: Colors.black),
                           enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0x00000000),

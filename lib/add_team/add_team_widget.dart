@@ -16,7 +16,7 @@ class AddTeamWidget extends StatefulWidget {
 }
 
 class _AddTeamWidgetState extends State<AddTeamWidget> {
-  String uploadedFileUrl = '';
+  String uploadedFileUrl;
   TextEditingController teamNameController;
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -44,14 +44,7 @@ class _AddTeamWidgetState extends State<AddTeamWidget> {
             color: FlutterTheme.of(context).primaryText,
             size: 32,
           ),
-          onPressed: () async {
-            await Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => AdminWidget(),
-              ),
-            );
-          },
+          onPressed: () => Navigator.pop(context),
         ),
         title: Text(
           'Add a team',
@@ -67,9 +60,7 @@ class _AddTeamWidgetState extends State<AddTeamWidget> {
         child: SingleChildScrollView(
           controller: controller,
           child: Column(
-            mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Form(
                 key: formKey,
@@ -85,6 +76,8 @@ class _AddTeamWidgetState extends State<AddTeamWidget> {
                         decoration: InputDecoration(
                           labelText: 'team name',
                           hintText: 'Enter the team name',
+                          labelStyle: TextStyle(color: Colors.black),
+                          hintStyle: TextStyle(color: Colors.black),
                           enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0x00000000),
@@ -219,7 +212,8 @@ class _AddTeamWidgetState extends State<AddTeamWidget> {
                       child: Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
                         child: Image.network(
-                          uploadedFileUrl,
+                          uploadedFileUrl ??
+                              "https://cdn-icons-png.flaticon.com/512/2471/2471527.png",
                           width: 100,
                           height: 100,
                           fit: BoxFit.contain,

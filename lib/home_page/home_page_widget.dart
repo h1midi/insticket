@@ -342,18 +342,22 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               final listViewGamesRecord =
                                   listViewGamesRecordList[listViewIndex];
                               double imgSize;
-                              if ((width < height
-                                          ? (width / 600).round()
-                                          : (width / 730).round()) ==
-                                      1 &&
-                                  (width / 3 - 170) > 60) {
+                              if (width < height &&
+                                  ((width / 600).round() == 1) &&
+                                  ((width / 3 - 170) > 60)) {
                                 imgSize = width / 3 - 190;
-                              } else if ((width < height
-                                          ? (width / 600).round()
-                                          : (width / 730).round()) ==
-                                      2 &&
-                                  (width / 6 - 170) > 60) {
+                              } else if (width < height &&
+                                  ((width / 600).round() == 2) &&
+                                  ((width / 6 - 170) > 60)) {
                                 imgSize = width / 6 - 170;
+                              } else if (width > height &&
+                                  ((width / 730).round() == 1) &&
+                                  ((width / 3 - 190) > 45)) {
+                                imgSize = width / 3 - 190;
+                              } else if (width > height &&
+                                  ((width / 730).round() == 2) &&
+                                  ((width / 6 - 150) > 45)) {
+                                imgSize = width / 6 - 150;
                               } else if (width > height) {
                                 imgSize = 45;
                               } else {

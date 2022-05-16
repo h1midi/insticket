@@ -3,7 +3,9 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 import '../add_game_at/add_game_at_widget.dart';
 import '../backend/backend.dart';
+import '../flutter_main/flutter_main_icon_button.dart';
 import '../flutter_main/flutter_main_theme.dart';
+import '../index.dart';
 
 class AddGameHtWidget extends StatefulWidget {
   const AddGameHtWidget({
@@ -27,6 +29,18 @@ class _AddGameHtWidgetState extends State<AddGameHtWidget> {
       appBar: AppBar(
         backgroundColor: FlutterTheme.of(context).primaryBackground,
         automaticallyImplyLeading: false,
+        leading: FlutterIconButton(
+          borderColor: Colors.transparent,
+          borderRadius: 30,
+          borderWidth: 1,
+          buttonSize: 60,
+          icon: Icon(
+            Icons.arrow_back_rounded,
+            color: FlutterTheme.of(context).primaryText,
+            size: 32,
+          ),
+          onPressed: () => Navigator.pop(context),
+        ),
         title: Text(
           'Select Home Team',
           style: FlutterTheme.of(context).title1,

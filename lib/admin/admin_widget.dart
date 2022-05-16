@@ -288,9 +288,10 @@ class StatWidgetWeb extends StatelessWidget {
   }) : super(key: key);
 
   final GamesRecord listViewGamesRecord;
-
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
       child: Container(
@@ -328,7 +329,9 @@ class StatWidgetWeb extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Stack(
-                      alignment: AlignmentDirectional(-0.6, 0),
+                      alignment: width > height
+                          ? AlignmentDirectional(-0.6, 0)
+                          : AlignmentDirectional(-0.6, 0.3),
                       children: [
                         Align(
                           alignment: AlignmentDirectional(0.4, 0),
@@ -352,7 +355,9 @@ class StatWidgetWeb extends StatelessWidget {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-0.4, 0),
+                          alignment: width > height
+                              ? AlignmentDirectional(-0.6, 0)
+                              : AlignmentDirectional(-0.6, 0.3),
                           child: Container(
                             width: 60,
                             height: 60,
