@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
@@ -346,8 +347,13 @@ class StatWidgetWeb extends StatelessWidget {
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   10, 10, 10, 10),
-                              child: Image.network(
-                                listViewGamesRecord.atImageUrl,
+                              child: CachedNetworkImage(
+                                imageUrl: listViewGamesRecord.atImageUrl,
+                                placeholder: (context, url) =>
+                                    new CircularProgressIndicator(),
+                                errorWidget: (context, url, error) =>
+                                    new Image.asset(
+                                        'assets/images/team-logo.png'),
                                 width: 100,
                                 height: 100,
                                 fit: BoxFit.contain,
@@ -369,8 +375,13 @@ class StatWidgetWeb extends StatelessWidget {
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   10, 10, 10, 10),
-                              child: Image.network(
-                                listViewGamesRecord.htImageUrl,
+                              child: CachedNetworkImage(
+                                imageUrl: listViewGamesRecord.htImageUrl,
+                                placeholder: (context, url) =>
+                                    new CircularProgressIndicator(),
+                                errorWidget: (context, url, error) =>
+                                    new Image.asset(
+                                        'assets/images/team-logo.png'),
                                 width: 100,
                                 height: 100,
                                 fit: BoxFit.contain,
@@ -512,8 +523,12 @@ class StatWidget extends StatelessWidget {
                         child: Padding(
                           padding:
                               EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
-                          child: Image.network(
-                            listViewGamesRecord.atImageUrl,
+                          child: CachedNetworkImage(
+                            imageUrl: listViewGamesRecord.atImageUrl,
+                            placeholder: (context, url) =>
+                                new CircularProgressIndicator(),
+                            errorWidget: (context, url, error) =>
+                                new Image.asset('assets/images/team-logo.png'),
                             width: 100,
                             height: 100,
                             fit: BoxFit.contain,
@@ -533,8 +548,12 @@ class StatWidget extends StatelessWidget {
                         child: Padding(
                           padding:
                               EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
-                          child: Image.network(
-                            listViewGamesRecord.htImageUrl,
+                          child: CachedNetworkImage(
+                            imageUrl: listViewGamesRecord.htImageUrl,
+                            placeholder: (context, url) =>
+                                new CircularProgressIndicator(),
+                            errorWidget: (context, url, error) =>
+                                new Image.asset('assets/images/team-logo.png'),
                             width: 100,
                             height: 100,
                             fit: BoxFit.contain,

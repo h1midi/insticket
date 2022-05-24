@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import '../admin/admin_widget.dart';
@@ -212,9 +213,12 @@ class _AddTeamWidgetState extends State<AddTeamWidget> {
                       ),
                       child: Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
-                        child: Image.network(
-                          uploadedFileUrl ??
-                              "https://cdn-icons-png.flaticon.com/512/2471/2471527.png",
+                        child: CachedNetworkImage(
+                          imageUrl: uploadedFileUrl,
+                          placeholder: (context, url) =>
+                              new CircularProgressIndicator(),
+                          errorWidget: (context, url, error) =>
+                              new Image.asset('assets/images/team-logo.png'),
                           width: 100,
                           height: 100,
                           fit: BoxFit.contain,

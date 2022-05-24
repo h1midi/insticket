@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
@@ -155,9 +156,17 @@ class _AddGameAtWidgetState extends State<AddGameAtWidget> {
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(10, 10, 10, 10),
-                                                  child: Image.network(
-                                                    listViewTeamsRecord
-                                                        .imageUrl,
+                                                  child: CachedNetworkImage(
+                                                    imageUrl:
+                                                        listViewTeamsRecord
+                                                            .imageUrl,
+                                                    placeholder: (context,
+                                                            url) =>
+                                                        new CircularProgressIndicator(),
+                                                    errorWidget: (context, url,
+                                                            error) =>
+                                                        new Image.asset(
+                                                            'assets/images/team-logo.png'),
                                                     width: 100,
                                                     height: 100,
                                                     fit: BoxFit.contain,

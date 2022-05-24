@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
@@ -110,8 +111,13 @@ class _TicketsViewWidgetState extends State<TicketsViewWidget> {
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       10, 10, 10, 10),
-                                  child: Image.network(
-                                    widget.ticketsView.htImageUrl,
+                                  child: CachedNetworkImage(
+                                    imageUrl: widget.ticketsView.htImageUrl,
+                                    placeholder: (context, url) =>
+                                        new CircularProgressIndicator(),
+                                    errorWidget: (context, url, error) =>
+                                        new Image.asset(
+                                            'assets/images/team-logo.png'),
                                     width: 100,
                                     height: 100,
                                     fit: BoxFit.contain,
@@ -195,8 +201,13 @@ class _TicketsViewWidgetState extends State<TicketsViewWidget> {
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       10, 10, 10, 10),
-                                  child: Image.network(
-                                    widget.ticketsView.atImageUrl,
+                                  child: CachedNetworkImage(
+                                    imageUrl: widget.ticketsView.atImageUrl,
+                                    placeholder: (context, url) =>
+                                        new CircularProgressIndicator(),
+                                    errorWidget: (context, url, error) =>
+                                        new Image.asset(
+                                            'assets/images/team-logo.png'),
                                     width: 100,
                                     height: 100,
                                     fit: BoxFit.contain,

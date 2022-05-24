@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import '../auth/auth_util.dart';
@@ -114,11 +115,16 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           10, 10, 10, 10),
-                                      child: Image.network(
-                                        widget.gameDetails.htImageUrl,
+                                      child: CachedNetworkImage(
+                                        imageUrl: widget.gameDetails.htImageUrl,
+                                        placeholder: (context, url) =>
+                                            new CircularProgressIndicator(),
+                                        errorWidget: (context, url, error) =>
+                                            new Image.asset(
+                                                'assets/images/team-logo.png'),
                                         width: 100,
                                         height: 100,
-                                        fit: BoxFit.cover,
+                                        fit: BoxFit.contain,
                                       ),
                                     ),
                                   ),
@@ -238,8 +244,13 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           10, 10, 10, 10),
-                                      child: Image.network(
-                                        widget.gameDetails.atImageUrl,
+                                      child: CachedNetworkImage(
+                                        imageUrl: widget.gameDetails.atImageUrl,
+                                        placeholder: (context, url) =>
+                                            new CircularProgressIndicator(),
+                                        errorWidget: (context, url, error) =>
+                                            new Image.asset(
+                                                'assets/images/team-logo.png'),
                                         width: 100,
                                         height: 100,
                                         fit: BoxFit.contain,

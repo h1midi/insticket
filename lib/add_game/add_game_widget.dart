@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 
@@ -130,8 +131,13 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       10, 10, 10, 10),
-                                  child: Image.network(
-                                    widget.team.imageUrl,
+                                  child: CachedNetworkImage(
+                                    imageUrl: widget.team.imageUrl,
+                                    placeholder: (context, url) =>
+                                        new CircularProgressIndicator(),
+                                    errorWidget: (context, url, error) =>
+                                        new Image.asset(
+                                            'assets/images/team-logo.png'),
                                     width: 100,
                                     height: 100,
                                     fit: BoxFit.contain,
@@ -216,8 +222,13 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       10, 10, 10, 10),
-                                  child: Image.network(
-                                    widget.team2.imageUrl,
+                                  child: CachedNetworkImage(
+                                    imageUrl: widget.team2.imageUrl,
+                                    placeholder: (context, url) =>
+                                        new CircularProgressIndicator(),
+                                    errorWidget: (context, url, error) =>
+                                        new Image.asset(
+                                            'assets/images/team-logo.png'),
                                     width: 100,
                                     height: 100,
                                     fit: BoxFit.contain,

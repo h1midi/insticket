@@ -5,6 +5,7 @@ import '../flutter_main/flutter_main_icon_button.dart';
 import '../flutter_main/flutter_main_theme.dart';
 import '../flutter_main/flutter_main_util.dart';
 import '../game_details/game_details_widget.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 //FR
 class HomePageWidget extends StatefulWidget {
@@ -431,9 +432,18 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(10,
                                                                     10, 10, 10),
-                                                        child: Image.network(
-                                                          listViewGamesRecord
-                                                              .htImageUrl,
+                                                        child:
+                                                            CachedNetworkImage(
+                                                          imageUrl:
+                                                              listViewGamesRecord
+                                                                  .htImageUrl,
+                                                          placeholder: (context,
+                                                                  url) =>
+                                                              new CircularProgressIndicator(),
+                                                          errorWidget: (context,
+                                                                  url, error) =>
+                                                              new Image.asset(
+                                                                  'assets/images/team-logo.png'),
                                                           width: imgSize + 40,
                                                           height: imgSize + 40,
                                                           fit: BoxFit.contain,
@@ -567,13 +577,34 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(10,
                                                                     10, 10, 10),
-                                                        child: Image.network(
-                                                          listViewGamesRecord
-                                                              .atImageUrl,
+                                                        child:
+                                                            CachedNetworkImage(
+                                                          imageUrl:
+                                                              listViewGamesRecord
+                                                                  .atImageUrl,
+                                                          placeholder: (context,
+                                                                  url) =>
+                                                              new CircularProgressIndicator(),
+                                                          errorWidget: (context,
+                                                                  url, error) =>
+                                                              new Image.asset(
+                                                                  'assets/images/team-logo.png'),
                                                           width: imgSize + 40,
                                                           height: imgSize + 40,
                                                           fit: BoxFit.contain,
                                                         ),
+
+                                                        // FadeInImage
+                                                        //     .assetNetwork(
+                                                        //   placeholder:
+                                                        //       'assets/images/team-logo.png',
+                                                        //   image:
+                                                        //       listViewGamesRecord
+                                                        //           .atImageUrl,
+                                                        //   width: imgSize + 40,
+                                                        //   height: imgSize + 40,
+                                                        //   fit: BoxFit.contain,
+                                                        // ),
                                                       ),
                                                     ),
                                                   ),

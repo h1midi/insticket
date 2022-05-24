@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:typed_data';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:path_provider/path_provider.dart';
@@ -275,68 +276,83 @@ class _TicketDetailsWidgetState extends State<TicketDetailsWidget> {
                         ],
                       ),
                     ),
-                    Align(
-                      alignment: AlignmentDirectional(0, 0),
-                      child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 20),
-                        child: ElevatedButton(
-                          onPressed: () async {
-                            final bytes = await Utils.capture(key);
-                            setState(() {
-                              this.bytes = bytes;
-                              isSaved = true;
-                            });
-                            Timer(Duration(seconds: 3), () {
-                              setState(() {
-                                isSaved = false;
-                              });
-                            });
-                            if (await _requestPermission(Permission.storage)) {
-                              Directory directory =
-                                  await getExternalStorageDirectory();
-                              String newPath = "";
-                              List<String> paths = directory.path.split("/");
-                              for (int x = 1; x < paths.length; x++) {
-                                String folder = paths[x];
-                                if (folder != "Android") {
-                                  newPath += "/" + folder;
-                                } else {
-                                  break;
-                                }
-                              }
-                              newPath = newPath + "/Insticket";
-                              await Directory(newPath).create();
-                              directory = Directory(newPath);
+                    !kIsWeb
+                        ? Align(
+                            alignment: AlignmentDirectional(0, 0),
+                            child: Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 20, 0, 20),
+                              child: ElevatedButton(
+                                onPressed: () async {
+                                  final bytes = await Utils.capture(key);
+                                  setState(() {
+                                    this.bytes = bytes;
+                                    isSaved = true;
+                                  });
+                                  Timer(Duration(seconds: 3), () {
+                                    setState(() {
+                                      isSaved = false;
+                                    });
+                                  });
+                                  if (await _requestPermission(
+                                      Permission.storage)) {
+                                    Directory directory =
+                                        await getExternalStorageDirectory();
+                                    String newPath = "";
+                                    List<String> paths =
+                                        directory.path.split("/");
+                                    for (int x = 1; x < paths.length; x++) {
+                                      String folder = paths[x];
+                                      if (folder != "Android") {
+                                        newPath += "/" + folder;
+                                      } else {
+                                        break;
+                                      }
+                                    }
+                                    newPath = newPath + "/Insticket";
+                                    await Directory(newPath).create();
+                                    directory = Directory(newPath);
 
-                              print(directory);
+                                    print(directory);
 
-                              final pathOfImage = await File(
-                                      '${directory.path}/${DateTime.now().microsecondsSinceEpoch}.png')
-                                  .create();
-                              await pathOfImage.writeAsBytes(bytes);
-                            } else {
-                              return false;
-                            }
-                          },
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text(
-                                'Téléchargez votre billet',
+                                    final pathOfImage = await File(
+                                            '${directory.path}/${DateTime.now().microsecondsSinceEpoch}.png')
+                                        .create();
+                                    await pathOfImage.writeAsBytes(bytes);
+                                  } else {
+                                    return false;
+                                  }
+                                },
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Text(
+                                      'Téléchargez votre billet',
+                                      style: FlutterTheme.of(context).title2,
+                                    ),
+                                    isSaved
+                                        ? Icon(
+                                            Icons.check,
+                                            color: FlutterTheme.of(context)
+                                                .primaryColor,
+                                          )
+                                        : Container(),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          )
+                        : Align(
+                            alignment: AlignmentDirectional(0, 0),
+                            child: Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 20, 0, 20),
+                              child: Text(
+                                "Code QR",
                                 style: FlutterTheme.of(context).title2,
                               ),
-                              isSaved
-                                  ? Icon(
-                                      Icons.check,
-                                      color:
-                                          FlutterTheme.of(context).primaryColor,
-                                    )
-                                  : Container(),
-                            ],
+                            ),
                           ),
-                        ),
-                      ),
-                    ),
                     WidgetToImage(
                       builder: (key) {
                         this.key = key;
