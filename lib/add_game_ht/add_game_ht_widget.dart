@@ -43,9 +43,12 @@ class _AddGameHtWidgetState extends State<AddGameHtWidget> {
           ),
           onPressed: () => Navigator.pop(context),
         ),
-        title: Text(
-          'Sélectionnez l\'équipe locale',
-          style: FlutterTheme.of(context).title1,
+        title: FittedBox(
+          fit: BoxFit.fitWidth,
+          child: Text(
+            'Sélectionnez l\'équipe locale',
+            style: FlutterTheme.of(context).title1,
+          ),
         ),
         actions: [],
         centerTitle: true,

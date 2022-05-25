@@ -45,9 +45,12 @@ class _AddGameAtWidgetState extends State<AddGameAtWidget> {
           ),
           onPressed: () => Navigator.pop(context),
         ),
-        title: Text(
-          'Sélectionnez l\'équipe extérieur',
-          style: FlutterTheme.of(context).title1,
+        title: FittedBox(
+          fit: BoxFit.fitWidth,
+          child: Text(
+            'Sélectionnez l\'équipe extérieur',
+            style: FlutterTheme.of(context).title1,
+          ),
         ),
         actions: [],
         centerTitle: true,
