@@ -60,7 +60,6 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
         onTap: () => FocusScope.of(context).unfocus(),
         child: SingleChildScrollView(
           child: Column(
-            mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Column(
@@ -83,7 +82,6 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Row(
-                        mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
@@ -99,7 +97,6 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                               ),
                             ),
                             child: Column(
-                              mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 //HomeImg
@@ -132,11 +129,16 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                                 //HomeName
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 10, 0, 10),
-                                    child: Text(
-                                      widget.gameDetails.homeTeam,
-                                      style: FlutterTheme.of(context).bodyText1,
+                                    padding: const EdgeInsets.only(
+                                        left: 3.0, right: 3.0),
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: Text(
+                                        widget.gameDetails.homeTeam,
+                                        textAlign: TextAlign.center,
+                                        style:
+                                            FlutterTheme.of(context).bodyText1,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -182,7 +184,6 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
                               child: Column(
-                                mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Align(
@@ -227,7 +228,6 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                               ),
                             ),
                             child: Column(
-                              mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.end,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
@@ -261,11 +261,16 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                                 //AwayName
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 10, 0, 10),
-                                    child: Text(
-                                      widget.gameDetails.awayTeam,
-                                      style: FlutterTheme.of(context).bodyText1,
+                                    padding: const EdgeInsets.only(
+                                        left: 3.0, right: 3.0),
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: Text(
+                                        widget.gameDetails.awayTeam,
+                                        textAlign: TextAlign.center,
+                                        style:
+                                            FlutterTheme.of(context).bodyText1,
+                                      ),
                                     ),
                                   ),
                                 ),

@@ -128,10 +128,13 @@ class _TicketsViewWidgetState extends State<TicketsViewWidget> {
                             Expanded(
                               child: Padding(
                                 padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                                child: Text(
-                                  widget.ticketsView.homeTeam,
-                                  style: FlutterTheme.of(context).bodyText1,
+                                    EdgeInsetsDirectional.fromSTEB(3, 10, 3, 0),
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: Text(
+                                    widget.ticketsView.homeTeam,
+                                    style: FlutterTheme.of(context).bodyText1,
+                                  ),
                                 ),
                               ),
                             ),
@@ -218,10 +221,13 @@ class _TicketsViewWidgetState extends State<TicketsViewWidget> {
                             Expanded(
                               child: Padding(
                                 padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                                child: Text(
-                                  widget.ticketsView.awayTeam,
-                                  style: FlutterTheme.of(context).bodyText1,
+                                    EdgeInsetsDirectional.fromSTEB(3, 10, 3, 0),
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: Text(
+                                    widget.ticketsView.awayTeam,
+                                    style: FlutterTheme.of(context).bodyText1,
+                                  ),
                                 ),
                               ),
                             ),

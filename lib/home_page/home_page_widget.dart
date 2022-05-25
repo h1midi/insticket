@@ -183,13 +183,19 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               ),
                                             ),
                                             Expanded(
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: Text(
-                                                  listViewGamesRecord.homeTeam,
-                                                  style:
-                                                      FlutterTheme.of(context)
-                                                          .bodyText1,
+                                              child: Padding(
+                                                padding: const EdgeInsets.only(
+                                                    left: 3.0, right: 3.0),
+                                                child: FittedBox(
+                                                  fit: BoxFit.scaleDown,
+                                                  child: Text(
+                                                    listViewGamesRecord
+                                                        .homeTeam,
+                                                    textAlign: TextAlign.center,
+                                                    style:
+                                                        FlutterTheme.of(context)
+                                                            .bodyText1,
+                                                  ),
                                                 ),
                                               ),
                                             ),
@@ -314,13 +320,19 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               ),
                                             ),
                                             Expanded(
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: Text(
-                                                  listViewGamesRecord.awayTeam,
-                                                  style:
-                                                      FlutterTheme.of(context)
-                                                          .bodyText1,
+                                              child: Padding(
+                                                padding: const EdgeInsets.only(
+                                                    left: 3.0, right: 3.0),
+                                                child: FittedBox(
+                                                  fit: BoxFit.scaleDown,
+                                                  child: Text(
+                                                    listViewGamesRecord
+                                                        .awayTeam,
+                                                    textAlign: TextAlign.center,
+                                                    style:
+                                                        FlutterTheme.of(context)
+                                                            .bodyText1,
+                                                  ),
                                                 ),
                                               ),
                                             ),
