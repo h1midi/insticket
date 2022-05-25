@@ -183,10 +183,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               ),
                                             ),
                                             Expanded(
-                                              child: Text(
-                                                listViewGamesRecord.homeTeam,
-                                                style: FlutterTheme.of(context)
-                                                    .bodyText1,
+                                              child: FittedBox(
+                                                fit: BoxFit.scaleDown,
+                                                child: Text(
+                                                  listViewGamesRecord.homeTeam,
+                                                  style:
+                                                      FlutterTheme.of(context)
+                                                          .bodyText1,
+                                                ),
                                               ),
                                             ),
                                           ],
@@ -310,10 +314,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               ),
                                             ),
                                             Expanded(
-                                              child: Text(
-                                                listViewGamesRecord.awayTeam,
-                                                style: FlutterTheme.of(context)
-                                                    .bodyText1,
+                                              child: FittedBox(
+                                                fit: BoxFit.scaleDown,
+                                                child: Text(
+                                                  listViewGamesRecord.awayTeam,
+                                                  style:
+                                                      FlutterTheme.of(context)
+                                                          .bodyText1,
+                                                ),
                                               ),
                                             ),
                                           ],
