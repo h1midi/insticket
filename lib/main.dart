@@ -198,12 +198,15 @@ class _NavBarPageState extends State<NavBarPage> {
                       switch (index) {
                         case 0:
                           _currentPage = tabs.keys.toList()[index];
+                          FFAppState().fullList = true;
                           break;
                         case 1:
                           _currentPage = tabs.keys.toList()[index];
+                          FFAppState().fullList = true;
                           break;
                         case 2:
                           _currentPage = tabs.keys.toList()[index];
+                          FFAppState().fullList = true;
                           break;
                       }
                     });
@@ -321,8 +324,10 @@ class _NavBarPageState extends State<NavBarPage> {
       bottomNavigationBar: width < height
           ? BottomNavigationBar(
               currentIndex: currentIndex,
-              onTap: (i) =>
-                  setState(() => _currentPage = tabs.keys.toList()[i]),
+              onTap: (i) {
+                setState(() => _currentPage = tabs.keys.toList()[i]);
+                FFAppState().fullList = true;
+              },
               backgroundColor: FlutterTheme.of(context).secondaryBackground,
               selectedItemColor: FlutterTheme.of(context).primaryColor,
               unselectedItemColor: FlutterTheme.of(context).unselectedIcon,

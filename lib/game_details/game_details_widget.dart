@@ -25,6 +25,21 @@ class GameDetailsWidget extends StatefulWidget {
 
 class _GameDetailsWidgetState extends State<GameDetailsWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  int countOccurrencesUsingLoop(
+      List<DocumentReference<Object>> list, DocumentReference<Object> element) {
+    if (list == null || list.isEmpty) {
+      return 0;
+    }
+
+    int count = 0;
+    for (int i = 0; i < list.length; i++) {
+      if (list[i] == element) {
+        count++;
+      }
+    }
+
+    return count;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -354,38 +369,44 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
                               child: FFButtonWidget(
-                                onPressed: () async {
-                                  final ticketsCreateData =
-                                      createTicketsRecordData(
-                                    code: functions.generateCode(),
-                                    user: currentUserReference,
-                                    game: widget.gameDetails.reference,
-                                    purchasedOn: getCurrentTimestamp,
-                                    isValid: true,
-                                    isCovered: true,
-                                  );
-                                  await TicketsRecord.collection
-                                      .doc()
-                                      .set(ticketsCreateData);
+                                onPressed: countOccurrencesUsingLoop(
+                                          widget.gameDetails.boughtBy.asList(),
+                                          currentUserReference,
+                                        ) <
+                                        4
+                                    ? () async {
+                                        final ticketsCreateData =
+                                            createTicketsRecordData(
+                                          code: functions.generateCode(),
+                                          user: currentUserReference,
+                                          game: widget.gameDetails.reference,
+                                          purchasedOn: getCurrentTimestamp,
+                                          isValid: true,
+                                          isCovered: true,
+                                        );
+                                        await TicketsRecord.collection
+                                            .doc()
+                                            .set(ticketsCreateData);
 
-                                  final gamesUpdateData = {
-                                    'bought_by': FieldValue.arrayUnion(
-                                        [currentUserReference]),
-                                    'total_revenue': FieldValue.increment(
-                                        widget.gameDetails.coveredPrice),
-                                    'covered_num_current':
-                                        FieldValue.increment(1),
-                                  };
-                                  await widget.gameDetails.reference
-                                      .update(gamesUpdateData);
-                                  await Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          NavBarPage(initialPage: 'MyTickets'),
-                                    ),
-                                  );
-                                },
+                                        final gamesUpdateData = {
+                                          'bought_by': FieldValue.arrayUnion(
+                                              [currentUserReference]),
+                                          'total_revenue': FieldValue.increment(
+                                              widget.gameDetails.normalPrice),
+                                          'covered_num_current':
+                                              FieldValue.increment(1),
+                                        };
+                                        await widget.gameDetails.reference
+                                            .update(gamesUpdateData);
+                                        await Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => NavBarPage(
+                                                initialPage: 'MyTickets'),
+                                          ),
+                                        );
+                                      }
+                                    : () {},
                                 text:
                                     'Places couverts : ${widget.gameDetails.coveredPrice.toString()} \$',
                                 options: FFButtonOptions(
