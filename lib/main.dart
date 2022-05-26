@@ -2,8 +2,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:side_navigation/side_navigation.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 import 'auth/auth_util.dart';
 import 'auth/firebase_user_provider.dart';
 import 'flutter_main/flutter_main_theme.dart';
@@ -17,6 +18,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   await FlutterTheme.initialize();
+
+  FFAppState(); // Initialize FFAppState
 
   runApp(MyApp());
 }
