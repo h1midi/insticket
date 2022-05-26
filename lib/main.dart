@@ -211,7 +211,7 @@ class _NavBarPageState extends State<NavBarPage> {
                     children: [
                       IconButton(
                           onPressed: () => launchURL(
-                              "https://github.com/hammiddi/projet-PFE/blob/main/README.md"),
+                              "https://github.com/hammiddi/PFE/blob/main/README.md"),
                           icon: Icon(Icons.info_outline)),
                       IconButton(
                           onPressed: () => launchUrl(
@@ -263,7 +263,7 @@ class _NavBarPageState extends State<NavBarPage> {
                           leading: Icon(Icons.info_outline_rounded),
                           onTap: () {
                             launchURL(
-                                "https://github.com/hammiddi/projet-PFE/blob/main/README.md");
+                                "https://github.com/hammiddi/PFE/blob/main/README.md");
                           },
                         ),
                       ),
