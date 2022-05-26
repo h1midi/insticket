@@ -21,9 +21,11 @@ class TicketDetailsWidget extends StatefulWidget {
   const TicketDetailsWidget({
     Key key,
     this.ticketDetails,
+    this.qrtitle,
   }) : super(key: key);
 
   final TicketsRecord ticketDetails;
+  final String qrtitle;
 
   @override
   _TicketDetailsWidgetState createState() => _TicketDetailsWidgetState();
@@ -316,7 +318,7 @@ class _TicketDetailsWidgetState extends State<TicketDetailsWidget> {
                                     print(directory);
 
                                     final pathOfImage = await File(
-                                            '${directory.path}/${DateTime.now().microsecondsSinceEpoch}.png')
+                                            '${directory.path}/${widget.qrtitle}${widget.ticketDetails.isCovered ? "(couvert)" : "(normal)"}.png')
                                         .create();
                                     await pathOfImage.writeAsBytes(bytes);
                                   } else {

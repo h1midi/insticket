@@ -75,7 +75,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+              padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 20),
               child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
@@ -827,18 +827,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                               fit: BoxFit
                                                                   .contain,
                                                             ),
-
-                                                            // FadeInImage
-                                                            //     .assetNetwork(
-                                                            //   placeholder:
-                                                            //       'assets/images/team-logo.png',
-                                                            //   image:
-                                                            //       listViewGamesRecord
-                                                            //           .atImageUrl,
-                                                            //   width: imgSize + 40,
-                                                            //   height: imgSize + 40,
-                                                            //   fit: BoxFit.contain,
-                                                            // ),
                                                           ),
                                                         ),
                                                       ),
@@ -873,9 +861,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       final searchedGames = simpleSearchResults?.toList() ?? [];
                       return width < height
                           ? ListView.builder(
+                              controller: controller,
                               padding: EdgeInsets.zero,
                               shrinkWrap: true,
-                              scrollDirection: Axis.vertical,
                               itemCount: searchedGames.length,
                               itemBuilder: (context, searchedGamesIndex) {
                                 final searchedGamesItem =
@@ -885,7 +873,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       (getCurrentTimestamp),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 20, 0, 0),
+                                        20, 0, 20, 20),
                                     child: InkWell(
                                       onTap: () async {
                                         FFAppState().fullList = true;

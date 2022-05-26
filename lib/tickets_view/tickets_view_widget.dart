@@ -327,6 +327,12 @@ class _TicketsViewWidgetState extends State<TicketsViewWidget> {
                                                             TicketDetailsWidget(
                                                           ticketDetails:
                                                               listViewTicketsRecord,
+                                                          qrtitle: widget
+                                                                  .ticketsView
+                                                                  .homeTeam +
+                                                              " VS " +
+                                                              widget.ticketsView
+                                                                  .awayTeam,
                                                         ),
                                                       ),
                                                     );
