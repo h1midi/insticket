@@ -76,7 +76,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
                 child: Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
@@ -715,6 +715,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                           child: Text(
                                                             listViewGamesRecord
                                                                 .homeTeam,
+                                                            textAlign: TextAlign
+                                                                .center,
                                                             style:
                                                                 FlutterTheme.of(
                                                                         context)
@@ -908,6 +910,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                           child: Text(
                                                             listViewGamesRecord
                                                                 .awayTeam,
+                                                            textAlign: TextAlign
+                                                                .center,
                                                             style:
                                                                 FlutterTheme.of(
                                                                         context)
@@ -1054,6 +1058,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                     child: Text(
                                                       searchedGamesItem
                                                           .homeTeam,
+                                                      textAlign:
+                                                          TextAlign.center,
                                                       style: FlutterTheme.of(
                                                               context)
                                                           .bodyText1,
@@ -1208,6 +1214,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                     child: Text(
                                                       searchedGamesItem
                                                           .awayTeam,
+                                                      textAlign:
+                                                          TextAlign.center,
                                                       style: FlutterTheme.of(
                                                               context)
                                                           .bodyText1,

@@ -1,12 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 
 import '../add_game_ht/add_game_ht_widget.dart';
-import '../add_team/add_team_widget.dart';
 import '../backend/backend.dart';
 import '../flutter_main/flutter_main_icon_button.dart';
 import '../flutter_main/flutter_main_theme.dart';
@@ -14,6 +13,7 @@ import '../flutter_main/flutter_main_util.dart';
 import '../flutter_main/flutter_main_widgets.dart';
 import '../main.dart';
 import '../scan/scan_widget.dart';
+import '../teams/teams_widget.dart';
 
 //FR
 class AdminWidget extends StatefulWidget {
@@ -161,11 +161,11 @@ class _AdminWidgetState extends State<AdminWidget> {
                         await Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => AddTeamWidget(),
+                            builder: (context) => TeamsWidget(),
                           ),
                         );
                       },
-                      text: 'Ajouter une nouvelle équipe',
+                      text: 'Les équipes',
                       icon: Icon(
                         Icons.flag_outlined,
                         size: 15,
@@ -230,10 +230,17 @@ class _AdminWidgetState extends State<AdminWidget> {
                         )
                       : Container(),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 20),
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
                     child: Text(
                       'Statistiques de vente de billets',
                       style: FlutterTheme.of(context).title2,
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+                    child: Text(
+                      '(hold to delete games)',
+                      style: FlutterTheme.of(context).bodyText1,
                     ),
                   ),
                   StreamBuilder<List<GamesRecord>>(
@@ -487,189 +494,231 @@ class StatWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
-      child: Container(
-        width: double.infinity,
-        height: 160,
-        decoration: BoxDecoration(
-          color: FlutterTheme.of(context).secondaryBackground,
-          boxShadow: [
-            BoxShadow(
-              blurRadius: 48,
-              color: Color(0x0B000000),
-              offset: Offset(0, 2),
-            )
-          ],
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Expanded(
-              flex: 5,
-              child: Container(
-                width: MediaQuery.of(context).size.width * 0.3,
-                height: double.infinity,
-                decoration: BoxDecoration(
-                  color: FlutterTheme.of(context).secondaryColor,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(10),
-                    bottomRight: Radius.circular(0),
-                    topLeft: Radius.circular(10),
-                    topRight: Radius.circular(0),
-                  ),
+        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+        child: InkWell(
+          onLongPress: () async {
+            var confirmDialogResponse = await showDialog<bool>(
+                  context: context,
+                  builder: (alertDialogContext) {
+                    return AlertDialog(
+                      title: Text('Confirmation Message'),
+                      content:
+                          Text('are you sure you want to delete this game ?'),
+                      actions: [
+                        TextButton(
+                          onPressed: () =>
+                              Navigator.pop(alertDialogContext, false),
+                          child: Text('Cancel'),
+                        ),
+                        TextButton(
+                          onPressed: () =>
+                              Navigator.pop(alertDialogContext, true),
+                          child: Text('Confirm'),
+                        ),
+                      ],
+                    );
+                  },
+                ) ??
+                false;
+            if (confirmDialogResponse) {
+              await listViewGamesRecord.reference.delete();
+              await Navigator.push(
+                context,
+                PageTransition(
+                  type: PageTransitionType.fade,
+                  duration: Duration(milliseconds: 300),
+                  reverseDuration: Duration(milliseconds: 300),
+                  child: AdminWidget(),
                 ),
-                child: Stack(
-                  alignment: AlignmentDirectional(-0.6, 0),
-                  children: [
-                    Align(
-                      alignment: AlignmentDirectional(0.4, -0.3),
-                      child: Container(
-                        width: 60,
-                        height: 60,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFC8E6C9),
-                          shape: BoxShape.circle,
-                        ),
-                        child: Padding(
-                          padding:
-                              EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
-                          child: CachedNetworkImage(
-                            imageUrl: listViewGamesRecord.atImageUrl,
-                            placeholder: (context, url) =>
-                                new CircularProgressIndicator(),
-                            errorWidget: (context, url, error) =>
-                                new Image.asset('assets/images/team-logo.png'),
-                            width: 100,
-                            height: 100,
-                            fit: BoxFit.contain,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Align(
-                      alignment: AlignmentDirectional(-0.4, 0.3),
-                      child: Container(
-                        width: 60,
-                        height: 60,
-                        decoration: BoxDecoration(
-                          color: Color(0xFF81C784),
-                          shape: BoxShape.circle,
-                        ),
-                        child: Padding(
-                          padding:
-                              EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
-                          child: CachedNetworkImage(
-                            imageUrl: listViewGamesRecord.htImageUrl,
-                            placeholder: (context, url) =>
-                                new CircularProgressIndicator(),
-                            errorWidget: (context, url, error) =>
-                                new Image.asset('assets/images/team-logo.png'),
-                            width: 100,
-                            height: 100,
-                            fit: BoxFit.contain,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              );
+            }
+          },
+          child: Container(
+            width: double.infinity,
+            height: 160,
+            decoration: BoxDecoration(
+              color: FlutterTheme.of(context).secondaryBackground,
+              boxShadow: [
+                BoxShadow(
+                  blurRadius: 48,
+                  color: Color(0x0B000000),
+                  offset: Offset(0, 2),
+                )
+              ],
+              borderRadius: BorderRadius.circular(10),
             ),
-            Expanded(
-              flex: 12,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: FittedBox(
-                      fit: BoxFit.fitWidth,
-                      child: Text(
-                        '${listViewGamesRecord.homeTeam} vs ${listViewGamesRecord.awayTeam}',
-                        style: FlutterTheme.of(context).bodyText1,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Expanded(
+                  flex: 5,
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.3,
+                    height: double.infinity,
+                    decoration: BoxDecoration(
+                      color: FlutterTheme.of(context).secondaryColor,
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(10),
+                        bottomRight: Radius.circular(0),
+                        topLeft: Radius.circular(10),
+                        topRight: Radius.circular(0),
                       ),
                     ),
+                    child: Stack(
+                      alignment: AlignmentDirectional(-0.6, 0),
+                      children: [
+                        Align(
+                          alignment: AlignmentDirectional(0.4, -0.3),
+                          child: Container(
+                            width: 60,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              color: Color(0xFFC8E6C9),
+                              shape: BoxShape.circle,
+                            ),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  10, 10, 10, 10),
+                              child: CachedNetworkImage(
+                                imageUrl: listViewGamesRecord.atImageUrl,
+                                placeholder: (context, url) =>
+                                    new CircularProgressIndicator(),
+                                errorWidget: (context, url, error) =>
+                                    new Image.asset(
+                                        'assets/images/team-logo.png'),
+                                width: 100,
+                                height: 100,
+                                fit: BoxFit.contain,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Align(
+                          alignment: AlignmentDirectional(-0.4, 0.3),
+                          child: Container(
+                            width: 60,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              color: Color(0xFF81C784),
+                              shape: BoxShape.circle,
+                            ),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  10, 10, 10, 10),
+                              child: CachedNetworkImage(
+                                imageUrl: listViewGamesRecord.htImageUrl,
+                                placeholder: (context, url) =>
+                                    new CircularProgressIndicator(),
+                                errorWidget: (context, url, error) =>
+                                    new Image.asset(
+                                        'assets/images/team-logo.png'),
+                                width: 100,
+                                height: 100,
+                                fit: BoxFit.contain,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                  Row(
+                ),
+                Expanded(
+                  flex: 12,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
-                      Expanded(
-                        flex: 7,
-                        child: Padding(
-                          padding:
-                              EdgeInsetsDirectional.fromSTEB(10, 15, 0, 15),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Places couvert\n${listViewGamesRecord.coveredNumCurrent.toString()} / ${listViewGamesRecord.coveredNum.toString()}',
-                                style: FlutterTheme.of(context).bodyText2,
-                              ),
-                              Text(
-                                'Places normal\n${listViewGamesRecord.normalNumCurrent.toString()} / ${listViewGamesRecord.normalNum.toString()}',
-                                style: FlutterTheme.of(context).bodyText2,
-                              ),
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: FittedBox(
+                          fit: BoxFit.fitWidth,
+                          child: Text(
+                            '${listViewGamesRecord.homeTeam} vs ${listViewGamesRecord.awayTeam}',
+                            style: FlutterTheme.of(context).bodyText1,
+                          ),
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                            flex: 7,
+                            child: Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(10, 15, 0, 15),
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Icon(
-                                    Icons.calendar_today_outlined,
-                                    color:
-                                        FlutterTheme.of(context).secondaryText,
-                                    size: 12,
+                                  Text(
+                                    'Places couvert\n${listViewGamesRecord.coveredNumCurrent.toString()} / ${listViewGamesRecord.coveredNum.toString()}',
+                                    style: FlutterTheme.of(context).bodyText2,
                                   ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        5, 0, 0, 0),
-                                    child: Text(
-                                      dateTimeFormat('M / d h:mm a',
-                                          listViewGamesRecord.date),
-                                      style: FlutterTheme.of(context).bodyText2,
-                                    ),
+                                  Text(
+                                    'Places normal\n${listViewGamesRecord.normalNumCurrent.toString()} / ${listViewGamesRecord.normalNum.toString()}',
+                                    style: FlutterTheme.of(context).bodyText2,
+                                  ),
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Icon(
+                                        Icons.calendar_today_outlined,
+                                        color: FlutterTheme.of(context)
+                                            .secondaryText,
+                                        size: 12,
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            5, 0, 0, 0),
+                                        child: Text(
+                                          dateTimeFormat('M / d h:mm a',
+                                              listViewGamesRecord.date),
+                                          style: FlutterTheme.of(context)
+                                              .bodyText2,
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ],
                               ),
-                            ],
+                            ),
                           ),
-                        ),
-                      ),
-                      Expanded(
-                        flex: 5,
-                        child: Center(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                "Revenu total",
-                                style: FlutterTheme.of(context).bodyText1,
-                                textAlign: TextAlign.center,
+                          Expanded(
+                            flex: 5,
+                            child: Center(
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "Revenu total",
+                                    style: FlutterTheme.of(context).bodyText1,
+                                    textAlign: TextAlign.center,
+                                  ),
+                                  Text(
+                                    '${listViewGamesRecord.totalRevenue.toString()} \$',
+                                    style: FlutterTheme.of(context)
+                                        .bodyText1
+                                        .override(
+                                          fontSize: 26,
+                                          fontFamily: 'Poppins',
+                                          fontWeight: FontWeight.bold,
+                                          color: FlutterTheme.of(context)
+                                              .primaryColor,
+                                        ),
+                                  ),
+                                ],
                               ),
-                              Text(
-                                '${listViewGamesRecord.totalRevenue.toString()} \$',
-                                style: FlutterTheme.of(context)
-                                    .bodyText1
-                                    .override(
-                                      fontSize: 26,
-                                      fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.bold,
-                                      color:
-                                          FlutterTheme.of(context).primaryColor,
-                                    ),
-                              ),
-                            ],
+                            ),
                           ),
-                        ),
-                      ),
+                        ],
+                      )
                     ],
-                  )
-                ],
-              ),
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
-      ),
-    );
+          ),
+        ));
   }
 }

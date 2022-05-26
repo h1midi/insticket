@@ -581,7 +581,7 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 30),
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
                       child: FFButtonWidget(
                         onPressed: () async {
                           await DatePicker.showDateTimePicker(
@@ -620,64 +620,67 @@ class _AddGameWidgetState extends State<AddGameWidget> {
                   ],
                 ),
               ),
-              FFButtonWidget(
-                onPressed: () async {
-                  if (!formKey.currentState.validate()) {
-                    return;
-                  }
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 30),
+                child: FFButtonWidget(
+                  onPressed: () async {
+                    if (!formKey.currentState.validate()) {
+                      return;
+                    }
 
-                  if (datePicked == null) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text(
-                          'Veuillez sélectionner l\'heure et la date',
-                          style: FlutterTheme.of(context).bodyText1,
+                    if (datePicked == null) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(
+                            'Veuillez sélectionner l\'heure et la date',
+                            style: FlutterTheme.of(context).bodyText1,
+                          ),
+                          duration: Duration(milliseconds: 3000),
+                          backgroundColor:
+                              FlutterTheme.of(context).secondaryBackground,
                         ),
-                        duration: Duration(milliseconds: 3000),
-                        backgroundColor:
-                            FlutterTheme.of(context).secondaryBackground,
+                      );
+                      return;
+                    }
+
+                    final gamesCreateData = createGamesRecordData(
+                      date: datePicked,
+                      title: titleController.text,
+                      desc: descController.text,
+                      stadium: stadiumController.text,
+                      homeTeam: widget.team.name,
+                      htImageUrl: widget.team.imageUrl,
+                      awayTeam: widget.team2.name,
+                      atImageUrl: widget.team2.imageUrl,
+                      coveredNum: int.parse(acsController.text),
+                      coveredPrice: int.parse(pcsController.text),
+                      normalPrice: int.parse(pnsController.text),
+                      normalNum: int.parse(ansController.text),
+                      versus: '${widget.team.name} VS ${widget.team2.name}',
+                    );
+                    await GamesRecord.collection.doc().set(gamesCreateData);
+                    await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AdminWidget(),
                       ),
                     );
-                    return;
-                  }
-
-                  final gamesCreateData = createGamesRecordData(
-                    date: datePicked,
-                    title: titleController.text,
-                    desc: descController.text,
-                    stadium: stadiumController.text,
-                    homeTeam: widget.team.name,
-                    htImageUrl: widget.team.imageUrl,
-                    awayTeam: widget.team2.name,
-                    atImageUrl: widget.team2.imageUrl,
-                    coveredNum: int.parse(acsController.text),
-                    coveredPrice: int.parse(pcsController.text),
-                    normalPrice: int.parse(pnsController.text),
-                    normalNum: int.parse(ansController.text),
-                    versus: '${widget.team.name} VS ${widget.team2.name}',
-                  );
-                  await GamesRecord.collection.doc().set(gamesCreateData);
-                  await Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => AdminWidget(),
+                  },
+                  text: 'Ajouter le macth',
+                  options: FFButtonOptions(
+                    width: double.infinity,
+                    height: 50,
+                    color: FlutterTheme.of(context).primaryColor,
+                    textStyle: FlutterTheme.of(context).subtitle2.override(
+                          fontFamily: 'Poppins',
+                          color: Colors.white,
+                        ),
+                    borderSide: BorderSide(
+                      color: Colors.transparent,
+                      width: 1,
                     ),
-                  );
-                },
-                text: 'Ajouter le macth',
-                options: FFButtonOptions(
-                  width: double.infinity,
-                  height: 50,
-                  color: FlutterTheme.of(context).primaryColor,
-                  textStyle: FlutterTheme.of(context).subtitle2.override(
-                        fontFamily: 'Poppins',
-                        color: Colors.white,
-                      ),
-                  borderSide: BorderSide(
-                    color: Colors.transparent,
-                    width: 1,
+                    borderRadius: 12,
                   ),
-                  borderRadius: 12,
                 ),
               ),
             ],
