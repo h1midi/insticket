@@ -16,6 +16,7 @@ export 'package:cloud_firestore/cloud_firestore.dart' show DocumentReference;
 export 'package:intl/intl.dart';
 export 'package:page_transition/page_transition.dart';
 
+export '../app_state.dart';
 export 'lat_lng.dart';
 export 'place.dart';
 

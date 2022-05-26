@@ -232,6 +232,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.2.1"
+  edit_distance:
+    dependency: transitive
+    description:
+      name: edit_distance
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.5.0-nullsafety.0"
   fake_async:
     dependency: transitive
     description:
@@ -971,6 +978,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.4.9"
+  text_search:
+    dependency: "direct main"
+    description:
+      name: text_search
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.2"
   timeago:
     dependency: "direct main"
     description:
@@ -985,6 +999,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
+  tuple:
+    dependency: transitive
+    description:
+      name: tuple
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0"
   typed_data:
     dependency: transitive
     description:

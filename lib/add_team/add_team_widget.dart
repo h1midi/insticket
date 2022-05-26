@@ -1,13 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-import '../admin/admin_widget.dart';
 import '../backend/backend.dart';
 import '../backend/firebase_storage/storage.dart';
 import '../flutter_main/flutter_main_icon_button.dart';
 import '../flutter_main/flutter_main_theme.dart';
 import '../flutter_main/flutter_main_widgets.dart';
 import '../flutter_main/upload_media.dart';
+import '../teams/teams_widget.dart';
 
 //FR
 class AddTeamWidget extends StatefulWidget {
@@ -257,7 +257,7 @@ class _AddTeamWidgetState extends State<AddTeamWidget> {
                   await Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => AdminWidget(),
+                      builder: (context) => TeamsWidget(),
                     ),
                   );
                 },
