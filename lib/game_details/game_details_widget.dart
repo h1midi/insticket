@@ -392,7 +392,7 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                                           'bought_by': FieldValue.arrayUnion(
                                               [currentUserReference]),
                                           'total_revenue': FieldValue.increment(
-                                              widget.gameDetails.normalPrice),
+                                              widget.gameDetails.coveredPrice),
                                           'covered_num_current':
                                               FieldValue.increment(1),
                                         };
