@@ -40,6 +40,28 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
+    double imgSize;
+    if (width < height &&
+        ((width / 600).round() == 1) &&
+        ((width / 3 - 170) > 60)) {
+      imgSize = width / 3 - 190;
+    } else if (width < height &&
+        ((width / 600).round() == 2) &&
+        ((width / 6 - 170) > 60)) {
+      imgSize = width / 6 - 170;
+    } else if (width > height &&
+        ((width / 730).round() == 1) &&
+        ((width / 3 - 190) > 45)) {
+      imgSize = width / 3 - 190;
+    } else if (width > height &&
+        ((width / 730).round() == 2) &&
+        ((width / 6 - 150) > 45)) {
+      imgSize = width / 6 - 150;
+    } else if (width > height) {
+      imgSize = 45;
+    } else {
+      imgSize = 60;
+    }
     return Scaffold(
       appBar: AppBar(
         backgroundColor: FlutterTheme.of(context).primaryBackground,
@@ -319,11 +341,20 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(10,
                                                                     10, 10, 10),
-                                                        child: Image.network(
-                                                          listViewGamesRecord
-                                                              .htImageUrl,
-                                                          width: 100,
-                                                          height: 100,
+                                                        child:
+                                                            CachedNetworkImage(
+                                                          imageUrl:
+                                                              listViewGamesRecord
+                                                                  .htImageUrl,
+                                                          placeholder: (context,
+                                                                  url) =>
+                                                              new CircularProgressIndicator(),
+                                                          errorWidget: (context,
+                                                                  url, error) =>
+                                                              new Image.asset(
+                                                                  'assets/images/team-logo.png'),
+                                                          width: imgSize + 40,
+                                                          height: imgSize + 40,
                                                           fit: BoxFit.contain,
                                                         ),
                                                       ),
@@ -474,11 +505,20 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(10,
                                                                     10, 10, 10),
-                                                        child: Image.network(
-                                                          listViewGamesRecord
-                                                              .atImageUrl,
-                                                          width: 100,
-                                                          height: 100,
+                                                        child:
+                                                            CachedNetworkImage(
+                                                          imageUrl:
+                                                              listViewGamesRecord
+                                                                  .atImageUrl,
+                                                          placeholder: (context,
+                                                                  url) =>
+                                                              new CircularProgressIndicator(),
+                                                          errorWidget: (context,
+                                                                  url, error) =>
+                                                              new Image.asset(
+                                                                  'assets/images/team-logo.png'),
+                                                          width: imgSize + 40,
+                                                          height: imgSize + 40,
                                                           fit: BoxFit.contain,
                                                         ),
                                                       ),
@@ -532,28 +572,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 itemBuilder: (context, listViewIndex) {
                                   final listViewGamesRecord =
                                       listViewGamesRecordList[listViewIndex];
-                                  double imgSize;
-                                  if (width < height &&
-                                      ((width / 600).round() == 1) &&
-                                      ((width / 3 - 170) > 60)) {
-                                    imgSize = width / 3 - 190;
-                                  } else if (width < height &&
-                                      ((width / 600).round() == 2) &&
-                                      ((width / 6 - 170) > 60)) {
-                                    imgSize = width / 6 - 170;
-                                  } else if (width > height &&
-                                      ((width / 730).round() == 1) &&
-                                      ((width / 3 - 190) > 45)) {
-                                    imgSize = width / 3 - 190;
-                                  } else if (width > height &&
-                                      ((width / 730).round() == 2) &&
-                                      ((width / 6 - 150) > 45)) {
-                                    imgSize = width / 6 - 150;
-                                  } else if (width > height) {
-                                    imgSize = 45;
-                                  } else {
-                                    imgSize = 60;
-                                  }
+
                                   return Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0, 20, 0, 16),
@@ -956,11 +975,22 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                       10,
                                                                       10,
                                                                       10),
-                                                          child: Image.network(
-                                                            searchedGamesItem
-                                                                .htImageUrl,
-                                                            width: 100,
-                                                            height: 100,
+                                                          child:
+                                                              CachedNetworkImage(
+                                                            imageUrl:
+                                                                searchedGamesItem
+                                                                    .htImageUrl,
+                                                            placeholder: (context,
+                                                                    url) =>
+                                                                new CircularProgressIndicator(),
+                                                            errorWidget: (context,
+                                                                    url,
+                                                                    error) =>
+                                                                new Image.asset(
+                                                                    'assets/images/team-logo.png'),
+                                                            width: imgSize + 40,
+                                                            height:
+                                                                imgSize + 40,
                                                             fit: BoxFit.contain,
                                                           ),
                                                         ),
@@ -1110,11 +1140,22 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                       10,
                                                                       10,
                                                                       10),
-                                                          child: Image.network(
-                                                            searchedGamesItem
-                                                                .atImageUrl,
-                                                            width: 100,
-                                                            height: 100,
+                                                          child:
+                                                              CachedNetworkImage(
+                                                            imageUrl:
+                                                                searchedGamesItem
+                                                                    .htImageUrl,
+                                                            placeholder: (context,
+                                                                    url) =>
+                                                                new CircularProgressIndicator(),
+                                                            errorWidget: (context,
+                                                                    url,
+                                                                    error) =>
+                                                                new Image.asset(
+                                                                    'assets/images/team-logo.png'),
+                                                            width: imgSize + 40,
+                                                            height:
+                                                                imgSize + 40,
                                                             fit: BoxFit.contain,
                                                           ),
                                                         ),
@@ -1160,28 +1201,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 itemBuilder: (context, listViewIndex) {
                                   final listViewGamesRecord =
                                       searchedGames[listViewIndex];
-                                  double imgSize;
-                                  if (width < height &&
-                                      ((width / 600).round() == 1) &&
-                                      ((width / 3 - 170) > 60)) {
-                                    imgSize = width / 3 - 190;
-                                  } else if (width < height &&
-                                      ((width / 600).round() == 2) &&
-                                      ((width / 6 - 170) > 60)) {
-                                    imgSize = width / 6 - 170;
-                                  } else if (width > height &&
-                                      ((width / 730).round() == 1) &&
-                                      ((width / 3 - 190) > 45)) {
-                                    imgSize = width / 3 - 190;
-                                  } else if (width > height &&
-                                      ((width / 730).round() == 2) &&
-                                      ((width / 6 - 150) > 45)) {
-                                    imgSize = width / 6 - 150;
-                                  } else if (width > height) {
-                                    imgSize = 45;
-                                  } else {
-                                    imgSize = 60;
-                                  }
                                   return Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0, 20, 0, 16),

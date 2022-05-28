@@ -15,9 +15,11 @@ class GameDetailsWidget extends StatefulWidget {
   const GameDetailsWidget({
     Key key,
     this.gameDetails,
+    this.ticketDetails,
   }) : super(key: key);
 
   final GamesRecord gameDetails;
+  final TicketsRecord ticketDetails;
 
   @override
   _GameDetailsWidgetState createState() => _GameDetailsWidgetState();
@@ -369,44 +371,38 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
                               child: FFButtonWidget(
-                                onPressed: countOccurrencesUsingLoop(
-                                          widget.gameDetails.boughtBy.asList(),
-                                          currentUserReference,
-                                        ) <
-                                        4
-                                    ? () async {
-                                        final ticketsCreateData =
-                                            createTicketsRecordData(
-                                          code: functions.generateCode(),
-                                          user: currentUserReference,
-                                          game: widget.gameDetails.reference,
-                                          purchasedOn: getCurrentTimestamp,
-                                          isValid: true,
-                                          isCovered: true,
-                                        );
-                                        await TicketsRecord.collection
-                                            .doc()
-                                            .set(ticketsCreateData);
+                                onPressed: () async {
+                                  final ticketsCreateData =
+                                      createTicketsRecordData(
+                                    code: functions.generateCode(),
+                                    user: currentUserReference,
+                                    game: widget.gameDetails.reference,
+                                    purchasedOn: getCurrentTimestamp,
+                                    isValid: true,
+                                    isCovered: true,
+                                  );
+                                  await TicketsRecord.collection
+                                      .doc()
+                                      .set(ticketsCreateData);
 
-                                        final gamesUpdateData = {
-                                          'bought_by': FieldValue.arrayUnion(
-                                              [currentUserReference]),
-                                          'total_revenue': FieldValue.increment(
-                                              widget.gameDetails.coveredPrice),
-                                          'covered_num_current':
-                                              FieldValue.increment(1),
-                                        };
-                                        await widget.gameDetails.reference
-                                            .update(gamesUpdateData);
-                                        await Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => NavBarPage(
-                                                initialPage: 'MyTickets'),
-                                          ),
-                                        );
-                                      }
-                                    : () {},
+                                  final gamesUpdateData = {
+                                    'bought_by': FieldValue.arrayUnion(
+                                        [currentUserReference]),
+                                    'total_revenue': FieldValue.increment(
+                                        widget.gameDetails.coveredPrice),
+                                    'covered_num_current':
+                                        FieldValue.increment(1),
+                                  };
+                                  await widget.gameDetails.reference
+                                      .update(gamesUpdateData);
+                                  await Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          NavBarPage(initialPage: 'MyTickets'),
+                                    ),
+                                  );
+                                },
                                 text:
                                     'Places couverts : ${widget.gameDetails.coveredPrice.toString()} \$',
                                 options: FFButtonOptions(
