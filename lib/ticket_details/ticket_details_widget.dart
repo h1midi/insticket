@@ -318,7 +318,7 @@ class _TicketDetailsWidgetState extends State<TicketDetailsWidget> {
                                     print(directory);
 
                                     final pathOfImage = await File(
-                                            '${directory.path}/${widget.qrtitle}${widget.ticketDetails.isCovered ? "(couvert)" : "(normal)"}.png')
+                                            '${directory.path}/${widget.qrtitle}${widget.ticketDetails.isCovered ? "(couvert)" : "(normal)"}${widget.ticketDetails.code}.png')
                                         .create();
                                     await pathOfImage.writeAsBytes(bytes);
                                   } else {

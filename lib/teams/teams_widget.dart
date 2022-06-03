@@ -44,7 +44,7 @@ class _TeamsWidgetState extends State<TeamsWidget> {
           },
         ),
         title: Text(
-          'teams',
+          'équipes',
           style: FlutterTheme.of(context).title1,
         ),
         actions: [],
@@ -198,9 +198,9 @@ class _TeamsWidgetState extends State<TeamsWidget> {
                                                           (alertDialogContext) {
                                                         return AlertDialog(
                                                           title: Text(
-                                                              'Confirmation Message'),
+                                                              'message de confirmation'),
                                                           content: Text(
-                                                              'Are you sure you want to delete this team'),
+                                                              'Êtes-vous certain de vouloir supprimer cette équipe?'),
                                                           actions: [
                                                             TextButton(
                                                               onPressed: () =>
@@ -208,7 +208,7 @@ class _TeamsWidgetState extends State<TeamsWidget> {
                                                                       alertDialogContext,
                                                                       false),
                                                               child: Text(
-                                                                  'Cancel'),
+                                                                  'annuler'),
                                                             ),
                                                             TextButton(
                                                               onPressed: () =>
@@ -216,7 +216,7 @@ class _TeamsWidgetState extends State<TeamsWidget> {
                                                                       alertDialogContext,
                                                                       true),
                                                               child: Text(
-                                                                  'Confirm'),
+                                                                  'confirmer'),
                                                             ),
                                                           ],
                                                         );

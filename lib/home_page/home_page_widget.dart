@@ -209,7 +209,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
 
                               setState(() => FFAppState().fullList = false);
                             },
-                            text: 'Search',
+                            text: 'Chercher',
                             options: FFButtonOptions(
                               width: 100,
                               height: 40,

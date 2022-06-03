@@ -239,7 +239,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
                     child: Text(
-                      '(hold to delete games)',
+                      '(appuyez longuement pour supprimer)',
                       style: FlutterTheme.of(context).bodyText1,
                     ),
                   ),
@@ -309,19 +309,19 @@ class StatWidgetWeb extends StatelessWidget {
                 context: context,
                 builder: (alertDialogContext) {
                   return AlertDialog(
-                    title: Text('Confirmation Message'),
-                    content:
-                        Text('are you sure you want to delete this game ?'),
+                    title: Text('message de confirmation'),
+                    content: Text(
+                        'Êtes-vous certain de vouloir supprimer cette équipe?'),
                     actions: [
                       TextButton(
                         onPressed: () =>
                             Navigator.pop(alertDialogContext, false),
-                        child: Text('Cancel'),
+                        child: Text('annuler'),
                       ),
                       TextButton(
                         onPressed: () =>
                             Navigator.pop(alertDialogContext, true),
-                        child: Text('Confirm'),
+                        child: Text('confirmer'),
                       ),
                     ],
                   );
@@ -552,19 +552,19 @@ class StatWidget extends StatelessWidget {
                   context: context,
                   builder: (alertDialogContext) {
                     return AlertDialog(
-                      title: Text('Confirmation Message'),
-                      content:
-                          Text('are you sure you want to delete this game ?'),
+                      title: Text('message de confirmation'),
+                      content: Text(
+                          'Êtes-vous certain de vouloir supprimer cette équipe?'),
                       actions: [
                         TextButton(
                           onPressed: () =>
                               Navigator.pop(alertDialogContext, false),
-                          child: Text('Cancel'),
+                          child: Text('annuler'),
                         ),
                         TextButton(
                           onPressed: () =>
                               Navigator.pop(alertDialogContext, true),
-                          child: Text('Confirm'),
+                          child: Text('confirmer'),
                         ),
                       ],
                     );
