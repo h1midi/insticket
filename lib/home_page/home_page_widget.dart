@@ -29,11 +29,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   TextEditingController textController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
   bool isfocusd;
+  bool charNum = false;
   @override
   void initState() {
     super.initState();
     textController = TextEditingController();
     isfocusd = false;
+    charNum = textController.text.length < 3;
   }
 
   @override
@@ -182,33 +184,52 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                           child: FFButtonWidget(
-                            onPressed: () async {
-                              setState(() {
-                                isfocusd = false;
-                              });
-                              await queryGamesRecordOnce()
-                                  .then(
-                                    (records) => simpleSearchResults =
-                                        TextSearch(
-                                      records
-                                          .map(
-                                            (record) => TextSearchItem(record, [
-                                              record.awayTeam,
-                                              record.homeTeam,
-                                              record.stadium
-                                            ]),
+                            onPressed: charNum
+                                ? () {
+                                    setState(() {
+                                      charNum = textController.text.length < 3;
+                                    });
+                                    if (charNum) {
+                                      SnackBar snackBar = SnackBar(
+                                        content: Text('au moins 3 caractère'),
+                                      );
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(snackBar);
+                                    }
+                                  }
+                                : () async {
+                                    setState(() {
+                                      isfocusd = false;
+                                      charNum = textController.text.length < 3;
+                                    });
+                                    if (!charNum) {
+                                      await queryGamesRecordOnce()
+                                          .then(
+                                            (records) => simpleSearchResults =
+                                                TextSearch(
+                                              records
+                                                  .map(
+                                                    (record) => TextSearchItem(
+                                                        record, [
+                                                      record.awayTeam,
+                                                      record.homeTeam,
+                                                      record.stadium
+                                                    ]),
+                                                  )
+                                                  .toList(),
+                                            )
+                                                    .search(textController.text)
+                                                    .map((r) => r.object)
+                                                    .toList(),
                                           )
-                                          .toList(),
-                                    )
-                                            .search(textController.text)
-                                            .map((r) => r.object)
-                                            .toList(),
-                                  )
-                                  .onError((_, __) => simpleSearchResults = [])
-                                  .whenComplete(() => setState(() {}));
+                                          .onError((_, __) =>
+                                              simpleSearchResults = [])
+                                          .whenComplete(() => setState(() {}));
 
-                              setState(() => FFAppState().fullList = false);
-                            },
+                                      setState(
+                                          () => FFAppState().fullList = false);
+                                    }
+                                  },
                             text: 'Chercher',
                             options: FFButtonOptions(
                               width: 100,
@@ -878,6 +899,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 : Builder(
                     builder: (context) {
                       final searchedGames = simpleSearchResults?.toList() ?? [];
+
                       return width < height
                           ? ListView.builder(
                               controller: controller,
@@ -885,8 +907,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               shrinkWrap: true,
                               itemCount: searchedGames.length,
                               itemBuilder: (context, searchedGamesIndex) {
-                                final searchedGamesItem =
-                                    searchedGames[searchedGamesIndex];
+                                GamesRecord searchedGamesItem;
+                                if (searchedGames[searchedGamesIndex].date >
+                                    getCurrentTimestamp)
+                                  searchedGamesItem =
+                                      searchedGames[searchedGamesIndex];
+                                else
+                                  return Container();
                                 return Visibility(
                                   visible: (searchedGamesItem.date) >
                                       (getCurrentTimestamp),
