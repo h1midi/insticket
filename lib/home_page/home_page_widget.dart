@@ -1171,7 +1171,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                               CachedNetworkImage(
                                                             imageUrl:
                                                                 searchedGamesItem
-                                                                    .htImageUrl,
+                                                                    .atImageUrl,
                                                             placeholder: (context,
                                                                     url) =>
                                                                 new CircularProgressIndicator(),

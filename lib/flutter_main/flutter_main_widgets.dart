@@ -112,7 +112,7 @@ class _FFButtonWidgetState extends State<FFButtonWidget> {
                       widget.options.textStyle.color,
                 ),
           ),
-          label: textWidget,
+          label: FittedBox(fit: BoxFit.fitWidth, child: textWidget),
           onPressed: onPressed,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(widget.options.borderRadius),

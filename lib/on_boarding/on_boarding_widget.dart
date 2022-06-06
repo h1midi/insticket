@@ -16,226 +16,154 @@ class OnBoardingWidget extends StatefulWidget {
 class _OnBoardingWidgetState extends State<OnBoardingWidget> {
   PageController pageViewController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
-
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterTheme.of(context).primaryBackground,
       body: Column(
         children: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0, 100, 0, 0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'INSTICKET',
-                  style: FlutterTheme.of(context).title1.override(
-                        fontFamily: 'Poppins',
-                        fontSize: 32,
-                      ),
-                ),
-              ],
+            padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+            child: Text(
+              'INSTICKET',
+              style: FlutterTheme.of(context).title1.override(
+                    fontFamily: 'Poppins',
+                    fontSize: 32,
+                  ),
             ),
           ),
           Expanded(
             child: Container(
               width: double.infinity,
-              height: MediaQuery.of(context).size.height * 0.6,
+              height: height * 0.6,
               child: Stack(
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 30),
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                     child: PageView(
                       controller: pageViewController ??=
                           PageController(initialPage: 0),
                       scrollDirection: Axis.horizontal,
                       children: [
                         Container(
-                          width: 100,
-                          height: 100,
                           decoration: BoxDecoration(),
                           child: Column(
-                            mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 0, 20),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(10),
-                                      child: Image.asset(
-                                        'assets/images/onboarding1.png',
-                                        width: 300,
-                                        height: 300,
-                                        fit: BoxFit.fitWidth,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    20, 0, 20, 8),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Expanded(
-                                      child: Text(
-                                        'Recherche',
-                                        textAlign: TextAlign.center,
-                                        style: FlutterTheme.of(context).title1,
-                                      ),
-                                    ),
-                                  ],
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(10),
+                                  child: Image.asset(
+                                    'assets/images/onboarding1.png',
+                                    width: height * 0.4,
+                                    height: height * 0.4,
+                                    fit: BoxFit.fitWidth,
+                                  ),
                                 ),
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     20, 0, 20, 8),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Expanded(
-                                      child: Text(
-                                        'Vous pouvez facilement trouver les matchs de football que vous voulez',
-                                        textAlign: TextAlign.center,
-                                        style:
-                                            FlutterTheme.of(context).subtitle2,
-                                      ),
-                                    ),
-                                  ],
+                                child: Expanded(
+                                  child: Text(
+                                    'Recherche',
+                                    textAlign: TextAlign.center,
+                                    style: FlutterTheme.of(context).title1,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    20, 0, 20, 8),
+                                child: Expanded(
+                                  child: Text(
+                                    'Vous pouvez facilement trouver les matchs de football que vous voulez',
+                                    textAlign: TextAlign.center,
+                                    style: FlutterTheme.of(context).subtitle2,
+                                  ),
                                 ),
                               ),
                             ],
                           ),
                         ),
                         Container(
-                          width: 100,
-                          height: 100,
                           decoration: BoxDecoration(),
                           child: Column(
-                            mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 0, 20),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(10),
-                                      child: Image.asset(
-                                        'assets/images/onboarding2.png',
-                                        width: 300,
-                                        height: 300,
-                                        fit: BoxFit.fitWidth,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    20, 0, 20, 8),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Expanded(
-                                      child: Text(
-                                        'Acheter',
-                                        textAlign: TextAlign.center,
-                                        style: FlutterTheme.of(context).title1,
-                                      ),
-                                    ),
-                                  ],
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(10),
+                                  child: Image.asset(
+                                    'assets/images/onboarding2.png',
+                                    width: height * 0.4,
+                                    height: height * 0.4,
+                                    fit: BoxFit.fitWidth,
+                                  ),
                                 ),
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     20, 0, 20, 8),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Expanded(
-                                      child: Text(
-                                        'Achetez autant de billets que vous le souhaitez en un simple clic',
-                                        textAlign: TextAlign.center,
-                                        style:
-                                            FlutterTheme.of(context).subtitle2,
-                                      ),
-                                    ),
-                                  ],
+                                child: Text(
+                                  'Acheter',
+                                  textAlign: TextAlign.center,
+                                  style: FlutterTheme.of(context).title1,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    20, 0, 20, 8),
+                                child: Text(
+                                  'Achetez autant de billets que vous le souhaitez en un simple clic',
+                                  textAlign: TextAlign.center,
+                                  style: FlutterTheme.of(context).subtitle2,
                                 ),
                               ),
                             ],
                           ),
                         ),
                         Container(
-                          width: 100,
-                          height: 100,
                           decoration: BoxDecoration(),
                           child: Column(
-                            mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 0, 20),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(10),
-                                      child: Image.asset(
-                                        'assets/images/onboarding3.png',
-                                        width: 300,
-                                        height: 300,
-                                        fit: BoxFit.fitWidth,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    20, 0, 20, 8),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Expanded(
-                                      child: Text(
-                                        'Scanner',
-                                        textAlign: TextAlign.center,
-                                        style: FlutterTheme.of(context).title1,
-                                      ),
-                                    ),
-                                  ],
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(10),
+                                  child: Image.asset(
+                                    'assets/images/onboarding3.png',
+                                    width: height * 0.4,
+                                    height: height * 0.4,
+                                    fit: BoxFit.fitWidth,
+                                  ),
                                 ),
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     20, 0, 20, 8),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Expanded(
-                                      child: Text(
-                                        'Et enfin scannez votre code qr et regardez votre match préféré, facile n\'est-ce pas ?',
-                                        textAlign: TextAlign.center,
-                                        style:
-                                            FlutterTheme.of(context).subtitle2,
-                                      ),
-                                    ),
-                                  ],
+                                child: Text(
+                                  'Scanner',
+                                  textAlign: TextAlign.center,
+                                  style: FlutterTheme.of(context).title1,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    20, 0, 20, 8),
+                                child: Text(
+                                  'Et enfin scannez votre code qr et regardez votre match préféré, facile n\'est-ce pas ?',
+                                  textAlign: TextAlign.center,
+                                  style: FlutterTheme.of(context).subtitle2,
                                 ),
                               ),
                             ],
@@ -279,41 +207,34 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
           ),
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-            child: Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
-                  child: FFButtonWidget(
-                    onPressed: () async {
-                      await Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              NavBarPage(initialPage: 'HomePage'),
-                        ),
-                      );
-                    },
-                    text: 'Passer',
-                    options: FFButtonOptions(
-                      width: 200,
-                      height: 50,
-                      color: FlutterTheme.of(context).secondaryText,
-                      textStyle: FlutterTheme.of(context).title2.override(
-                            fontFamily: 'Poppins',
-                            color: Color(0xFF212121),
-                          ),
-                      elevation: 1,
-                      borderSide: BorderSide(
-                        color: Colors.transparent,
-                        width: 1,
-                      ),
-                      borderRadius: 10,
+            child: Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 20),
+              child: FFButtonWidget(
+                onPressed: () async {
+                  await Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => NavBarPage(initialPage: 'HomePage'),
                     ),
+                  );
+                },
+                text: 'Passer',
+                options: FFButtonOptions(
+                  width: 200,
+                  height: 50,
+                  color: FlutterTheme.of(context).primaryColor,
+                  textStyle: FlutterTheme.of(context).title2.override(
+                        fontFamily: 'Poppins',
+                        color: Color.fromARGB(255, 255, 255, 255),
+                      ),
+                  elevation: 1,
+                  borderSide: BorderSide(
+                    color: Colors.transparent,
+                    width: 1,
                   ),
+                  borderRadius: 10,
                 ),
-              ],
+              ),
             ),
           ),
         ],
