@@ -216,8 +216,6 @@ class _AddTeamWidgetState extends State<AddTeamWidget> {
                         child: CachedNetworkImage(
                           imageUrl: uploadedFileUrl,
                           placeholder: (context, url) =>
-                              new CircularProgressIndicator(),
-                          errorWidget: (context, url, error) =>
                               new Image.asset('assets/images/team-logo.png'),
                           width: 100,
                           height: 100,
