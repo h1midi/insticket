@@ -28,14 +28,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   List<GamesRecord> simpleSearchResults = [];
   TextEditingController textController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  bool isfocusd;
-  bool charNum = false;
   @override
   void initState() {
     super.initState();
     textController = TextEditingController();
-    isfocusd = false;
-    charNum = textController.text.length < 3;
   }
 
   @override
@@ -122,15 +118,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     ),
                     alignment: AlignmentDirectional(0, 0),
                     child: Row(
-                      mainAxisSize: MainAxisSize.max,
                       children: [
                         Expanded(
                           child: Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
                             child: TextFormField(
-                              onTap: () => setState(() {
-                                isfocusd = true;
-                              }),
                               controller: textController,
                               obscureText: false,
                               decoration: InputDecoration(
@@ -146,14 +138,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     color: Color(0x00000000),
                                     width: 2,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(5),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
                                     width: 2,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(5),
                                 ),
                                 prefixIcon: Icon(
                                   Icons.search_sharp,
@@ -165,71 +157,47 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             ),
                           ),
                         ),
-                        isfocusd
-                            ? FlutterIconButton(
-                                borderColor: Colors.transparent,
-                                borderRadius: 30,
-                                borderWidth: 1,
-                                buttonSize: 40,
-                                icon: Icon(
-                                  Icons.close_outlined,
-                                  color: FlutterTheme.of(context).primaryText,
-                                  size: 20,
-                                ),
-                                onPressed: () async {
-                                  setState(() => FFAppState().fullList = true);
-                                },
-                              )
-                            : Container(),
+                        FlutterIconButton(
+                          borderColor: Colors.transparent,
+                          borderRadius: 30,
+                          borderWidth: 1,
+                          buttonSize: 40,
+                          icon: Icon(
+                            Icons.close_outlined,
+                            color: FlutterTheme.of(context).primaryText,
+                            size: 20,
+                          ),
+                          onPressed: () async {
+                            textController.text = "";
+                            setState(() => FFAppState().fullList = true);
+                          },
+                        ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                           child: FFButtonWidget(
-                            onPressed: charNum
-                                ? () {
-                                    setState(() {
-                                      charNum = textController.text.length < 3;
-                                    });
-                                    if (charNum) {
-                                      SnackBar snackBar = SnackBar(
-                                        content: Text('au moins 3 caractère'),
-                                      );
-                                      ScaffoldMessenger.of(context)
-                                          .showSnackBar(snackBar);
-                                    }
-                                  }
-                                : () async {
-                                    setState(() {
-                                      isfocusd = false;
-                                      charNum = textController.text.length < 3;
-                                    });
-                                    if (!charNum) {
-                                      await queryGamesRecordOnce()
-                                          .then(
-                                            (records) => simpleSearchResults =
-                                                TextSearch(
-                                              records
-                                                  .map(
-                                                    (record) => TextSearchItem(
-                                                        record, [
-                                                      record.awayTeam,
-                                                      record.homeTeam,
-                                                      record.stadium
-                                                    ]),
-                                                  )
-                                                  .toList(),
-                                            )
-                                                    .search(textController.text)
-                                                    .map((r) => r.object)
-                                                    .toList(),
+                            onPressed: () async {
+                              await queryGamesRecordOnce()
+                                  .then(
+                                    (records) => simpleSearchResults =
+                                        TextSearch(
+                                      records
+                                          .map(
+                                            (record) => TextSearchItem(record, [
+                                              record.awayTeam,
+                                              record.homeTeam
+                                            ]),
                                           )
-                                          .onError((_, __) =>
-                                              simpleSearchResults = [])
-                                          .whenComplete(() => setState(() {}));
+                                          .toList(),
+                                    )
+                                            .search(textController.text)
+                                            .map((r) => r.object)
+                                            .toList(),
+                                  )
+                                  .onError((_, __) => simpleSearchResults = [])
+                                  .whenComplete(() => setState(() {}));
 
-                                      setState(
-                                          () => FFAppState().fullList = false);
-                                    }
-                                  },
+                              setState(() => FFAppState().fullList = false);
+                            },
                             text: 'Chercher',
                             options: FFButtonOptions(
                               width: 100,

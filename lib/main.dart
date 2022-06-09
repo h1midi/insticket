@@ -306,10 +306,10 @@ class _NavBarPageState extends State<NavBarPage> {
                                         fontSize: 16),
                               ),
                               Switch(
-                                inactiveThumbImage: NetworkImage(
-                                    "https://cdn-icons-png.flaticon.com/512/5115/5115625.png"),
-                                activeThumbImage: NetworkImage(
-                                    "https://cdn-icons-png.flaticon.com/512/5115/5115625.png"),
+                                inactiveThumbImage:
+                                    AssetImage('assets/images/theme.png'),
+                                activeThumbImage:
+                                    AssetImage('assets/images/theme.png'),
                                 onChanged: toggleSwitch,
                                 value: isSwitched,
                               )

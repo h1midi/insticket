@@ -468,8 +468,7 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
                           child: FFButtonWidget(
                             onPressed: () {},
-                            text:
-                                'Les billets pour les places couvertes sont épuisés',
+                            text: 'Les places couvertes sont épuisés',
                             options: FFButtonOptions(
                               width: double.infinity,
                               height: 50,
@@ -493,8 +492,7 @@ class _GameDetailsWidgetState extends State<GameDetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
                           child: FFButtonWidget(
                             onPressed: () {},
-                            text:
-                                'Les billets pour les places normal sont épuisés',
+                            text: 'Les places normal sont épuisés',
                             options: FFButtonOptions(
                               width: double.infinity,
                               height: 50,
