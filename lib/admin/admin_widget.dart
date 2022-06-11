@@ -15,7 +15,7 @@ import '../main.dart';
 import '../scan/scan_widget.dart';
 import '../teams/teams_widget.dart';
 
-//FR
+
 class AdminWidget extends StatefulWidget {
   const AdminWidget({
     Key key,

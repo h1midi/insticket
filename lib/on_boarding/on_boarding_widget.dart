@@ -79,12 +79,10 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     20, 0, 20, 8),
-                                child: Expanded(
-                                  child: Text(
-                                    'Vous pouvez facilement trouver les matchs de football que vous voulez',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterTheme.of(context).subtitle2,
-                                  ),
+                                child: Text(
+                                  'Vous pouvez facilement trouver les matchs de football que vous voulez',
+                                  textAlign: TextAlign.center,
+                                  style: FlutterTheme.of(context).subtitle2,
                                 ),
                               ),
                             ],
