@@ -4,9 +4,9 @@
 ### Team
 
 - Mohammed Hamidi | Sidahmed Abdelaoui | Abdou Ammar | Mohammed Senouci.
----
-2021/2022
----
+
+***2021/2022***
+
 ## Tech Stack
 
 **Client:** Flutter
@@ -30,6 +30,7 @@ covered_place_price, home_team#, away_team#).
 **TEAM** (name, img_url).
 
 Game (*) --- (Watch) --- (*) User :
+
 **WATCH** (uid#, match_id#).
 
 ## Try it
