@@ -1,4 +1,4 @@
-![Logo]([https://insticket.netlify.app/image/logo/logo-black.png](https://i.postimg.cc/gkwcDGC3/app-cover.png))
+![Logo](https://i.postimg.cc/gkwcDGC3/app-cover.png)
 # Online ticketing system
 
 ### Team
