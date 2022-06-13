@@ -1,6 +1,5 @@
 # insticket
 ## Online ticketing system
-Final year project.
 
 ### Team
 
