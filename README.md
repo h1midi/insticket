@@ -42,4 +42,4 @@ WATCH (uid#, match_id#)
 
 ## Try it
 
-[![Get it on Google Play](https://lisk.com/sites/default/files/pictures/2020-01/download_on_the_play_store_badge.svg)](https://play.google.com/store/apps/details?id=com.team4.insticket)[![Website](https://insticket.netlify.app/image/l3/web-app.png)](https://web-insticket.netlify.app)
+[![Get it on Google Play](https://insticket.netlify.app/image/l3/google-play.png)](https://play.google.com/store/apps/details?id=com.team4.insticket)[![Website](https://insticket.netlify.app/image/l3/web-app.png)](https://web-insticket.netlify.app)
